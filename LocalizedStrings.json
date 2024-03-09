@@ -1,0 +1,14 @@
+[
+  {
+    "Key": "MyFeat.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "My Feat"
+  },
+
+  {
+    "Key": "MyFeat.Description",
+    "enGB": "This is my feat, not your feat."
+  }
+]

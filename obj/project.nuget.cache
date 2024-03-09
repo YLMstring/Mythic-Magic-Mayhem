@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "J4QzHkKy2wMuliREBsEfqeOPawtVK02VWOTjWFhuyKN77pfdWMJ1W/MAN71P72wlN8rslmVSF9U0cFc36VkS7w==",
+  "success": true,
+  "projectFilePath": "C:\\PatronMod\\Patron Code\\MythicMagicMayhem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\王异\\.nuget\\packages\\assemblypublicizer\\1.0.2\\assemblypublicizer.1.0.2.nupkg.sha512",
+    "C:\\Users\\王异\\.nuget\\packages\\ilrepack.msbuild.task\\2.0.13\\ilrepack.msbuild.task.2.0.13.nupkg.sha512",
+    "C:\\Users\\王异\\.nuget\\packages\\microsoft.build.framework\\15.9.20\\microsoft.build.framework.15.9.20.nupkg.sha512",
+    "C:\\Users\\王异\\.nuget\\packages\\microsoft.build.utilities.core\\15.9.20\\microsoft.build.utilities.core.15.9.20.nupkg.sha512",
+    "C:\\Users\\王异\\.nuget\\packages\\microsoft.visualstudio.setup.configuration.interop\\1.16.30\\microsoft.visualstudio.setup.configuration.interop.1.16.30.nupkg.sha512",
+    "C:\\Users\\王异\\.nuget\\packages\\system.collections.immutable\\1.5.0\\system.collections.immutable.1.5.0.nupkg.sha512",
+    "C:\\Users\\王异\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.3.0\\system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
+    "C:\\Users\\王异\\.nuget\\packages\\ww-blueprint-core\\2.8.4\\ww-blueprint-core.2.8.4.nupkg.sha512"
+  ],
+  "logs": []
+}

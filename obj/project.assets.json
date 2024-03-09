@@ -1,0 +1,351 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "AssemblyPublicizer/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net472/_._": {}
+        },
+        "runtime": {
+          "lib/net472/AssemblyPublicizer.dll": {}
+        },
+        "build": {
+          "build/AssemblyPublicizer.props": {}
+        }
+      },
+      "ILRepack.MSBuild.Task/2.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Build.Framework": "15.9.20",
+          "Microsoft.Build.Utilities.Core": "15.9.20"
+        },
+        "build": {
+          "build/ILRepack.MSBuild.Task.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/ILRepack.MSBuild.Task.props": {}
+        }
+      },
+      "Microsoft.Build.Framework/15.9.20": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xaml",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net46/Microsoft.Build.Framework.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/Microsoft.Build.Framework.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Build.Utilities.Core/15.9.20": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Build.Framework": "15.9.20",
+          "Microsoft.VisualStudio.Setup.Configuration.Interop": "1.16.30",
+          "System.Collections.Immutable": "1.5.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System.Configuration",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net46/Microsoft.Build.Utilities.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/Microsoft.Build.Utilities.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Setup.Configuration.Interop/1.16.30": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Microsoft.VisualStudio.Setup.Configuration.Interop.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net35/Microsoft.VisualStudio.Setup.Configuration.Interop.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/1.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.InteropServices.RuntimeInformation/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "WW-Blueprint-Core/2.8.4": {
+        "type": "package",
+        "compile": {
+          "lib/net472/BlueprintCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net472/BlueprintCore.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AssemblyPublicizer/1.0.2": {
+      "sha512": "PrswO/TWBYxdjuqKfJ89sTi4+fUAzQpwo3tHawVskYUQOr20BTQEm8+6bCzJ3aF0ABVFhPcnaZ1IAYAl2+FHAQ==",
+      "type": "package",
+      "path": "assemblypublicizer/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "assemblypublicizer.1.0.2.nupkg.sha512",
+        "assemblypublicizer.nuspec",
+        "build/AssemblyPublicizer.props",
+        "lib/net472/AssemblyPublicizer.dll"
+      ]
+    },
+    "ILRepack.MSBuild.Task/2.0.13": {
+      "sha512": "gcgC1yjEiaATEfPxGIJ6UzaEAXAGOpvfnyaMRUxHzrybiuPfO6I6jaH5+I6uXqN+FfsuyFKhGFgEzVXg94vptA==",
+      "type": "package",
+      "path": "ilrepack.msbuild.task/2.0.13",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/ILRepack.MSBuild.Task.props",
+        "buildMultiTargeting/ILRepack.MSBuild.Task.props",
+        "ilrepack.msbuild.task.2.0.13.nupkg.sha512",
+        "ilrepack.msbuild.task.nuspec",
+        "tasks/net46/ILRepack.MSBuild.Task.dll",
+        "tasks/netcoreapp2.1/ILRepack.MSBuild.Task.dll",
+        "tasks/netstandard2.0/ILRepack.MSBuild.Task.dll",
+        "tools/ilrepack.exe"
+      ]
+    },
+    "Microsoft.Build.Framework/15.9.20": {
+      "sha512": "j7KrBtZrD+YQPAu+8K1a0J7HgDf0X18bSnqu5llKXxHZ5Cb1t3eSlEtZPUDFqsv3RCBzByggjIBaxrmdvHxLqA==",
+      "type": "package",
+      "path": "microsoft.build.framework/15.9.20",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Microsoft.Build.Framework.dll",
+        "lib/net46/Microsoft.Build.Framework.pdb",
+        "lib/net46/Microsoft.Build.Framework.xml",
+        "lib/netstandard2.0/Microsoft.Build.Framework.dll",
+        "lib/netstandard2.0/Microsoft.Build.Framework.pdb",
+        "lib/netstandard2.0/Microsoft.Build.Framework.xml",
+        "microsoft.build.framework.15.9.20.nupkg.sha512",
+        "microsoft.build.framework.nuspec",
+        "notices/THIRDPARTYNOTICES.txt"
+      ]
+    },
+    "Microsoft.Build.Utilities.Core/15.9.20": {
+      "sha512": "s5F2IDARivpFJ+RiwOBnCt6Higu88nhDYfaUWwJ2ecBSf83HZsc3E/EjyQIs+4fPAeS5IZsL2ak7gOdxEXubSA==",
+      "type": "package",
+      "path": "microsoft.build.utilities.core/15.9.20",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Microsoft.Build.Utilities.Core.dll",
+        "lib/net46/Microsoft.Build.Utilities.Core.pdb",
+        "lib/net46/Microsoft.Build.Utilities.Core.xml",
+        "lib/netstandard2.0/Microsoft.Build.Utilities.Core.dll",
+        "lib/netstandard2.0/Microsoft.Build.Utilities.Core.pdb",
+        "lib/netstandard2.0/Microsoft.Build.Utilities.Core.xml",
+        "microsoft.build.utilities.core.15.9.20.nupkg.sha512",
+        "microsoft.build.utilities.core.nuspec",
+        "notices/THIRDPARTYNOTICES.txt"
+      ]
+    },
+    "Microsoft.VisualStudio.Setup.Configuration.Interop/1.16.30": {
+      "sha512": "lC6SqNkraWUSY7cyF5GUmXSECoTMwslBc/r1dguChjsi0D0BlF7G6PLsvXD0NFCwnpKlgVzUYrIq7DQakdGerw==",
+      "type": "package",
+      "path": "microsoft.visualstudio.setup.configuration.interop/1.16.30",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Microsoft.VisualStudio.Setup.Configuration.Interop.dll",
+        "lib/net35/Microsoft.VisualStudio.Setup.Configuration.Interop.xml",
+        "microsoft.visualstudio.setup.configuration.interop.1.16.30.nupkg.sha512",
+        "microsoft.visualstudio.setup.configuration.interop.nuspec"
+      ]
+    },
+    "System.Collections.Immutable/1.5.0": {
+      "sha512": "EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
+      "type": "package",
+      "path": "system.collections.immutable/1.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Collections.Immutable.dll",
+        "lib/netstandard1.0/System.Collections.Immutable.xml",
+        "lib/netstandard1.3/System.Collections.Immutable.dll",
+        "lib/netstandard1.3/System.Collections.Immutable.xml",
+        "lib/netstandard2.0/System.Collections.Immutable.dll",
+        "lib/netstandard2.0/System.Collections.Immutable.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
+        "system.collections.immutable.1.5.0.nupkg.sha512",
+        "system.collections.immutable.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.InteropServices.RuntimeInformation/4.3.0": {
+      "sha512": "cbz4YJMqRDR7oLeMRbdYv7mYzc++17lNhScCX0goO2XpGWdvAt60CGN+FHdePUEHCe/Jy9jUlvNAiNdM+7jsOw==",
+      "type": "package",
+      "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/win8/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/wpa81/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/win/lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/win/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/win/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
+        "system.runtime.interopservices.runtimeinformation.nuspec"
+      ]
+    },
+    "WW-Blueprint-Core/2.8.4": {
+      "sha512": "UKENy75K81dg0gjP5l57aSAwWP6LAsGXLd7FO23XicSu6N+NP66QZkzyrLDo6XRO181Lud5XMUhwhFQdiDLA1g==",
+      "type": "package",
+      "path": "ww-blueprint-core/2.8.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/BlueprintCore/LICENSE",
+        "content/BlueprintCore/README.md",
+        "content/BlueprintCore/changes.md",
+        "lib/net472/BlueprintCore.dll",
+        "lib/net472/BlueprintCore.xml",
+        "ww-blueprint-core.2.8.4.nupkg.sha512",
+        "ww-blueprint-core.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "AssemblyPublicizer >= *",
+      "ILRepack.MSBuild.Task >= *",
+      "WW-Blueprint-Core >= *"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\王异\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\PatronMod\\Patron Code\\MythicMagicMayhem.csproj",
+      "projectName": "MythicMagicMayhem",
+      "projectPath": "C:\\PatronMod\\Patron Code\\MythicMagicMayhem.csproj",
+      "packagesPath": "C:\\Users\\王异\\.nuget\\packages\\",
+      "outputPath": "C:\\PatronMod\\Patron Code\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\王异\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "targetAlias": "net472",
+        "dependencies": {
+          "AssemblyPublicizer": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[*, )"
+          },
+          "ILRepack.MSBuild.Task": {
+            "target": "Package",
+            "version": "[*, )"
+          },
+          "WW-Blueprint-Core": {
+            "target": "Package",
+            "version": "[*, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
