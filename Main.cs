@@ -17,7 +17,7 @@ namespace MythicMagicMayhem
   {
     public static bool Enabled;
     private static readonly LogWrapper Logger = LogWrapper.Get("MythicMagicMayhem");
-        private static readonly string RootKey = "mod-menu.test-settings";
+        private static readonly string RootKey = "mod-menu.MythicMagicMayhem-settings";
         public static string GetKey(string partialKey)
         {
             return $"{RootKey}.{partialKey}";
