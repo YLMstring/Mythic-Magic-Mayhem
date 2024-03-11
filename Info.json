@@ -2,9 +2,9 @@
   "Id": "MythicMagicMayhem",
   "DisplayName": "Mythic Magic Mayhem",
   "Author": "string",
-  "Version": "0.1",
+  "Version": "0.1.0",
   "ManagerVersion": "0.21.3",
-  "Requirements": [],
+  "Requirements": [ "ModMenu-1.3.0" ],
   "AssemblyName": "MythicMagicMayhem.dll",
   "EntryMethod": "MythicMagicMayhem.Main.Load"
 }
