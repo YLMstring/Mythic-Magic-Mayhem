@@ -101,7 +101,7 @@ namespace MythicMagicMayhem
 
           Logger.Info("Configuring blueprints.");
 
-          //MyFeat.Configure();
+          MyFeat.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg1"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg2"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) {  }
