@@ -10,14 +10,15 @@ using ModMenu.Settings;
 using System.Globalization;
 using MythicMagicMayhem.Menu;
 using System.Text;
+using MythicMagicMayhem.Mechanics;
 
 namespace MythicMagicMayhem
 {
   public static class Main
   {
     public static bool Enabled;
-    private static readonly LogWrapper Logger = LogWrapper.Get("MythicMagicMayhem");
-        private static readonly string RootKey = "mod-menu.MythicMagicMayhem-settings";
+    public static readonly LogWrapper Logger = LogWrapper.Get("MythicMagicMayhem");
+        private static readonly string RootKey = "mod-menu.mmm-settings";
         public static string GetKey(string partialKey)
         {
             return $"{RootKey}.{partialKey}";
@@ -101,14 +102,14 @@ namespace MythicMagicMayhem
 
           Logger.Info("Configuring blueprints.");
 
-          MyFeat.Configure();
+          //MyFeat.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg1"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg2"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg4"))) { }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg5"))) { }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg6"))) { }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg7"))) { }
+                    
 
                 }
         catch (Exception e)
@@ -135,7 +136,9 @@ namespace MythicMagicMayhem
           }
           Initialized = true;
 
-          RootConfigurator.ConfigureDelayedBlueprints();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg7"))) { MergableSpellbooks.Patch(); }
+
+                    RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)
         {
