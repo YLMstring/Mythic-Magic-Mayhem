@@ -1,6 +1,6 @@
 # Mythic Magic Mayhem
- Mythic Magic Mayhem Mod for WotR
- Our plan for version 1:
+## Mythic Magic Mayhem Mod for WotR
+## Our plan for version 1:
 ### Make all mythic spellbooks mergable with all full caster spellbooks
 ### Lich adjustments:
 - Add lesser animate dead, greater create undead and gloomblind bolts to lich spellbook
