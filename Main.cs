@@ -11,6 +11,8 @@ using System.Globalization;
 using MythicMagicMayhem.Menu;
 using System.Text;
 using MythicMagicMayhem.Mechanics;
+using MythicMagicMayhem.Angel;
+using MythicMagicMayhem.Lich;
 
 namespace MythicMagicMayhem
 {
@@ -103,11 +105,9 @@ namespace MythicMagicMayhem
           Logger.Info("Configuring blueprints.");
 
           //MyFeat.Configure();
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg1"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg2"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg4"))) { }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg5"))) { }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg6"))) { }
                     
 
@@ -137,7 +137,8 @@ namespace MythicMagicMayhem
           Initialized = true;
 
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg7"))) { MergableSpellbooks.Patch(); }
-
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg1"))) { LichSpell.Patch(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg5"))) { AngelSpell.Patch(); }
                     RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)
