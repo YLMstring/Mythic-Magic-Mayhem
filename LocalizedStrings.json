@@ -1,14 +1,69 @@
 [
   {
-    "Key": "MyFeat.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
+    "Key": "MergableSpellbooks.Name",
     "ProcessTemplates": false,
-    "enGB": "My Feat"
+    "enGB": "Mythic Spellbook",
+    "zhCN": "神话法术书"
   },
-
   {
-    "Key": "MyFeat.Description",
-    "enGB": "This is my feat, not your feat."
+    "Key": "MergableSpellbooks.Description",
+    "enGB": "At 3rd rank, you receive the ability to cast mythic spells. You can either choose to take it as part of an existing full spellcaster spellbook, or as a standalone spellbook. Standalone spellbook has an independent progression and spell slots. The number of its spell slots can't be increased with the Abundant Casting mythic feat. In case of merging spellbooks the maximum caster level of the spells within it is 30, and you can use spell slots from the original spellbook to cast mythic spells. Raising the caster level makes spells more powerful. The number of spell slots can be increased with the Abundant Casting mythic feat. Spontaneous spellcasters get the new known spells from their original class and from mythic path independently: the original class's progression doesn't change, and every mythic rank increase gives additional known spells. If you are multiclassing, it is recommended to use the standalone spellbook.",
+    "zhCN": "在神话3阶时，你获得施放神话法术的能力。你可以选择将其作为现有的9环施法者法术书的一部分，或作为独立的法术书。独立的法术书具有独立的进度和法术位。充裕施法神话专长无法增加其法术位。若合并法术书，其中法术的最大施法者等级为30，并且可以使用原法术书中的法术位来施放神话法术。提高施法者等级会使法术更强大，还可以通过充裕施法神话专长来增加法术位的数量。自发施法者从原职业和神话道途中分别独立获得新的已知法术：原职业的进度不会改变，并且每个神话等级都会增加额外的已知法术。兼职角色建议使用独立法术书。"
+  },
+  {
+    "Key": "FeatUndeadMount1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Undead Mount",
+    "zhCN": "不死坐骑"
+  },
+  {
+    "Key": "FeatUndeadMount1.Description",
+    "enGB": "The animal companion also gains a profane bonus equal to Lich's mythic rank on its Charisma score.",
+    "zhCN": "动物伙伴还会在魅力上获得等同于巫妖神话等级的亵渎加值。"
+  },
+  {
+    "Key": "FeatUndeadMount2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Undead Mount",
+    "zhCN": "不死坐骑"
+  },
+  {
+    "Key": "FeatUndeadMount2.Description",
+    "enGB": "The animal companion gains all undead traits.",
+    "zhCN": "动物伙伴获得所有不死生物特性。"
+  },
+  {
+    "Key": "FeatUnholyFortitude.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unholy Fortitude",
+    "zhCN": "不洁坚韧"
+  },
+  {
+    "Key": "FeatUnholyFortitude.Description",
+    "enGB": "Lich may choose to add his Charisma bonus, instead of his Constitution bonus, to Fortitude saves and the number of hit points he gains for character levels.",
+    "zhCN": "巫妖在决定强韧豁免以及角色等级提供的生命值时可以选择使用魅力加值来代替体质加值。"
+  },
+  {
+    "Key": "MMMFeatNewHalo1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Champion",
+    "zhCN": "神圣勇士"
+  },
+  {
+    "Key": "MMMFeatNewHalo1.Description",
+    "enGB": "While Angelic Halo is active, all energy damage the Angel deal is converted into holy damage.",
+    "zhCN": "激活天使光环时，天使造成的所有能量伤害转化为神圣伤害。"
+  },
+  {
+    "Key": "MMMFeatNewHalo2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Flames of Heaven",
+    "zhCN": "天堂烈焰"
+  },
+  {
+    "Key": "MMMFeatNewHalo2.Description",
+    "enGB": "While Angelic Halo is active, all energy damage the Angel deal is converted into fire damage.",
+    "zhCN": "激活天使光环时，天使造成的所有能量伤害转化为火焰伤害。"
   }
+
 ]
