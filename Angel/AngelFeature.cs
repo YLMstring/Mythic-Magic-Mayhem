@@ -36,6 +36,7 @@ namespace MythicMagicMayhem.Angel
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
+                    .AddPrerequisiteNoFeature(Feat2Guid)
                     .AddComponent<ChangeEnergyDamageType>(c => { c.halo = BuffRefs.AngelHaloBuff.Reference; c.Type = DamageTypes.Energy(DamageEnergyType.Holy); })
                     .Configure();
         }
@@ -54,6 +55,7 @@ namespace MythicMagicMayhem.Angel
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
+                    .AddPrerequisiteNoFeature(Feat1Guid)
                     .AddComponent<ChangeEnergyDamageType>(c => { c.halo = BuffRefs.AngelHaloBuff.Reference; c.Type = DamageTypes.Energy(DamageEnergyType.Fire); })
                     .Configure();
         }
