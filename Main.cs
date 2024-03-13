@@ -105,8 +105,8 @@ namespace MythicMagicMayhem
           Logger.Info("Configuring blueprints.");
 
           //MyFeat.Configure();
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg2"))) {  }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg2"))) { LichFeature.UndeadMount1Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) { LichFeature.UndeadMount2Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg4"))) { }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg6"))) { }
                     
