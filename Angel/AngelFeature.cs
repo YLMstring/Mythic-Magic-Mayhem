@@ -30,7 +30,7 @@ namespace MythicMagicMayhem.Angel
 
         public static void NewHalo1Configure()
         {
-            var icon = AbilityRefs.BestowGraceOfTheChampionCast.Reference.Get().Icon;
+            var icon = FeatureRefs.PiercingRaysFeature.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.AngelMythcHalo)
                     .SetDisplayName(DisplayName)
@@ -49,7 +49,7 @@ namespace MythicMagicMayhem.Angel
 
         public static void NewHalo2Configure()
         {
-            var icon = AbilityRefs.FlameStrike.Reference.Get().Icon;
+            var icon = FeatureRefs.FlameOfLifeFeature.Reference.Get().Icon;
 
             FeatureConfigurator.New(Feat2Name, Feat2Guid, Kingmaker.Blueprints.Classes.FeatureGroup.AngelMythcHalo)
                     .SetDisplayName(DisplayName2)

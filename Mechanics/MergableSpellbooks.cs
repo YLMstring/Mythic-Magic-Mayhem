@@ -40,7 +40,7 @@ namespace MythicMagicMayhem.Mechanics
                 .Configure();
 
             var lich = FeatureSelectMythicSpellbookRefs.LichIncorporateSpellbookFeature.Reference.Get();
-            lich.m_AllowedSpellbooks = books;
+            //lich.m_AllowedSpellbooks = books;
             FeatureSelectMythicSpellbookConfigurator.For(FeatureSelectMythicSpellbookRefs.LichIncorporateSpellbookFeature)
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
