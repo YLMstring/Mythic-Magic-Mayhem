@@ -44,6 +44,8 @@ namespace MythicMagicMayhem.Mechanics
             FeatureSelectMythicSpellbookConfigurator.For(FeatureSelectMythicSpellbookRefs.LichIncorporateSpellbookFeature)
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
+                .SetHideInCharacterSheetAndLevelUp(false)
+                .SetHideInUI(false)
                 .Configure();
 
             var trickster = FeatureSelectMythicSpellbookConfigurator.New(TricksterFeatName, TricksterFeatGuid)
