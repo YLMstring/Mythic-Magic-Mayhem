@@ -67,7 +67,7 @@ namespace MythicMagicMayhem.Lich
                     .SetDescription(Description2)
                     .SetIcon(icon)
                     .AddFeatureToPet(FeatureRefs.UndeadType.ToString(), PetType.AnimalCompanion)
-                    .AddPrerequisitePlayerHasFeature(ProgressionRefs.LichProgression.ToString())
+                    .AddPrerequisitePlayerHasFeature(FeatureSelectionRefs.LichUniqueAbilitiesSelection.ToString())
                     .SetHideNotAvailibleInUI(true)
                     .Configure();
         }
