@@ -20,6 +20,9 @@ namespace MythicMagicMayhem.Lich
         private static readonly string FeatName = "FeatUndeadMount1";
         public static readonly string FeatGuid = "{E2D99CFC-DDDF-4F10-AA04-E518E92C0A14}";
 
+        private static readonly string FeatShowName = "FeatShowUndeadMount1";
+        public static readonly string FeatShowGuid = "{5C6DB2C4-5950-465D-8936-4DC7569B2B8E}";
+
         private static readonly string DisplayName = "FeatUndeadMount1.Name";
         private static readonly string Description = "FeatUndeadMount1.Description";
 
@@ -35,9 +38,16 @@ namespace MythicMagicMayhem.Lich
                     .AddContextRankConfig(ContextRankConfigs.MythicLevel(true))
                     .Configure();
 
+            var feat2 = FeatureConfigurator.New(FeatShowName, FeatShowGuid)
+                    .SetDisplayName(DisplayName)
+                    .SetDescription(Description)
+                    .SetIcon(icon)
+                    .AddFeatureToPet(feat, PetType.AnimalCompanion)
+                    .SetReapplyOnLevelUp(true)
+                    .Configure();
+
             FeatureConfigurator.For(FeatureRefs.UndeadMountFeature.Reference)
-                .AddFeatureToPet(feat, PetType.AnimalCompanion)
-                .SetReapplyOnLevelUp(true)
+                .AddFacts(new() { feat2 })
                 .Configure();
         }
 

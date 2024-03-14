@@ -29,8 +29,8 @@
   },
   {
     "Key": "FeatUndeadMount2.Description",
-    "enGB": "The animal companion gains all undead traits.",
-    "zhCN": "动物伙伴获得所有不死生物特性。"
+    "enGB": "Your animal companion gains all undead traits.",
+    "zhCN": "你的动物伙伴获得所有不死生物特性。"
   },
   {
     "Key": "FeatUnholyFortitude.Name",
