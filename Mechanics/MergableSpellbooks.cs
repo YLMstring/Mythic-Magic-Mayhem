@@ -1,6 +1,7 @@
 ﻿using BlueprintCore.Blueprints.Configurators.Classes;
 using BlueprintCore.Blueprints.Configurators.Classes.Spells;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -71,15 +72,6 @@ namespace MythicMagicMayhem.Mechanics
             demon.m_AllowedSpellbooks = books;
             ProgressionConfigurator.For(ProgressionRefs.DemonProgression)
                 .AddToLevelEntries(1, demon)
-                .Configure();
-
-            SpellbookConfigurator.For(SpellbookRefs.DemonSpellbook)
-                .SetSpellList(SpellListRefs.AngelClericSpelllist.ToString())
-                .SetMythicSpellList(SpellListRefs.AngelMythicSpelllist.ToString())
-                .SetSpellsPerDay(SpellsTableRefs.AngeSpellsPerDay.ToString())
-                .SetAllSpellsKnown()
-                .SetSpontaneous(false)
-                .SetSpellsKnown(null)
                 .Configure();
 
             var azata = FeatureSelectMythicSpellbookConfigurator.New(AzataFeatName, AzataFeatGuid)
