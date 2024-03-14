@@ -97,13 +97,13 @@ namespace MythicMagicMayhem.Mechanics
 
         private static BlueprintSpellbookReference[] Get9thBooks()
         {
-            BlueprintSpellbookReference[] books = new BlueprintSpellbookReference[50];
+            var books = new List<BlueprintSpellbookReference>() { };
             var clazzs = RootRefs.BlueprintRoot.Reference.Get().Progression.AvailableCharacterClasses;
             foreach (var clazz in clazzs)
             {
                 if (GetMaxLevel(clazz.Spellbook) > 9)
                 {
-                    books.Append(clazz.Spellbook.ToReference<BlueprintSpellbookReference>());
+                    books.Add(clazz.Spellbook.ToReference<BlueprintSpellbookReference>());
                     Main.Logger.Info("Make " + clazz.Spellbook.NameSafe() + " mergable");
                 }
                 if (!clazz.Archetypes.Any()) continue;
@@ -111,12 +111,12 @@ namespace MythicMagicMayhem.Mechanics
                 {
                     if (GetMaxLevel(archetype.ReplaceSpellbook) > 9)
                     {
-                        books.Append(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
+                        books.Add(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
                         Main.Logger.Info("Make " + archetype.ReplaceSpellbook.NameSafe() + " mergable");
                     }
                 }
             }
-            return books;
+            return books.ToArray();
         }
 
         private static int GetMaxLevel(BlueprintSpellbook book)
