@@ -6,6 +6,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using System;
 using System.Collections.Generic;
@@ -86,7 +87,6 @@ namespace MythicMagicMayhem.Lich
                     .SetDescription(Description3)
                     .SetIcon(icon)
                     .AddComponent<UnholyFortitudeLogic>()
-                    .AddReplaceStatBaseAttribute(StatType.Charisma, true, Kingmaker.UnitLogic.Buffs.BonusMod.AsIs, StatType.SaveFortitude)
                     .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.LichProgression.Reference)
@@ -95,7 +95,7 @@ namespace MythicMagicMayhem.Lich
         }
     }
 
-    internal class UnholyFortitudeLogic : UnitFactComponentDelegate, IOwnerGainLevelHandler, IUnitSubscriber, ISubscriber
+    internal class UnholyFortitudeLogic : UnitFactComponentDelegate, IOwnerGainLevelHandler, IUnitSubscriber, ISubscriber, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, IInitiatorRulebookSubscriber
     {
         public override void OnTurnOn()
         {
@@ -124,6 +124,19 @@ namespace MythicMagicMayhem.Lich
             int cha = Owner.Descriptor.Stats.Charisma.BaseValue;
             int value = Math.Max(num * (cha - con) / 2, 0);
             Owner.Stats.HitPoints.AddModifier(value, Runtime, ModifierDescriptor.UntypedStackable);
+        }
+
+        void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
+        {
+            if (Owner.HasFact(Undead)) return; 
+            int num = Owner.Stats.Charisma.Bonus - Owner.Stats.Constitution.Bonus;
+            if (num <= 0) return;
+            evt.AddTemporaryModifier(evt.Initiator.Stats.SaveFortitude.AddModifier(num, base.Runtime));
+        }
+
+        void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
+        {
+            
         }
 
         private static BlueprintFeatureReference Undead = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.UndeadImmunities.ToString());
