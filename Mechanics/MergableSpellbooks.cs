@@ -40,7 +40,7 @@ namespace MythicMagicMayhem.Mechanics
                 .Configure();
 
             var lich = FeatureSelectMythicSpellbookRefs.LichIncorporateSpellbookFeature.Reference.Get();
-            //lich.m_AllowedSpellbooks = books;
+            lich.m_AllowedSpellbooks = books;
             FeatureSelectMythicSpellbookConfigurator.For(FeatureSelectMythicSpellbookRefs.LichIncorporateSpellbookFeature)
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
@@ -97,7 +97,7 @@ namespace MythicMagicMayhem.Mechanics
 
         private static BlueprintSpellbookReference[] Get9thBooks()
         {
-            BlueprintSpellbookReference[] books = new BlueprintSpellbookReference[] { };
+            BlueprintSpellbookReference[] books = new BlueprintSpellbookReference[50];
             var clazzs = RootRefs.BlueprintRoot.Reference.Get().Progression.AvailableCharacterClasses;
             foreach (var clazz in clazzs)
             {
