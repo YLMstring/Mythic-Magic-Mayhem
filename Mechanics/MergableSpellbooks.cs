@@ -58,9 +58,7 @@ namespace MythicMagicMayhem.Mechanics
                 .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             trickster.m_AllowedSpellbooks = books;
-            ProgressionConfigurator.For(ProgressionRefs.TricksterProgression)
-                .AddToLevelEntries(1, trickster)
-                .Configure();
+            //ProgressionConfigurator.For(ProgressionRefs.TricksterProgression).AddToLevelEntries(1, trickster).Configure();
 
             var demon = FeatureSelectMythicSpellbookConfigurator.New(DemonFeatName, DemonFeatGuid)
                 .SetDisplayName(DisplayName)
@@ -70,9 +68,7 @@ namespace MythicMagicMayhem.Mechanics
                 .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             demon.m_AllowedSpellbooks = books;
-            ProgressionConfigurator.For(ProgressionRefs.DemonProgression)
-                .AddToLevelEntries(1, demon)
-                .Configure();
+            //ProgressionConfigurator.For(ProgressionRefs.DemonProgression).AddToLevelEntries(1, demon).Configure();
 
             var azata = FeatureSelectMythicSpellbookConfigurator.New(AzataFeatName, AzataFeatGuid)
                 .SetDisplayName(DisplayName)
@@ -82,9 +78,7 @@ namespace MythicMagicMayhem.Mechanics
                 .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             azata.m_AllowedSpellbooks = books;
-            ProgressionConfigurator.For(ProgressionRefs.AzataProgression)
-                .AddToLevelEntries(1, azata)
-                .Configure();
+            //ProgressionConfigurator.For(ProgressionRefs.AzataProgression).AddToLevelEntries(1, azata).Configure();
 
             var aeon = FeatureSelectMythicSpellbookConfigurator.New(AeonFeatName, AeonFeatGuid)
                 .SetDisplayName(DisplayName)
@@ -94,9 +88,7 @@ namespace MythicMagicMayhem.Mechanics
                 .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             aeon.m_AllowedSpellbooks = books;
-            ProgressionConfigurator.For(ProgressionRefs.AeonProgression)
-                .AddToLevelEntries(1, aeon)
-                .Configure();
+            //ProgressionConfigurator.For(ProgressionRefs.AeonProgression).AddToLevelEntries(1, aeon).Configure();
         }
 
         private static BlueprintSpellbookReference[] Get9thBooks()
