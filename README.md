@@ -1,5 +1,5 @@
-# Mythic Magic Mayhem
-## Our plan for version 1:
+# Mythic Magic Mayhem v0.1.1 for WoTR
+## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [Spellbook Merge](https://github.com/vikigenius/SpellbookMerge/tree/master).
 ### Make all mythic spellbooks mergable with all full caster spellbooks
 ### Lich adjustments:
 - Add lesser animate dead, greater create undead and gloomblind bolts to lich spellbook
