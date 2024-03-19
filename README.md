@@ -12,3 +12,10 @@
 - Increase Storm of Justice to 9th level
 - Add Improved Angelic Halo - Divine Champion: While Angelic Halo is active energy damage is converted into holy damage
 - Add Improved Angelic Halo - Flames of Heaven: While Angelic Halo is active energy damage is converted into fire damage
+## Thanks to  
+-   WittleWolfie for his [Blueprint-Core](https://wittlewolfie.github.io/WW-Blueprint-Core/index.html), which makes modding easy and enjoyable.
+-   Bubbles (factsubio) for BubblePrints, saving me from going mad.
+-   vikigenius for Spellbook Merge!   
+-   All the Owlcat modders who came before me, wrote documents, and open sourced their code.
+-   Pathfinder Wrath of The Righteous Discord channel members.
+-   Join our [Discord](https://discord.com/invite/wotr)
