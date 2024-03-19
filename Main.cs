@@ -91,6 +91,9 @@ namespace MythicMagicMayhem
                 .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("tg7"), defaultValue: true, Helpers.CreateString("toggle-desc7", "Mergable Spellbooks"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("tg8"), defaultValue: true, Helpers.CreateString("toggle-desc8", "Restore Owlcat Merger"))
               .ShowVisualConnection()));
 
                 try

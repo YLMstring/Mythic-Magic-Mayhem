@@ -16,18 +16,6 @@ namespace MythicMagicMayhem.Mechanics
 {
     internal class MergableSpellbooks
     {
-        private static readonly string TricksterFeatName = "MergableSpellbooksTrickster";
-        private static readonly string TricksterFeatGuid = "{40E8CAAE-4F2C-43A2-AFDA-3B218D116BE2}";
-
-        private static readonly string DemonFeatName = "MergableSpellbooksDemon";
-        private static readonly string DemonFeatGuid = "{1FB17BDF-B9CA-4430-B895-BE0B64400512}";
-
-        private static readonly string AzataFeatName = "MergableSpellbooksAzata";
-        private static readonly string AzataFeatGuid = "{9310036B-9916-4CAE-BF4D-7E8C29D97A13}";
-
-        private static readonly string AeonFeatName = "MergableSpellbooksAeon";
-        private static readonly string AeonFeatGuid = "{6ACCBFCA-6F6D-4A2D-8FF0-16AC48FD3D5F}";
-
         private static readonly string DisplayName = "MergableSpellbooks.Name";
         private static readonly string Description = "MergableSpellbooks.Description";
         public static void Patch()
@@ -50,45 +38,29 @@ namespace MythicMagicMayhem.Mechanics
                 .SetHideInUI(false)
                 .Configure();
 
-            var trickster = FeatureSelectMythicSpellbookConfigurator.New(TricksterFeatName, TricksterFeatGuid)
+            var trickster = FeatureSelectMythicSpellbookConfigurator.For("c4ef6975-167d-4cf5-acbf-d66b60e63f9c")
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
-                .SetIsClassFeature(true)
-                .SetMythicSpellList(SpellListRefs.TricksterSpelllistMythic.ToString())
-                .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             trickster.m_AllowedSpellbooks = books;
-            //ProgressionConfigurator.For(ProgressionRefs.TricksterProgression).AddToLevelEntries(1, trickster).Configure();
 
-            var demon = FeatureSelectMythicSpellbookConfigurator.New(DemonFeatName, DemonFeatGuid)
+            var demon = FeatureSelectMythicSpellbookConfigurator.For("f3ff8515-355e-4738-b128-c3d01483f1ca")
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
-                .SetIsClassFeature(true)
-                .SetMythicSpellList(SpellListRefs.DemonSpelllist.ToString())
-                .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             demon.m_AllowedSpellbooks = books;
-            //ProgressionConfigurator.For(ProgressionRefs.DemonProgression).AddToLevelEntries(1, demon).Configure();
 
-            var azata = FeatureSelectMythicSpellbookConfigurator.New(AzataFeatName, AzataFeatGuid)
+            var azata = FeatureSelectMythicSpellbookConfigurator.For("83385d9f-4d71-4e4e-9461-8703be762a20")
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
-                .SetIsClassFeature(true)
-                .SetMythicSpellList(SpellListRefs.AzataMythicSpellsSpelllist.ToString())
-                .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             azata.m_AllowedSpellbooks = books;
-            //ProgressionConfigurator.For(ProgressionRefs.AzataProgression).AddToLevelEntries(1, azata).Configure();
 
-            var aeon = FeatureSelectMythicSpellbookConfigurator.New(AeonFeatName, AeonFeatGuid)
+            var aeon = FeatureSelectMythicSpellbookConfigurator.For("2b7027ee-76cb-4c58-b2cf-f0475bc69fbb")
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
-                .SetIsClassFeature(true)
-                .SetMythicSpellList(SpellListRefs.AeonSpellMythicList.ToString())
-                .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.ToString())
                 .Configure();
             aeon.m_AllowedSpellbooks = books;
-            //ProgressionConfigurator.For(ProgressionRefs.AeonProgression).AddToLevelEntries(1, aeon).Configure();
         }
 
         private static BlueprintSpellbookReference[] Get9thBooks()
