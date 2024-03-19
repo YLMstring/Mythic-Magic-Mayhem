@@ -2,6 +2,7 @@
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [Spellbook Merge](https://github.com/vikigenius/SpellbookMerge/tree/master).
 - Make all mythic spellbooks mergable with all full caster spellbooks！
 - The mod overrides Spellbook Merge Mod, making all of its options unavailable lol
+- All features are toggleable, and more toggleable than Prestige Plus
 ### Lich adjustments:
 - Add lesser animate dead, greater create undead and gloomblind bolts to lich spellbook
 - Improve Undead Mount power by adding a CHA bonus to mount equal to mythic rank
