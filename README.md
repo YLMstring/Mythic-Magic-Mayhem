@@ -4,7 +4,7 @@
 - The mod overrides Spellbook Merge Mod, making all of its options unavailable lol
 - All features are toggleable, and more toggleable than Prestige Plus
 ### Lich adjustments:
-- Add lesser animate dead, greater create undead and gloomblind bolts to lich spellbook
+- Add lesser animate dead to lich spellbook
 - Improve Undead Mount power by adding a CHA bonus to mount equal to mythic rank
 - Add a mythic power option to turn a companion's animal companion into undead template
 - Add a passive perk at MR5 to use CON or CHA (whichever is highest) for fort and hp modifiers
