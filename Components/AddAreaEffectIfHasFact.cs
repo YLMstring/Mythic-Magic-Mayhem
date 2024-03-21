@@ -9,12 +9,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kingmaker.Blueprints.Classes;
 
 namespace MythicMagicMayhem.Components
 {
     internal class AddAreaEffectIfHasFact : AddAreaEffect
     {
-        public BlueprintFeatureReference RequiredFact;
+        public BlueprintFeature RequiredFact;
     }
 
 
