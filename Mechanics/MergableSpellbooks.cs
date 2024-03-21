@@ -69,7 +69,7 @@ namespace MythicMagicMayhem.Mechanics
             var clazzs = RootRefs.BlueprintRoot.Reference.Get().Progression.AvailableCharacterClasses;
             foreach (var clazz in clazzs)
             {
-                if (GetMaxLevel(clazz.Spellbook) > 2)
+                if (GetMaxLevel(clazz.Spellbook) > 9)
                 {
                     books.Add(clazz.Spellbook.ToReference<BlueprintSpellbookReference>());
                     Main.Logger.Info("Make " + clazz.Spellbook.NameSafe() + " mergable");
@@ -77,7 +77,7 @@ namespace MythicMagicMayhem.Mechanics
                 if (!clazz.Archetypes.Any()) continue;
                 foreach (var archetype in clazz.Archetypes)
                 {
-                    if (GetMaxLevel(archetype.ReplaceSpellbook) > 2)
+                    if (GetMaxLevel(archetype.ReplaceSpellbook) > 9)
                     {
                         books.Add(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
                         Main.Logger.Info("Make " + archetype.ReplaceSpellbook.NameSafe() + " mergable");
