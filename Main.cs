@@ -119,7 +119,6 @@ namespace MythicMagicMayhem
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) { LichFeature.UndeadMount2Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg4"))) { LichFeature.UnholyFortitudeConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg6"))) { AngelFeature.NewHalo1Configure(); AngelFeature.NewHalo2Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg9"))) { AzataNewSpell.GroupHugConfigure(); AzataNewSpell.ElysiumChoirConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg10"))) { AzataFeature.NewSuperp1Configure(); }
                 }
         catch (Exception e)

@@ -20,7 +20,7 @@ namespace MythicMagicMayhem.Azata
 
         public static void NewSuperp1Configure()
         {
-            var icon = FeatureRefs.GlobalSpellAzataSongOfDeceivingThicketFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.FascinateFeature.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.AzataSuperpowerAbilities)
                     .SetDisplayName(DisplayName)

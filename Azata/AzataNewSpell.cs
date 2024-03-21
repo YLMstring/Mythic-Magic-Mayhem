@@ -26,12 +26,12 @@ namespace MythicMagicMayhem.Azata
 
         internal const string DisplayName = "NewSpellGroupHug.Name";
         private const string Description = "NewSpellGroupHug.Description";
-        public static void GroupHugConfigure()
+        public static BlueprintAbility GroupHugConfigure()
         {
             var icon = AbilityRefs.FriendlyHug.Reference.Get().Icon;
-            var fx = AbilityRefs.FriendlyHug.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var fx = AbilityRefs.AuraOfGreaterCourage.Reference.Get().GetComponent<AbilitySpawnFx>();
 
-            AbilityConfigurator.NewSpell(
+            return AbilityConfigurator.NewSpell(
                 GroupHugAbility1, GroupHugAbility1Guid, SpellSchool.Abjuration, canSpecialize: false)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
@@ -41,7 +41,7 @@ namespace MythicMagicMayhem.Azata
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 15.Feet(), spreadSpeed: 20.Feet())
               .AddComponent(fx)
-              .AddToSpellLists(level: 8, SpellList.AzataMythic)
+              //.AddToSpellLists(level: 8, SpellList.AzataMythic)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .CastSpell(AbilityRefs.FriendlyHug.ToString())
@@ -62,7 +62,7 @@ namespace MythicMagicMayhem.Azata
         internal const string DisplayName2 = "NewSpellElysiumChoir.Name";
         private const string Description2 = "NewSpellElysiumChoir.Description";
 
-        public static void ElysiumChoirConfigure()
+        public static BlueprintAbility ElysiumChoirConfigure()
         {
             var icon = AbilityRefs.Azata1SongOfThePeopleAbility.Reference.Get().Icon;
 
@@ -185,7 +185,7 @@ namespace MythicMagicMayhem.Azata
 
             //var fx = AbilityRefs.SmiteEvilAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
 
-            AbilityConfigurator.NewSpell(
+            return AbilityConfigurator.NewSpell(
                 ElysiumChoirAbility, ElysiumChoirAbilityGuid, SpellSchool.Enchantment, canSpecialize: false)
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
@@ -197,7 +197,6 @@ namespace MythicMagicMayhem.Azata
               .SetRange(AbilityRange.Long)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
-              .AddToSpellLists(level: 10, SpellList.AzataMythic)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ApplyBuff(buff, ContextDuration.Fixed(10), isFromSpell: true, toCaster: true)
