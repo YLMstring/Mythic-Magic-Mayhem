@@ -94,6 +94,9 @@ namespace MythicMagicMayhem
             Toggle.New(GetKey("tg9"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm9", "Azata Spell"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("tg10"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm10", "Azata Superpower"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("tg7"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm7", "Mergable Spellbooks"))
               .ShowVisualConnection())
           .AddToggle(
@@ -116,8 +119,8 @@ namespace MythicMagicMayhem
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) { LichFeature.UndeadMount2Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg4"))) { LichFeature.UnholyFortitudeConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg6"))) { AngelFeature.NewHalo1Configure(); AngelFeature.NewHalo2Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg9"))) { }
-
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg9"))) { AzataNewSpell.GroupHugConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg10"))) { AzataFeature.NewSuperp1Configure(); }
                 }
         catch (Exception e)
         {
