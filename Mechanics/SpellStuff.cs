@@ -28,7 +28,7 @@ namespace MythicMagicMayhem.Mechanics
                     levelentry.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
                 }
             }
-
+            if (newlevel > 10) return;
             var Lists = spell.GetComponents<SpellListComponent>();
             if (Lists == null) return;
             foreach (var List in Lists)

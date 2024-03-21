@@ -13,6 +13,7 @@ using System.Text;
 using MythicMagicMayhem.Mechanics;
 using MythicMagicMayhem.Angel;
 using MythicMagicMayhem.Lich;
+using MythicMagicMayhem.Azata;
 
 namespace MythicMagicMayhem
 {
@@ -46,7 +47,7 @@ namespace MythicMagicMayhem
       Enabled = value;
       return true;
     }
-        private static void onclick()
+        private static void Onclick()
         {
             var log = new StringBuilder();
             log.AppendLine("Current settings: ");
@@ -68,32 +69,35 @@ namespace MythicMagicMayhem
             static void Init()
             {
                 ModMenu.ModMenu.AddSettings(
-                SettingsBuilder.New(RootKey, Helpers.CreateString("title", "Mythic Magic Mayhem"))
+                SettingsBuilder.New(RootKey, Helpers.CreateString("title-mmm", "Mythic Magic Mayhem"))
                 .AddDefaultButton().AddButton(Button.New(
-            Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), onclick))
+            Helpers.CreateString("button-desc-mmm", "Restart the game to apply changes!"), Helpers.CreateString("button-text-mmm", "Do Not Turn Any Chosen Features Off"), Onclick))
           .AddToggle(
-            Toggle.New(GetKey("tg1"), defaultValue: true, Helpers.CreateString("toggle-desc1", "Lich Spell"))
+            Toggle.New(GetKey("tg1"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm1", "Lich Spell"))
                 .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg2"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Lich Mount"))
+            Toggle.New(GetKey("tg2"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm2", "Lich Mount"))
                 .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg3"), defaultValue: true, Helpers.CreateString("toggle-desc3", "Lich Companion Feat"))
+            Toggle.New(GetKey("tg3"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm3", "Lich Companion Feat"))
                 .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg4"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Lich Fortitude"))
+            Toggle.New(GetKey("tg4"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm4", "Lich Fortitude"))
                 .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg5"), defaultValue: true, Helpers.CreateString("toggle-desc5", "Angel Spell"))
+            Toggle.New(GetKey("tg5"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm5", "Angel Spell"))
                 .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg6"), defaultValue: true, Helpers.CreateString("toggle-desc6", "Angel Halo"))
+            Toggle.New(GetKey("tg6"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm6", "Angel Halo"))
                 .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg7"), defaultValue: true, Helpers.CreateString("toggle-desc7", "Mergable Spellbooks"))
+            Toggle.New(GetKey("tg9"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm9", "Azata Spell"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg8"), defaultValue: true, Helpers.CreateString("toggle-desc8", "Restore Owlcat Merger"))
+            Toggle.New(GetKey("tg7"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm7", "Mergable Spellbooks"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("tg8"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm8", "Restore Owlcat Merger"))
               .ShowVisualConnection()));
 
                 try
@@ -112,7 +116,7 @@ namespace MythicMagicMayhem
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg3"))) { LichFeature.UndeadMount2Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg4"))) { LichFeature.UnholyFortitudeConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg6"))) { AngelFeature.NewHalo1Configure(); AngelFeature.NewHalo2Configure(); }
-                    
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg9"))) { }
 
                 }
         catch (Exception e)
@@ -142,6 +146,7 @@ namespace MythicMagicMayhem
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg7"))) { MergableSpellbooks.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg1"))) { LichSpell.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg5"))) { AngelSpell.Patch(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg9"))) { AzataSpellTweak.Patch(); }
                     RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)
