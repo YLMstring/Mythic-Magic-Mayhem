@@ -40,16 +40,25 @@ namespace MythicMagicMayhem.Azata
             SpellStuff.ChangeSpellLevel(AbilityRefs.WindsOfTheFall.Reference, SpellListRefs.AzataMythicSpellsSpelllist.Reference, 7, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.RainbowStarfall.Reference, SpellListRefs.AzataMythicSpellsSpelllist.Reference, 8, 6);
             SpellStuff.AddSpellLevel(AbilityRefs.PrismaticSpray.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 7);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.WaterTorrent.Reference, SpellListRefs.AzataMythicSpellsSpelllist.Reference, 8, 7);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.HeroNeverSurrender.Reference, SpellListRefs.AzataMythicSpellsSpelllist.Reference, 8, 7);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.RainbowArrows.Reference, SpellListRefs.AzataMythicSpellsSpelllist.Reference, 9, 7);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.Revolt.Reference, SpellListRefs.AzataMythicSpellsSpelllist.Reference, 9, 7);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.UnbreakableBond.Reference, SpellListRefs.AzataMythicSpellsSpelllist.Reference, 9, 7);
             SpellStuff.AddSpellLevel(AbilityRefs.Seamantle.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.PolarRay.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.SummonElementalElderBase.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.Stormbolts.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 8);
             SpellStuff.AddSpellLevel(AzataNewSpell.GroupHugConfigure(), SpellListRefs.AzataMythicSpelllist.Reference, 8);
-            SpellStuff.AddSpellLevel(AbilityRefs.DominateMonster.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 9);
+            //SpellStuff.AddSpellLevel(AbilityRefs.DominateMonster.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.Tsunami.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.IcyPrisonMass.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 9);
-            SpellStuff.AddSpellLevel(AbilityRefs.HoldMonsterMass.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 9);
+            //SpellStuff.AddSpellLevel(AbilityRefs.HoldMonsterMass.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AzataNewSpell.ElysiumChoirConfigure(), SpellListRefs.AzataMythicSpelllist.Reference, 10);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.PowerWordStun.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 8);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.HeroicInvocation.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.PowerWordKill.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.EvilSuccubusDominate.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
         }
     }
 }

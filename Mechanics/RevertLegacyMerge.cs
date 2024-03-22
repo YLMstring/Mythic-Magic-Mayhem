@@ -70,9 +70,9 @@ namespace MythicMagicMayhem.Mechanics
                         BlueprintSpellsTable blueprintSpellsTable = spellbook.Blueprint.SpellsKnown;
                         if (classData.CharacterClass.IsMythic)
                         {
-                            UnitFact unitFact = unit.Facts.Get<UnitFact>((UnitFact x) => x.Blueprint is BlueprintFeatureSelectMythicSpellbook);
-                            BlueprintFeatureSelectMythicSpellbook blueprintFeatureSelectMythicSpellbook = ((unitFact != null) ? unitFact.Blueprint : null) as BlueprintFeatureSelectMythicSpellbook;
-                            if (blueprintFeatureSelectMythicSpellbook != null)
+                            UnitFact unitFact = unit.Facts.Get((UnitFact x) => x.Blueprint is BlueprintFeatureSelectMythicSpellbook);
+                            BlueprintFeatureSelectMythicSpellbook blueprintFeatureSelectMythicSpellbook = (unitFact?.Blueprint) as BlueprintFeatureSelectMythicSpellbook;
+                            if (blueprintFeatureSelectMythicSpellbook != null && unitFact is Feature feat && feat.Param?.Blueprint is BlueprintSpellbook book && !book.IsMythic)
                             {
                                 blueprintSpellsTable = blueprintFeatureSelectMythicSpellbook.SpellKnownForSpontaneous;
                                 if (blueprintSpellsTable != null)
