@@ -44,7 +44,7 @@ namespace MythicMagicMayhem.Azata
               //.AddToSpellLists(level: 8, SpellList.AzataMythic)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .CastSpell(AbilityRefs.FriendlyHug.ToString())
+                  .CastSpell(AbilityRefs.FriendlyHug.ToString(), overrideSpellbook: true)
                   .Build())
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.AOE,
@@ -214,6 +214,10 @@ namespace MythicMagicMayhem.Azata
                     ifTrue: ActionsBuilder.New().CastSpell(AbilityRefs.BattleSingerSecondVerseAbility.ToString()).Build())
                   .Conditional(ConditionsBuilder.New().CasterHasFact(FeatureRefs.BattleSingerThirdVerseFeature.ToString()).IsEnemy().Build(),
                     ifTrue: ActionsBuilder.New().CastSpell(AbilityRefs.BattleSingerThirdVerseAbility.ToString()).Build())
+                  .Conditional(ConditionsBuilder.New().CasterHasFact(FeatureRefs.SongOfCourageousDefenderFeature.ToString()).IsAlly().Build(),
+                    ifTrue: ActionsBuilder.New().CastSpell(AbilityRefs.SongOfCourageousDefenderChoseCompanionAbility.ToString()).Build())
+                  .Conditional(ConditionsBuilder.New().CasterHasFact(FeatureRefs.SoothingPerformanceFeature.ToString()).IsAlly().Build(),
+                    ifTrue: ActionsBuilder.New().CastSpell(AbilityRefs.SoothingPerformanceAbility.ToString()).Build())
                   .Build())
               .Configure();
         }
