@@ -20,7 +20,7 @@ namespace MythicMagicMayhem.Mechanics
         private static readonly string Description = "MergableSpellbooks.Description";
         public static void Patch()
         {
-            var books = Get9thBooks();
+            var books = GetBooks();
 
             var angel = FeatureSelectMythicSpellbookRefs.AngelIncorporateSpellbook.Reference.Get();
             angel.m_AllowedSpellbooks = books;
@@ -63,26 +63,46 @@ namespace MythicMagicMayhem.Mechanics
             aeon.m_AllowedSpellbooks = books;
         }
 
-        private static BlueprintSpellbookReference[] Get9thBooks()
+        private static BlueprintSpellbookReference[] GetBooks()
         {
             var books = new List<BlueprintSpellbookReference>() { };
             var clazzs = RootRefs.BlueprintRoot.Reference.Get().Progression.AvailableCharacterClasses;
+            var fours = new HashSet<BlueprintSpellsTable>() { };
+            var sixs = new HashSet<BlueprintSpellsTable>() { };
             foreach (var clazz in clazzs)
             {
-                if (GetMaxLevel(clazz.Spellbook) > 8)
+                books.Add(clazz.Spellbook.ToReference<BlueprintSpellbookReference>());
+                Main.Logger.Info("Make " + clazz.Spellbook.NameSafe() + " mergable");
+                if (GetMaxLevel(clazz.Spellbook) == 5)
                 {
-                    books.Add(clazz.Spellbook.ToReference<BlueprintSpellbookReference>());
-                    Main.Logger.Info("Make " + clazz.Spellbook.NameSafe() + " mergable");
+                    fours.Add(clazz.Spellbook.SpellsPerDay);
+                }
+                else if (GetMaxLevel(clazz.Spellbook) == 7)
+                {
+                    sixs.Add(clazz.Spellbook.SpellsPerDay);
                 }
                 if (!clazz.Archetypes.Any()) continue;
                 foreach (var archetype in clazz.Archetypes)
                 {
-                    if (GetMaxLevel(archetype.ReplaceSpellbook) > 8)
+                    books.Add(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
+                    Main.Logger.Info("Make " + archetype.ReplaceSpellbook.NameSafe() + " mergable");
+                    if (GetMaxLevel(archetype.ReplaceSpellbook) == 5)
                     {
-                        books.Add(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
-                        Main.Logger.Info("Make " + archetype.ReplaceSpellbook.NameSafe() + " mergable");
+                        fours.Add(archetype.ReplaceSpellbook.SpellsPerDay);
+                    }
+                    else if (GetMaxLevel(archetype.ReplaceSpellbook) == 7)
+                    {
+                        sixs.Add(archetype.ReplaceSpellbook.SpellsPerDay);
                     }
                 }
+            }
+            foreach (var table in fours)
+            {
+                Convert4th(table);
+            }
+            foreach (var table in sixs)
+            {
+                Convert6th(table);
             }
             return books.ToArray();
         }
@@ -92,6 +112,127 @@ namespace MythicMagicMayhem.Mechanics
             var levels = book?.m_SpellsPerDay?.Get()?.Levels;
             if (levels == null) return 0;
             return levels[17].Count.Length;
+        }
+
+        private static void Convert4th(BlueprintSpellsTable table)
+        {
+            var list = new List<SpellsLevelEntry>();
+            SpellsLevelEntry entry = null;
+            foreach (var level in table.Levels)
+            {
+                if (list.Count >= 18) { break; }
+                list.Add(level);
+                entry = level;
+            }
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 0 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 1, 0 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 1, 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 2, 1, 0 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 2, 1, 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 2, 2, 1, 0 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 3, 2, 1, 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 3, 2, 2, 1, 0 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 3, 3, 2, 1, 1 })
+            });
+            table.Levels = list.ToArray();
+            Main.Logger.Info("Converting 4th Table " + table.AssetGuidThreadSafe);
+        }
+        private static void Convert6th(BlueprintSpellsTable table)
+        {
+            var list = new List<SpellsLevelEntry>();
+            SpellsLevelEntry entry = null;
+            foreach (var level in table.Levels)
+            {
+                if (list.Count >= 21) { break; }
+                list.Add(level);
+                entry = level;
+            }
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 2 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 2, 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 2, 2 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 3, 2, 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 3, 2, 2 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 3, 3, 2 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 4, 3, 2, 1 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 4, 3, 3, 2 })
+            });
+            list.Add(new SpellsLevelEntry()
+            {
+                Count = MergeCount(entry.Count, new int[] { 4, 4, 3, 2 })
+            });
+            table.Levels = list.ToArray();
+            Main.Logger.Info("Converting 6th Table " + table.AssetGuidThreadSafe);
+        }
+
+        private static int[] MergeCount(int[] oldcount, int[] newcount)
+        {
+            var list = new List<int>();
+            foreach (var num in oldcount)
+            {
+                list.Add(num);
+            }
+            foreach (var num in newcount)
+            {
+                list.Add(num);
+            }
+            return list.ToArray();
         }
     }
 }
