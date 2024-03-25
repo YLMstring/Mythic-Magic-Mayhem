@@ -71,6 +71,7 @@ namespace MythicMagicMayhem.Mechanics
             var sixs = new HashSet<BlueprintSpellsTable>() { };
             foreach (var clazz in clazzs)
             {
+                if (GetMaxLevel(clazz.Spellbook) == 0) { continue; }
                 books.Add(clazz.Spellbook.ToReference<BlueprintSpellbookReference>());
                 Main.Logger.Info("Make " + clazz.Spellbook.NameSafe() + " mergable");
                 if (GetMaxLevel(clazz.Spellbook) == 5)
@@ -84,6 +85,7 @@ namespace MythicMagicMayhem.Mechanics
                 if (!clazz.Archetypes.Any()) continue;
                 foreach (var archetype in clazz.Archetypes)
                 {
+                    if (GetMaxLevel(archetype.ReplaceSpellbook) == 0) { continue; }
                     books.Add(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
                     Main.Logger.Info("Make " + archetype.ReplaceSpellbook.NameSafe() + " mergable");
                     if (GetMaxLevel(archetype.ReplaceSpellbook) == 5)
