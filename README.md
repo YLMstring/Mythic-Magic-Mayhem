@@ -1,6 +1,8 @@
-# Mythic Magic Mayhem v0.2.0 for WoTR
+# Mythic Magic Mayhem v0.2.1 for WoTR
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [Spellbook Merge](https://github.com/vikigenius/SpellbookMerge/tree/master).
-- Make all mythic spellbooks mergable with all full caster spellbooks！
+- Make all mythic spell books mergeable with any spell book!
+- 4th and 6th casters gain extra spell slots:
+![extraspellslots](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/c06aeaf6-1418-480a-8ca2-efb23944d3de)
 - The mod overrides Spellbook Merge Mod, making all of its options unavailable lol
 - All features are toggleable, and more toggleable than Prestige Plus
 ### Lich adjustments:
