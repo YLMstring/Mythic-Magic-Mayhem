@@ -44,7 +44,6 @@ namespace MythicMagicMayhem.Aeon
             SpellStuff.AddSpellLevel(AbilityRefs.ProtectionFromSpells.Reference, SpellListRefs.AeonSpellList.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.MindBlank.Reference, SpellListRefs.AeonSpellList.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.PowerWordStun.Reference, SpellListRefs.AeonSpellList.Reference, 8);
-            // hold person again?
             SpellStuff.AddSpellLevel(AbilityRefs.PredictionOfFailure.Reference, SpellListRefs.AeonSpellList.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.Sunburst.Reference, SpellListRefs.AeonSpellList.Reference, 8);
             //SpellStuff.AddSpellLevel(AzataNewSpell.GroupHugConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 8);
