@@ -96,6 +96,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Aeon\" />
+  </ItemGroup>
+
   <!-- Generates Assembly-CSharp_public.dll -->
   <Target Name="Publicize" AfterTargets="Clean">
     <ItemGroup>

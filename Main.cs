@@ -14,6 +14,7 @@ using MythicMagicMayhem.Mechanics;
 using MythicMagicMayhem.Angel;
 using MythicMagicMayhem.Lich;
 using MythicMagicMayhem.Azata;
+using MythicMagicMayhem.Aeon;
 
 namespace MythicMagicMayhem
 {
@@ -97,6 +98,9 @@ namespace MythicMagicMayhem
             Toggle.New(GetKey("tg10"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm10", "Azata Superpower"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("tg11"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm11", "Aeon Spell"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("tg7"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm7", "Mergable Spellbooks"))
               .ShowVisualConnection())
           .AddToggle(
@@ -149,6 +153,7 @@ namespace MythicMagicMayhem
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg1"))) { LichSpell.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg5"))) { AngelSpell.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg9"))) { AzataSpellTweak.Patch(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("tg11"))) { AeonSpellTweak.Patch(); }
                     RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)
