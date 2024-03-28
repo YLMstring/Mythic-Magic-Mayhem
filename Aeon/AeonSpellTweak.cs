@@ -54,7 +54,7 @@ namespace MythicMagicMayhem.Aeon
             SpellStuff.AddSpellLevel(AbilityRefs.HoldMonsterMass.Reference, SpellListRefs.AeonSpellList.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.MindBlankCommunal.Reference, SpellListRefs.AeonSpellList.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.PowerWordKill.Reference, SpellListRefs.AeonSpellList.Reference, 9);
-            //SpellStuff.AddSpellLevel(AzataNewSpell.ElysiumChoirConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 10);
+            SpellStuff.AddSpellLevel(AeonNewSpell.AbsoluteAuthorityConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 10);
         }
     }
 }
