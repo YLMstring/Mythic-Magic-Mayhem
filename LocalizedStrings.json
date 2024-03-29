@@ -97,6 +97,28 @@
     "Key": "NewSpellElysiumChoir.Description",
     "enGB": "When you sing all of Elysium joins with you. You use every performance ability you know. Those with a duration last for the duration of the spell, these benefits do not use up your daily usage of performance abilities.",
     "zhCN": "你歌唱时，整个极乐境都会加入你。你使用你所知的一切表演。若有持续时间，则等同于该法术的持续时间，且不消耗这些能力的每日使用次数。"
+  },
+  {
+    "Key": "NewSpellAbsoluteAuthority.Name",
+    "ProcessTemplates": false,
+    "enGB": "Edict of Absolute Authority",
+    "zhCN": "绝对权威法令"
+  },
+  {
+    "Key": "NewSpellAbsoluteAuthority.Description",
+    "enGB": "The natural order of the universe is absolute, and thus so is your authority. As a swift action you cause all enemies within a 30 foot radius to suffer the effects of the Edict of Retaliation and Edict of Nonresistance spells (saving separately for each).",
+    "zhCN": "宇宙的自然秩序是绝对的，你的权威也是如此。以一个迅捷动作，你可以使30英尺半径内的所有敌人受到报复法令和不抵抗法令的影响（两种效果分别骰豁免）。"
+  },
+  {
+    "Key": "NewSpellTotalNullification.Name",
+    "ProcessTemplates": false,
+    "enGB": "Edict of Total Nullification",
+    "zhCN": "完全虚无法令"
+  },
+  {
+    "Key": "NewSpellTotalNullification.Description",
+    "enGB": "The aeon and his agents are protected from all harm by the will of the cosmos.  The Aeon and all allies within a 20 foot radius gain the benefits of the Protection From Energy, Communal spell with the exception that it applies to any and all damage types, absorbs 20 per caster level and has a combined damage pool. The damage types affected are slashing, bludgeoning, piercing, fire, cold, acid, lightning, sonic, positive, negative, holy, unholy and divine.",
+    "zhCN": "御衡者及其代理人受到宇宙意志的保护，免受所有伤害。御衡者和 20 英尺半径内的所有盟友都获得群体防护能量法术的好处，但它适用于所有伤害类型，这些伤害类型共计每施法者等级吸收20点，包括挥砍、钝击、穿刺、火焰、寒冷、酸液、闪电、音波、正能量、负能量、神圣、污邪和神力。"
   }
 
 ]
