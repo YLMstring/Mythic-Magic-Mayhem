@@ -46,7 +46,7 @@ namespace MythicMagicMayhem.Aeon
             SpellStuff.AddSpellLevel(AbilityRefs.PowerWordStun.Reference, SpellListRefs.AeonSpellList.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.PredictionOfFailure.Reference, SpellListRefs.AeonSpellList.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.Sunburst.Reference, SpellListRefs.AeonSpellList.Reference, 8);
-            //SpellStuff.AddSpellLevel(AzataNewSpell.GroupHugConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 8);
+            SpellStuff.AddSpellLevel(AeonNewSpell.TotalNullificationConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.DominateMonster.Reference, SpellListRefs.AeonSpellList.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.Foresight.Reference, SpellListRefs.AeonSpellList.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.HeroicInvocation.Reference, SpellListRefs.AeonSpellList.Reference, 9);
