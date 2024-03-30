@@ -25,7 +25,6 @@
 ### Aeon adjustments:
 - Aeon is now a full caster!
 ![aeonspell](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/82323a86-62e9-4dad-ac7a-80aabc7c8037)
-- New Superpower - Harmonious Echo: Azata may start a second performance while maintaining another.
 - New Spell - Edict of Total Nullification: The aeon and his agents are protected from all harm by the will of the cosmos.  The Aeon and all allies within a 20 foot radius gain the benefits of the Protection From Energy, Communal spell with the exception that it applies to any and all damage types, absorbs 20 per caster level and has a combined damage pool. The damage types affected are slashing, bludgeoning, piercing, fire, cold, acid, lightning, sonic, positive, negative, holy, unholy and divine.
 - New Spell - Edict of Absolute Authority: The natural order of the universe is absolute, and thus so is your authority. As a swift action you cause all enemies within a 30 foot radius to suffer the effects of the Edict of Retaliation and Edict of Nonresistance spells (saving separately for each).
 ## Thanks to  
