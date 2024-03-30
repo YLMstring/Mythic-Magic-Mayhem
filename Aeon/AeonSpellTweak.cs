@@ -36,6 +36,8 @@ namespace MythicMagicMayhem.Aeon
             SpellStuff.ChangeSpellLevel(AbilityRefs.EmbodimentOfOrder.Reference, SpellListRefs.AeonSpellMythicList.Reference, 7, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.FreezingNothingness.Reference, SpellListRefs.AeonSpellMythicList.Reference, 8, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.ZoneOfPredetermination.Reference, SpellListRefs.AeonSpellMythicList.Reference, 8, 6);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.BlackHole.Reference, SpellListRefs.AeonSpellMythicList.Reference, 9, 7);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.PerfectForm.Reference, SpellListRefs.AeonSpellMythicList.Reference, 9, 7);
             SpellStuff.AddSpellLevel(AbilityRefs.HoldPersonMass.Reference, SpellListRefs.AeonSpellList.Reference, 7);
             SpellStuff.AddSpellLevel(AbilityRefs.ResonatingWord.Reference, SpellListRefs.AeonSpellList.Reference, 7);
             SpellStuff.ChangeSpellLevel(AbilityRefs.EdictOfInvulnerability.Reference, SpellListRefs.AeonSpellMythicList.Reference, 8, 7);

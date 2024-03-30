@@ -1,4 +1,8 @@
 ﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
 using MythicMagicMayhem.Mechanics;
 using System;
 using System.Collections.Generic;
@@ -14,6 +18,15 @@ namespace MythicMagicMayhem.Angel
         {
             SpellStuff.ChangeSpellLevel(AbilityRefs.AngelBoltOfJusticeAbility.Reference, SpellListRefs.AngelMythicSpelllist.Reference, 7, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.AngelStormOfJusticeAbility.Reference, SpellListRefs.AngelMythicSpelllist.Reference, 9, 8);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.AngelWrathOfTheRighteous.Reference, SpellListRefs.AngelMythicSpelllist.Reference, 8, 9);
+            var cond = AbilityRefs.AngelWrathOfTheRighteous.Reference.Get().GetComponent<AbilityTargetsAround>()?.m_Condition;
+            if (cond != null)
+            {
+                var newcond = ConditionsBuilder.New()
+                    .Alignment(Kingmaker.Enums.AlignmentComponent.Evil, false, false)
+                    .Build();
+                cond.Conditions.Append(newcond.Conditions.First());
+            }
         }
     }
 }
