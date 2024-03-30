@@ -1,4 +1,4 @@
-# Mythic Magic Mayhem v0.2.1 for WoTR
+# Mythic Magic Mayhem v0.3.0 for WoTR
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [Spellbook Merge](https://github.com/vikigenius/SpellbookMerge/tree/master).
 - Make all mythic spell books mergeable with any spell book!
 - 4th and 6th casters gain extra spell slots:
@@ -13,6 +13,7 @@
 ### Angel adjustments:
 - Increase Bolt of Justice to 7th level
 - Increase Storm of Justice to 9th level
+- Wrath of the Righteous is now 8th level and affects evil demons only (Arue <3)
 - Add Improved Angelic Halo - Divine Champion: While Angelic Halo is active energy damage is converted into holy damage
 - Add Improved Angelic Halo - Flames of Heaven: While Angelic Halo is active energy damage is converted into fire damage
 ### Azata adjustments:
