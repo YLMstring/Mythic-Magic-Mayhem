@@ -117,8 +117,8 @@
   },
   {
     "Key": "NewSpellTotalNullification.Description",
-    "enGB": "The aeon and his agents are protected from all harm by the will of the cosmos.  The Aeon and all allies within a 20 foot radius gain the benefits of the Protection From Energy, Communal spell with the exception that it applies to any and all damage types, absorbs 20 per caster level and has a combined damage pool. The damage types affected are slashing, bludgeoning, piercing, fire, cold, acid, lightning, sonic, positive, negative, holy, unholy and divine.",
-    "zhCN": "御衡者及其代理人受到宇宙意志的保护，免受所有伤害。御衡者和 20 英尺半径内的所有盟友都获得群体防护能量法术的好处，但它适用于所有伤害类型，这些伤害类型共计每施法者等级吸收20点，包括挥砍、钝击、穿刺、火焰、寒冷、酸液、闪电、音波、正能量、负能量、神圣、污邪和神力。"
+    "enGB": "The aeon and his agents are protected from all harm by the will of the cosmos. The Aeon and all allies within a 20 foot radius gain the benefits of the Protection From Energy, Communal spell with the exception that it applies to any and all damage types, absorbs 10 per caster level and has separate damage pools. The damage types affected are physical, fire, cold, acid, lightning, sonic, positive, negative, holy, unholy and divine.",
+    "zhCN": "御衡者及其代理人受到宇宙意志的保护，免受所有伤害。御衡者和 20 英尺半径内的所有盟友都获得群体防护能量法术的好处，但它适用于所有伤害类型，这些伤害类型分别以每施法者等级吸收10点，包括物理、火焰、寒冷、酸液、闪电、音波、正能量、负能量、神圣、污邪和神力。"
   }
 
 ]

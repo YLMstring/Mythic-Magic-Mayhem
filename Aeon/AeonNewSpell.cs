@@ -31,7 +31,7 @@ namespace MythicMagicMayhem.Aeon
         private const string Description = "NewSpellAbsoluteAuthority.Description";
         public static BlueprintAbility AbsoluteAuthorityConfigure()
         {
-            var icon = AbilityRefs.OverwhelmingPresence.Reference.Get().Icon;
+            var icon = AbilityRefs.CastigateMass.Reference.Get().Icon;
             var fx = AbilityRefs.OverwhelmingPresence.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             return AbilityConfigurator.NewSpell(
@@ -64,7 +64,7 @@ namespace MythicMagicMayhem.Aeon
 
         public static BlueprintAbility TotalNullificationConfigure()
         {
-            var icon = AbilityRefs.MaskOfAreshkagalBelt_VoidAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.HolyWord.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(TotalNullificationBuff, TotalNullificationBuffGuid)
               .SetDisplayName(DisplayName2)
@@ -74,7 +74,7 @@ namespace MythicMagicMayhem.Aeon
               .AddContextRankConfig(ContextRankConfigs.CasterLevel().WithMultiplyByModifierProgression(20))
               .Configure();
 
-            var fx = AbilityRefs.SmiteEvilAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var fx = AbilityRefs.CircleOfDeath.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             return AbilityConfigurator.NewSpell(
                 TotalNullificationAbility, TotalNullificationAbilityGuid, SpellSchool.Abjuration, canSpecialize: false)

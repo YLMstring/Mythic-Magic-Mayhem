@@ -21,8 +21,10 @@ namespace MythicMagicMayhem.Components
     {
         private static void Postfix(ref AddDamageResistanceEnergy __instance, ref bool __result, ref BaseDamage damage)
         {
+            Main.Logger.Info("ProtectionFromEverything11");
             if (__instance is ProtectionFromEverything)
             {
+                Main.Logger.Info("ProtectionFromEverything");
                 if (damage is EnergyDamage energy)
                 {
                     __result = energy.EnergyType == Kingmaker.Enums.Damage.DamageEnergyType.Magic;
