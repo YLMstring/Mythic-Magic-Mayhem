@@ -24,8 +24,9 @@ namespace MythicMagicMayhem.Angel
             {
                 var newcond = ConditionsBuilder.New()
                     .Alignment(Kingmaker.Enums.AlignmentComponent.Evil, false, false)
+                    .HasFact(FeatureRefs.SubtypeDemon.ToString())
                     .Build();
-                cond.Conditions.Append(newcond.Conditions.First());
+                cond.Conditions = newcond.Conditions;
             }
         }
     }

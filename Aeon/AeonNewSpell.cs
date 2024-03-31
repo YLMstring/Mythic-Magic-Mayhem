@@ -21,6 +21,8 @@ using BlueprintCore.Utils.Types;
 using MythicMagicMayhem.Components;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Enums.Damage;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.ElementsSystem;
 
 namespace MythicMagicMayhem.Aeon
 {
@@ -34,10 +36,21 @@ namespace MythicMagicMayhem.Aeon
         public static BlueprintAbility AbsoluteAuthorityConfigure()
         {
             var icon = AbilityRefs.CastigateMass.Reference.Get().Icon;
-            var fx = AbilityRefs.OverwhelmingPresence.Reference.Get().GetComponent<AbilitySpawnFx>();
+
+            var action = ActionsBuilder.New()
+                  .CastSpell(AbilityRefs.EdictOfRetaliation.ToString(), overrideSpellbook: true, overrideSpellLevel: 10, markAsChild: true)
+                  .Build();
+
+            var action2 = AbilityRefs.EdictOfNonresistance.Reference.Get().GetComponent<AbilityEffectRunAction>().Actions;
+            var list = new List<GameAction>
+            {
+                action.Actions.First(),
+                action2.Actions.First()
+            };
+            action.Actions = list.ToArray();
 
             return AbilityConfigurator.NewSpell(
-                AbsoluteAuthorityAbility1, AbsoluteAuthorityAbility1Guid, SpellSchool.Abjuration, canSpecialize: false)
+                AbsoluteAuthorityAbility1, AbsoluteAuthorityAbility1Guid, SpellSchool.Enchantment, canSpecialize: false)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
@@ -46,12 +59,9 @@ namespace MythicMagicMayhem.Aeon
               .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 20.Feet())
-              .AddComponent(fx)
-              .AddAbilityEffectRunAction(
-                actions: ActionsBuilder.New()
-                  .CastSpell(AbilityRefs.EdictOfRetaliation.ToString(), overrideSpellbook: true, overrideSpellLevel: 15)
-                  .CastSpell(AbilityRefs.EdictOfNonresistance.ToString(), overrideSpellbook: true, overrideSpellLevel: 15)
-                  .Build())
+              .AddAbilityEffectRunAction(action, savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Will)
+              .AddComponent(AbilityRefs.EdictOfNonresistance.Reference.Get().GetComponent<AbilityEffectRunAction>())
+              .AddComponent(AbilityRefs.EdictOfNonresistance.Reference.Get().GetComponent<ContextRankConfig>())
               .Configure();
         }
 
