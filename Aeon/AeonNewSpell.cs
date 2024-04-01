@@ -22,7 +22,6 @@ using MythicMagicMayhem.Components;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.ElementsSystem;
 
 namespace MythicMagicMayhem.Aeon
 {
@@ -31,23 +30,30 @@ namespace MythicMagicMayhem.Aeon
         private const string AbsoluteAuthorityAbility1 = "NewSpell.UseAbsoluteAuthority1";
         public static readonly string AbsoluteAuthorityAbility1Guid = "{E87E92DF-09A2-4B42-8082-8C7420D5CF67}";
 
+        private const string AbsoluteAuthorityAbility2 = "NewSpell.UseAbsoluteAuthority2";
+        public static readonly string AbsoluteAuthorityAbility2Guid = "{B1840175-0400-47D9-B2B5-F362D44B7075}";
+
         internal const string DisplayName = "NewSpellAbsoluteAuthority.Name";
         private const string Description = "NewSpellAbsoluteAuthority.Description";
         public static BlueprintAbility AbsoluteAuthorityConfigure()
         {
             var icon = AbilityRefs.CastigateMass.Reference.Get().Icon;
 
-            var action = ActionsBuilder.New()
+            var ability = AbilityConfigurator.NewSpell(
+                AbsoluteAuthorityAbility2, AbsoluteAuthorityAbility2Guid, SpellSchool.Enchantment, canSpecialize: false)
+              .SetDisplayName(DisplayName)
+              .SetDescription(Description)
+              .SetIcon(icon)
+              .SetRange(AbilityRange.Personal)
+              .SetType(AbilityType.Spell)
+              .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal)
+              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 20.Feet())
+              .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
                   .CastSpell(AbilityRefs.EdictOfRetaliation.ToString(), overrideSpellbook: true, overrideSpellLevel: 10, markAsChild: true)
-                  .Build();
-
-            var action2 = AbilityRefs.EdictOfNonresistance.Reference.Get().GetComponent<AbilityEffectRunAction>().Actions;
-            var list = new List<GameAction>
-            {
-                action.Actions.First(),
-                action2.Actions.First()
-            };
-            action.Actions = list.ToArray();
+                  .Build())
+              .Configure();
 
             return AbilityConfigurator.NewSpell(
                 AbsoluteAuthorityAbility1, AbsoluteAuthorityAbility1Guid, SpellSchool.Enchantment, canSpecialize: false)
@@ -59,9 +65,12 @@ namespace MythicMagicMayhem.Aeon
               .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 20.Feet())
-              .AddAbilityEffectRunAction(action, savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Will)
               .AddComponent(AbilityRefs.EdictOfNonresistance.Reference.Get().GetComponent<AbilityEffectRunAction>())
               .AddComponent(AbilityRefs.EdictOfNonresistance.Reference.Get().GetComponent<ContextRankConfig>())
+              .AddAbilityExecuteActionOnCast(
+                actions: ActionsBuilder.New()
+                  .CastSpell(ability, overrideSpellbook: true, overrideSpellLevel: 10, markAsChild: true)
+                  .Build())
               .Configure();
         }
 
