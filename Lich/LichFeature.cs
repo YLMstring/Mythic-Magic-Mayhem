@@ -3,6 +3,8 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
+using Kingmaker.EntitySystem;
+using Kingmaker.EntitySystem.Entities;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
@@ -90,12 +92,12 @@ namespace MythicMagicMayhem.Lich
                     .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.LichProgression.Reference)
-                .AddToLevelEntry(5, feat)
+                .AddToLevelEntry(3, feat)
                 .Configure();
         }
     }
 
-    internal class UnholyFortitudeLogic : UnitFactComponentDelegate, IOwnerGainLevelHandler, IUnitSubscriber, ISubscriber, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, IInitiatorRulebookSubscriber
+    internal class UnholyFortitudeLogic : UnitFactComponentDelegate, IUnitSubscriber, ISubscriber, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, IInitiatorRulebookSubscriber, IUnitGainFactHandler, IUnitLostFactHandler, IUnitNewCombatRoundHandler
     {
         public override void OnTurnOn()
         {
@@ -105,25 +107,7 @@ namespace MythicMagicMayhem.Lich
         // Token: 0x0600E570 RID: 58736 RVA: 0x003AB2CE File Offset: 0x003A94CE
         public override void OnTurnOff()
         {
-            Owner.Stats.HitPoints.RemoveModifiersFrom(Runtime);
-        }
-
-        // Token: 0x0600E571 RID: 58737 RVA: 0x003AB2EB File Offset: 0x003A94EB
-        public void HandleUnitGainLevel()
-        {
-            Apply();
-        }
-
-        // Token: 0x0600E572 RID: 58738 RVA: 0x003AB2F4 File Offset: 0x003A94F4
-        private void Apply()
-        {
-            Owner.Stats.HitPoints.RemoveModifiersFrom(Runtime);
-            if (Owner.HasFact(Undead)) return;
-            int num = Owner.Progression.CharacterLevel;
-            int con = Owner.Descriptor.Stats.Constitution.BaseValue;
-            int cha = Owner.Descriptor.Stats.Charisma.BaseValue;
-            int value = Math.Max(num * (cha - con) / 2, 0);
-            Owner.Stats.HitPoints.AddModifier(value, Runtime, ModifierDescriptor.UntypedStackable);
+            base.Owner.Stats.HitPoints.BaseStat = HitPointsBaseStat.Constitution;
         }
 
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
@@ -137,6 +121,34 @@ namespace MythicMagicMayhem.Lich
         void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
         {
             
+        }
+
+        void IUnitGainFactHandler.HandleUnitGainFact(EntityFact fact)
+        {
+            Apply();
+        }
+        void IUnitLostFactHandler.HandleUnitLostFact(EntityFact fact)
+        {
+            Apply();
+        }
+
+        void IUnitNewCombatRoundHandler.HandleNewCombatRound(UnitEntityData unit)
+        {
+            Apply();
+        }
+
+        private void Apply()
+        {
+            int con = Owner.Descriptor.Stats.Constitution;
+            int cha = Owner.Descriptor.Stats.Charisma;
+            if (con >= cha)
+            {
+                base.Owner.Stats.HitPoints.BaseStat = HitPointsBaseStat.Constitution;
+            }
+            else
+            {
+                base.Owner.Stats.HitPoints.BaseStat = HitPointsBaseStat.Charisma;
+            }
         }
 
         private static BlueprintFeatureReference Undead = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.UndeadImmunities.ToString());
