@@ -45,8 +45,7 @@ namespace MythicMagicMayhem.Demon
 
         internal const string DisplayName = "NewSpellBlindFury.Name";
         private const string Description = "NewSpellBlindFury.Description";
-
-        public static void Configure()
+        public static BlueprintAbility BlindFuryConfigure()
         {
             var icon = AbilityRefs.BlindingWrathAbility.Reference.Get().Icon;
             var buff = BuffConfigurator.New(BlindFuryBuff, BlindFuryBuffGuid)
@@ -58,7 +57,7 @@ namespace MythicMagicMayhem.Demon
               .AddFacts(new() { BuffRefs.RageSpellBuff.ToString() })
               .Configure();
 
-            AbilityConfigurator.NewSpell(BlindFuryAbility, BlindFuryAbilityGuid, SpellSchool.Enchantment, canSpecialize: false)
+            return AbilityConfigurator.NewSpell(BlindFuryAbility, BlindFuryAbilityGuid, SpellSchool.Enchantment, canSpecialize: false)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)

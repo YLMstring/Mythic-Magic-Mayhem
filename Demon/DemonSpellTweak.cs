@@ -56,7 +56,7 @@ namespace MythicMagicMayhem.Demon
             SpellStuff.AddSpellLevel(AbilityRefs.RiftOfRuin.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.ShoutGreater.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.Stormbolts.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 8);
-            //blind fury
+            SpellStuff.AddSpellLevel(DemonNewSpell.BlindFuryConfigure(), SpellListRefs.DemonSpelllist.Reference, 8);
             SpellStuff.AddSpellLevel(AbilityRefs.DominateMonster.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.EnergyDrain.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.FieryBody.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
