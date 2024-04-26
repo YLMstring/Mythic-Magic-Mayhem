@@ -21,6 +21,17 @@ using BlueprintCore.Conditions.Builder;
 using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Abilities.Components;
 using BlueprintCore.Utils;
+using HarmonyLib;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.UnitLogic.Class.LevelUp.Actions;
+using Kingmaker.UnitLogic.Class.LevelUp;
+using Kingmaker.UnitLogic;
+using Kingmaker;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic.Parts;
+using Kingmaker.Enums;
+using Kingmaker.EntitySystem.Entities;
 
 namespace MythicMagicMayhem.Demon
 {
@@ -69,5 +80,34 @@ namespace MythicMagicMayhem.Demon
                   .Build(), savingThrowType: SavingThrowType.Will)
               .Configure();
         }
+
+    }
+    internal class BlindFuryFix
+    {
+        [HarmonyPatch(typeof(RerollConcealment), nameof(RerollConcealment.ShouldReroll))]
+        private static class BlindFuryFixReRoll
+        {
+            private static void Postfix(ref bool __result, ref RuleConcealmentCheck evt)
+            {
+                if (evt.Initiator.HasFact(Buff))
+                {
+                    __result = false;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(RerollConcealment), nameof(UnitPartConcealment.Calculate))]
+        private static class BlindFuryFixCalc
+        {
+            private static void Postfix(ref Concealment __result, ref UnitEntityData initiator)
+            {
+                if (initiator.HasFact(Buff) && initiator.State.HasCondition(UnitCondition.Blindness))
+                {
+                    __result = Concealment.Total;
+                }
+            }
+        }
+
+        private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(DemonNewSpell.BlindFuryBuffGuid);
     }
 }
