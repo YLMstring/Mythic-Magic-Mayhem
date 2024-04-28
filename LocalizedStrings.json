@@ -119,6 +119,28 @@
     "Key": "NewSpellTotalNullification.Description",
     "enGB": "The aeon and his agents are protected from all harm by the will of the cosmos. The Aeon and all allies within a 20 foot radius gain the benefits of the Protection From Energy, Communal spell with the exception that it applies to any and all damage types, absorbs 10 per caster level and has separate damage pools. The damage types affected are physical, fire, cold, acid, lightning, sonic, positive, negative, holy, unholy and divine.",
     "zhCN": "御衡者及其代理人受到宇宙意志的保护，免受所有伤害。御衡者和 20 英尺半径内的所有盟友都获得群体防护能量法术的好处，但它适用于所有伤害类型，这些伤害类型分别以每施法者等级吸收10点，包括物理、火焰、寒冷、酸液、闪电、音波、正能量、负能量、神圣、污邪和神力。"
+  },
+  {
+    "Key": "NewSpellBlindFury.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blind Fury",
+    "zhCN": "盲目狂怒"
+  },
+  {
+    "Key": "NewSpellBlindFury.Description",
+    "enGB": "Targets in the area must pass a willpower saving throw or suffer the effects of the rage spell and the blindness condition.  In addition those who fail their saving throw lose the benefits of true seeing, blind fighting or any other effect that allows them to ignore or reroll the miss chance caused by concealment.",
+    "zhCN": "范围内所有目标必须通过意志豁免，否则受到目盲以及狂暴术的效果。此外，未能通过豁免者还会失去真知术，盲斗，以及任何令其无视隐蔽，或是重投隐蔽失手的效果所带来的好处。"
+  },
+  {
+    "Key": "NewSpellAbyssalBreach.Name",
+    "ProcessTemplates": false,
+    "enGB": "Abyssal Breach",
+    "zhCN": "深渊裂隙"
+  },
+  {
+    "Key": "NewSpellAbyssalBreach.Description",
+    "enGB": "Tearing a hole through Golarion's dimensional fabric you create a gateway for some of the most powerful denizens of the abyss to come to your aid.  Each round a random demon appears and will fight on your side for 1 minute.  The demon summoned each round is random with a CR between 13 and 25.",
+    "zhCN": "通过在格拉利昂的位面结构上撕开一个洞，你创造一个门户，令一些最强大的深渊居民可以前来帮助你，每轮都会出现一个随机的恶魔，并为你战斗1分钟。每轮召唤的恶魔都是随机的，其CR介于13到25之间。"
   }
 
 ]
