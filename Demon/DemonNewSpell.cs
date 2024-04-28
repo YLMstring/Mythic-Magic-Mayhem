@@ -32,6 +32,7 @@ using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Enums;
 using Kingmaker.EntitySystem.Entities;
+using BlueprintCore.Actions.Builder.AVEx;
 
 namespace MythicMagicMayhem.Demon
 {
@@ -80,6 +81,53 @@ namespace MythicMagicMayhem.Demon
               .Configure();
         }
 
+        private const string AbyssalBreachAbility = "NewSpell.UseAbyssalBreach";
+        public static readonly string AbyssalBreachAbilityGuid = "{0680AD26-35F1-4875-9AA6-C792A4081193}";
+
+        private const string AbyssalBreachBuff = "NewSpell.AbyssalBreachBuff";
+        public static readonly string AbyssalBreachBuffGuid = "{16CB55C7-836A-4E7C-BED7-C2DC8F8063A3}";
+
+        internal const string DisplayName2 = "NewSpellAbyssalBreach.Name";
+        private const string Description2 = "NewSpellAbyssalBreach.Description";
+        public static BlueprintAbility AbyssalBreachConfigure()
+        {
+            var icon = AbilityRefs.DimensionalRetributionAbility.Reference.Get().Icon;
+
+            var end = ActionsBuilder.New()
+                .Add<ContextActionBreachEnd>()
+                .Build();
+
+            var summon = ActionsBuilder.New()
+                
+                .Build();
+
+            var buff = BuffConfigurator.New(AbyssalBreachBuff, AbyssalBreachBuffGuid)
+              .SetDisplayName(DisplayName2)
+              .SetDescription(Description2)
+              .SetIcon(icon)
+              .AddBuffActions(deactivated: end, newRound: summon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            return AbilityConfigurator.NewSpell(AbyssalBreachAbility, AbyssalBreachAbilityGuid, SpellSchool.Conjuration, canSpecialize: false)
+              .SetDisplayName(DisplayName2)
+              .SetDescription(Description2)
+              .SetIcon(icon)
+              .AllowTargeting(true, false, false, false)
+              .SetRange(AbilityRange.Close)
+              .SetType(AbilityType.Spell)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
+              .SetSpellDescriptor(SpellDescriptor.Summoning)
+              .SetLocalizedDuration(Duration.OneMinute)
+              .AddAbilityCasterHasNoFacts(new() { buff })
+              .SetIsFullRoundAction(true)
+              .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ApplyBuff(buff, ContextDuration.Fixed(10), toCaster: true)
+                  .Add<ContextActionBreachStart>()
+                  .Build())
+              .Configure();
+        }
     }
     internal class BlindFuryFix
     {

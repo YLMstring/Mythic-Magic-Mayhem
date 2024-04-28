@@ -62,7 +62,7 @@ namespace MythicMagicMayhem.Demon
             SpellStuff.AddSpellLevel(AbilityRefs.FieryBody.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.HoldMonsterMass.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.MindBlankCommunal.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
-            //SpellStuff.AddSpellLevel(AeonNewSpell.AbsoluteAuthorityConfigure(), SpellListRefs.DemonSpelllist.Reference, 10);
+            SpellStuff.AddSpellLevel(DemonNewSpell.AbyssalBreachConfigure(), SpellListRefs.DemonSpelllist.Reference, 10);
         }
     }
 }
