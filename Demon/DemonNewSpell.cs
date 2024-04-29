@@ -98,7 +98,7 @@ namespace MythicMagicMayhem.Demon
                 .Build();
 
             var summon = ActionsBuilder.New()
-                
+                .Add<ContextActionBreachSummon>()
                 .Build();
 
             var buff = BuffConfigurator.New(AbyssalBreachBuff, AbyssalBreachBuffGuid)
