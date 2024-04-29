@@ -1,4 +1,4 @@
-# Mythic Magic Mayhem v0.3.0 for WoTR
+# Mythic Magic Mayhem v0.4.0 for WoTR
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [Spellbook Merge](https://github.com/vikigenius/SpellbookMerge/tree/master).
 - Make all mythic spell books mergeable with any spell book!
 - 4th and 6th casters gain extra spell slots:
@@ -27,6 +27,11 @@
 ![aeonspell](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/82323a86-62e9-4dad-ac7a-80aabc7c8037)
 - New Spell - Edict of Total Nullification: The aeon and his agents are protected from all harm by the will of the cosmos. The Aeon and all allies within a 20 foot radius gain the benefits of the Protection From Energy, Communal spell with the exception that it applies to any and all damage types, absorbs 10 per caster level and has separate damage pools. The damage types affected are physical, fire, cold, acid, lightning, sonic, positive, negative, holy, unholy and divine.
 - New Spell - Edict of Absolute Authority: The natural order of the universe is absolute, and thus so is your authority. As a swift action you cause all enemies within a 30 foot radius to suffer the effects of the Edict of Retaliation and Edict of Nonresistance spells (saving separately for each).
+### Demon adjustments:
+- Demon is now a full caster!
+![demonspell](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/0fd26cdf-08b8-4b00-912f-d53b0e2d0a86)
+- New Spell - Blind Fury: Targets in the area must pass a willpower saving throw or suffer the effects of the rage spell and the blindness condition.  In addition those who fail their saving throw lose the benefits of true seeing, blind fighting or any other effect that allows them to ignore or reroll the miss chance caused by concealment.
+- New Spell - Abyssal Breach: Tearing a hole through Golarion's dimensional fabric you create a gateway for some of the most powerful denizens of the abyss to come to your aid.  Each round a random demon appears and will fight on your side for 1 minute.  The demon summoned each round is random with a CR between 13 and 25.
 ## Thanks to  
 -   WittleWolfie for his [Blueprint-Core](https://wittlewolfie.github.io/WW-Blueprint-Core/index.html), which makes modding easy and enjoyable.
 -   Bubbles (factsubio) for BubblePrints, saving me from going mad.
