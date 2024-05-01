@@ -30,7 +30,7 @@ namespace MythicMagicMayhem.Mechanics
 
             public static void Apply(LevelUpState state, UnitDescriptor unit)
             {
-                Main.Logger.Info("Start Owlcat Merger...");
+                //Main.Logger.Info("Start Owlcat Merger...");
                 if (state.SelectedClass == null)
                 {
                     return;

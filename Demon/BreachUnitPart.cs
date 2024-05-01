@@ -81,6 +81,11 @@ namespace MythicMagicMayhem.Demon
             if (part == null) { return; }
             int cr = UnityEngine.Random.Range(13, 26);
             Summon(Context.MaybeCaster, part.position, GetUnit(cr));
+            var prefab = AbilityRefs.DimensionalRetributionAbility.Reference.Get().GetComponent<AbilityCustomDimensionDoor>()?.PortalToPrefab?.Load(false, false);
+            if (prefab != null)
+            {
+                FxHelper.SpawnFxOnPoint(prefab, part.position, false, Quaternion.identity);
+            }
         }
 
         public static void Summon(UnitEntityData caster, Vector3 position, BlueprintUnit unit)
@@ -94,6 +99,7 @@ namespace MythicMagicMayhem.Demon
             UnitEntityData unitEntityData = Game.Instance.EntityCreator.SpawnUnit(unit, vector, Quaternion.identity, maybeCaster.HoldingState, null);
             unitEntityData.GroupId = maybeCaster.GroupId;
             unitEntityData.UpdateGroup();
+            unitEntityData.Descriptor.AddBuff(Game.Instance.BlueprintRoot.SystemMechanics.SummonedUnitBuff, caster, new TimeSpan(0, 1, 0), null);
         }
 
         public BlueprintUnit GetUnit(int cr)
@@ -113,7 +119,7 @@ namespace MythicMagicMayhem.Demon
             foreach (var unit in UnitRefs.All)
             {
                 var demon = unit.Reference.Get();
-                if (demon.CR <= 25 && demon.CR >= 13 && demon.m_AddFacts?.Contains(FeatureRefs.SubtypeDemon.Reference.Get().ToReference<BlueprintUnitFactReference>()) == true && demon.GetComponent<ArmyUnitComponent>() == null)
+                if (demon.CR <= 25 && demon.CR >= 13 && demon.m_AddFacts?.Contains(FeatureRefs.SubtypeDemon.Reference.Get().ToReference<BlueprintUnitFactReference>()) == true && demon.GetComponent<ArmyUnitComponent>() == null && demon.Faction?.m_AttackFactions?.Contains(FactionRefs.Player.Reference.Get()) == true)
                 {
                     demons.Add(unit.Reference);
                 }  

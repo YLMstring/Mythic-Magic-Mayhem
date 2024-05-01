@@ -48,7 +48,7 @@ namespace MythicMagicMayhem.Demon
         private const string Description = "NewSpellBlindFury.Description";
         public static BlueprintAbility BlindFuryConfigure()
         {
-            var icon = AbilityRefs.BlindingWrathAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.BansheeBlast.Reference.Get().Icon;
             var buff = BuffConfigurator.New(BlindFuryBuff, BlindFuryBuffGuid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
@@ -63,7 +63,7 @@ namespace MythicMagicMayhem.Demon
               .SetDescription(Description)
               .SetIcon(icon)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 20.Feet(), spreadSpeed: 30.Feet())
-              .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
+              .AllowTargeting(true, true, true, true)
               //.SetAnimation(CastAnimationStyle.Directional) 
               .SetRange(AbilityRange.Custom)
               .SetCustomRange(60)
@@ -91,7 +91,7 @@ namespace MythicMagicMayhem.Demon
         private const string Description2 = "NewSpellAbyssalBreach.Description";
         public static BlueprintAbility AbyssalBreachConfigure()
         {
-            var icon = AbilityRefs.DimensionalRetributionAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.DemonTeleport.Reference.Get().Icon;
 
             var end = ActionsBuilder.New()
                 .Add<ContextActionBreachEnd>()
@@ -143,7 +143,7 @@ namespace MythicMagicMayhem.Demon
             }
         }
 
-        [HarmonyPatch(typeof(RerollConcealment), nameof(UnitPartConcealment.Calculate))]
+        [HarmonyPatch(typeof(UnitPartConcealment), nameof(UnitPartConcealment.Calculate))]
         private static class BlindFuryFixCalc
         {
             private static void Postfix(ref Concealment __result, ref UnitEntityData initiator)
