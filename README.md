@@ -1,4 +1,4 @@
-# Mythic Magic Mayhem v0.4.0 for WoTR
+# Mythic Magic Mayhem v0.4.1 for WoTR
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [Spellbook Merge](https://github.com/vikigenius/SpellbookMerge/tree/master).
 - Make all mythic spell books mergeable with any spell book!
 - 4th and 6th casters gain extra spell slots:
@@ -29,7 +29,7 @@
 - New Spell - Edict of Absolute Authority: The natural order of the universe is absolute, and thus so is your authority. As a swift action you cause all enemies within a 30 foot radius to suffer the effects of the Edict of Retaliation and Edict of Nonresistance spells (saving separately for each).
 ### Demon adjustments:
 - Demon is now a full caster!
-![demonspell](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/0fd26cdf-08b8-4b00-912f-d53b0e2d0a86)
+![demonspell](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/ecf202f1-cb7b-4d3f-98c1-2b4cea607a0a)
 - New Spell - Blind Fury: Targets in the area must pass a willpower saving throw or suffer the effects of the rage spell and the blindness condition.  In addition those who fail their saving throw lose the benefits of true seeing, blind fighting or any other effect that allows them to ignore or reroll the miss chance caused by concealment.
 - New Spell - Abyssal Breach: Tearing a hole through Golarion's dimensional fabric you create a gateway for some of the most powerful denizens of the abyss to come to your aid.  Each round a random demon appears and will fight on your side for 1 minute.  The demon summoned each round is random with a CR between 13 and 25.
 ## Thanks to  
