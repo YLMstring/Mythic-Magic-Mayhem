@@ -33,6 +33,8 @@ using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Enums;
 using Kingmaker.EntitySystem.Entities;
 using BlueprintCore.Actions.Builder.AVEx;
+using Kingmaker.UnitLogic.Buffs.Components;
+using Kingmaker.UnitLogic.Buffs;
 
 namespace MythicMagicMayhem.Demon
 {
@@ -113,10 +115,10 @@ namespace MythicMagicMayhem.Demon
               .Configure();
 
             BuffConfigurator.New(AbyssalBreachBuff2, AbyssalBreachBuff2Guid)
-              .AddBuffActions(deactivated: ActionsBuilder.New().Kill().Build())
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
               .SetIcon(icon)
+              .AddComponent<MMMDestroyOnDeactivate>()
               .Configure();
 
             return AbilityConfigurator.NewSpell(AbyssalBreachAbility, AbyssalBreachAbilityGuid, SpellSchool.Conjuration, canSpecialize: false)
@@ -166,5 +168,20 @@ namespace MythicMagicMayhem.Demon
         }
 
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(DemonNewSpell.BlindFuryBuffGuid);
+    }
+
+    public class MMMDestroyOnDeactivate : UnitBuffComponentDelegate
+    {
+        // Token: 0x0600C378 RID: 50040 RVA: 0x00330564 File Offset: 0x0032E764
+        public override void OnActivate()
+        {
+
+        }
+
+        // Token: 0x0600C379 RID: 50041 RVA: 0x003305D0 File Offset: 0x0032E7D0
+        public override void OnDeactivate()
+        {
+            Owner.IsInGame = false;
+        }
     }
 }
