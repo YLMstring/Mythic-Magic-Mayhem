@@ -21,6 +21,7 @@ using Kingmaker.Designers.EventConditionActionSystem.ContextData;
 using Kingmaker.View;
 using Kingmaker.Utility;
 using Kingmaker.Armies.Components;
+using BlueprintCore.Utils;
 
 namespace MythicMagicMayhem.Demon
 {
@@ -81,11 +82,6 @@ namespace MythicMagicMayhem.Demon
             if (part == null) { return; }
             int cr = UnityEngine.Random.Range(13, 26);
             Summon(Context.MaybeCaster, part.position, GetUnit(cr));
-            var prefab = AbilityRefs.DimensionalRetributionAbility.Reference.Get().GetComponent<AbilityCustomDimensionDoor>()?.PortalToPrefab?.Load(false, false);
-            if (prefab != null)
-            {
-                FxHelper.SpawnFxOnPoint(prefab, part.position, false, Quaternion.identity);
-            }
         }
 
         public static void Summon(UnitEntityData caster, Vector3 position, BlueprintUnit unit)
@@ -100,7 +96,7 @@ namespace MythicMagicMayhem.Demon
             unitEntityData.Descriptor.SwitchFactions(caster.Faction, true);
             unitEntityData.GroupId = maybeCaster.GroupId;
             unitEntityData.UpdateGroup();
-            unitEntityData.Descriptor.AddBuff(Game.Instance.BlueprintRoot.SystemMechanics.SummonedUnitBuff, caster, new TimeSpan(0, 1, 0), null);
+            unitEntityData.Descriptor.AddBuff(BlueprintTool.GetRef<BlueprintBuffReference>(DemonNewSpell.AbyssalBreachBuff2Guid), caster, new TimeSpan(0, 1, 0), null);
         }
 
         public BlueprintUnit GetUnit(int cr)

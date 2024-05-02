@@ -87,6 +87,9 @@ namespace MythicMagicMayhem.Demon
         private const string AbyssalBreachBuff = "NewSpell.AbyssalBreachBuff";
         public static readonly string AbyssalBreachBuffGuid = "{16CB55C7-836A-4E7C-BED7-C2DC8F8063A3}";
 
+        private const string AbyssalBreachBuff2 = "NewSpell.AbyssalBreachBuff2";
+        public static readonly string AbyssalBreachBuff2Guid = "{0A6F618A-8898-40D6-AA47-7E902FCD4470}";
+
         internal const string DisplayName2 = "NewSpellAbyssalBreach.Name";
         private const string Description2 = "NewSpellAbyssalBreach.Description";
         public static BlueprintAbility AbyssalBreachConfigure()
@@ -107,6 +110,13 @@ namespace MythicMagicMayhem.Demon
               .SetIcon(icon)
               .AddBuffActions(deactivated: end, newRound: summon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            BuffConfigurator.New(AbyssalBreachBuff2, AbyssalBreachBuff2Guid)
+              .AddBuffActions(deactivated: ActionsBuilder.New().Kill().Build())
+              .SetDisplayName(DisplayName2)
+              .SetDescription(Description2)
+              .SetIcon(icon)
               .Configure();
 
             return AbilityConfigurator.NewSpell(AbyssalBreachAbility, AbyssalBreachAbilityGuid, SpellSchool.Conjuration, canSpecialize: false)
