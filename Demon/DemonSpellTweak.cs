@@ -1,6 +1,8 @@
 ﻿using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
+using Kingmaker.Armies.Components;
 using Kingmaker.Blueprints;
+using Kingmaker.Utility;
 using MythicMagicMayhem.Aeon;
 using MythicMagicMayhem.Mechanics;
 using System;
@@ -63,6 +65,15 @@ namespace MythicMagicMayhem.Demon
             SpellStuff.AddSpellLevel(AbilityRefs.HoldMonsterMass.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.MindBlankCommunal.Reference, SpellListRefs.DemonUsualSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(DemonNewSpell.AbyssalBreachConfigure(), SpellListRefs.DemonSpelllist.Reference, 10);
+
+            foreach (var unit in UnitRefs.All)
+            {
+                var demon = unit.Reference.Get();
+                if (demon.CR <= 25 && demon.CR >= 13 && demon.m_AddFacts?.Contains(FeatureRefs.SubtypeDemon.Reference.Get().ToReference<BlueprintUnitFactReference>()) == true && demon.GetComponent<ArmyUnitComponent>() == null && demon.Faction?.m_AttackFactions?.Contains(FactionRefs.Player.Reference.Get()) == true)
+                {
+                    ContextActionBreachSummon.demons.Add(unit.Reference);
+                }
+            }
         }
     }
 }

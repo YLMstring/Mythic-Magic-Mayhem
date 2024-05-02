@@ -40,7 +40,7 @@ namespace MythicMagicMayhem.Demon
         public override void RunAction()
         {
             if (Context.MaybeCaster == null) { return; }
-            var prefab = AbilityRefs.DimensionalRetributionAbility.Reference.Get().GetComponent<AbilityCustomDimensionDoor>()?.PortalToPrefab?.Load(false, false);
+            var prefab = AbilityAreaEffectRefs.RiftOfRuinArea.Reference.Get().Fx.Load(false, false);
             IFxHandle hand = null;
             if (prefab != null)
             {
@@ -97,6 +97,7 @@ namespace MythicMagicMayhem.Demon
             float radius = (unitEntityView != null) ? unitEntityView.Corpulence : 0.5f;
             FreePlaceSelector.PlaceSpawnPlaces(1, radius, vector);
             UnitEntityData unitEntityData = Game.Instance.EntityCreator.SpawnUnit(unit, vector, Quaternion.identity, maybeCaster.HoldingState, null);
+            unitEntityData.Descriptor.SwitchFactions(caster.Faction, true);
             unitEntityData.GroupId = maybeCaster.GroupId;
             unitEntityData.UpdateGroup();
             unitEntityData.Descriptor.AddBuff(Game.Instance.BlueprintRoot.SystemMechanics.SummonedUnitBuff, caster, new TimeSpan(0, 1, 0), null);
@@ -127,6 +128,6 @@ namespace MythicMagicMayhem.Demon
             return GetUnit(cr);
         }
 
-        private List<BlueprintUnit> demons = new() { };
+        public static List<BlueprintUnit> demons = new() { };
     }
 }
