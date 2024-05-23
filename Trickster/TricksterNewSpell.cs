@@ -63,58 +63,28 @@ namespace MythicMagicMayhem.Trickster
         }
 
         private const string RainHalberdiersAbility = "NewSpell.UseRainHalberdiers";
-        public static readonly string RainHalberdiersAbilityGuid = "{0680AD26-35F1-4875-9AA6-C792A4081193}";
-
-        private const string RainHalberdiersBuff = "NewSpell.RainHalberdiersBuff";
-        public static readonly string RainHalberdiersBuffGuid = "{16CB55C7-836A-4E7C-BED7-C2DC8F8063A3}";
-
-        private const string RainHalberdiersBuff2 = "NewSpell.RainHalberdiersBuff2";
-        public static readonly string RainHalberdiersBuff2Guid = "{0A6F618A-8898-40D6-AA47-7E902FCD4470}";
+        public static readonly string RainHalberdiersAbilityGuid = "{F52AE91B-7C25-4F19-A40A-376AFE0337C4}";
 
         internal const string DisplayName2 = "NewSpellRainHalberdiers.Name";
         private const string Description2 = "NewSpellRainHalberdiers.Description";
         public static BlueprintAbility RainHalberdiersConfigure()
         {
-            var icon = AbilityRefs.DemonTeleport.Reference.Get().Icon;
+            var icon = AbilityRefs.TricksterRainOfHalberds.Reference.Get().Icon;
 
-            var end = ActionsBuilder.New()
-                .Add<ContextActionBreachEnd>()
-                .Build();
-
-            var summon = ActionsBuilder.New()
-                .Add<ContextActionBreachSummon>()
-                .Build();
-
-            var buff = BuffConfigurator.New(RainHalberdiersBuff, RainHalberdiersBuffGuid)
+            return AbilityConfigurator.NewSpell(RainHalberdiersAbility, RainHalberdiersAbilityGuid, SpellSchool.Conjuration, canSpecialize: true)
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
               .SetIcon(icon)
-              .AddBuffActions(deactivated: end, newRound: summon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .Configure();
-
-            BuffConfigurator.New(RainHalberdiersBuff2, RainHalberdiersBuff2Guid)
-              .SetDisplayName(DisplayName2)
-              .SetDescription(Description2)
-              .SetIcon(icon)
-              .AddComponent<MMMDestroyOnDeactivate>()
-              .Configure();
-
-            return AbilityConfigurator.NewSpell(RainHalberdiersAbility, RainHalberdiersAbilityGuid, SpellSchool.Conjuration, canSpecialize: false)
-              .SetDisplayName(DisplayName2)
-              .SetDescription(Description2)
-              .SetIcon(icon)
-              .AllowTargeting(true, false, false, false)
-              .SetRange(AbilityRange.Close)
+              .AllowTargeting(true, true, true, true)
+              .SetRange(AbilityRange.Custom)
+              .SetCustomRange(40)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Selective, Metamagic.Bolstered, Metamagic.Empower, Metamagic.Maximize)
               .SetSpellDescriptor(SpellDescriptor.Summoning)
-              .SetLocalizedDuration(Duration.OneMinute)
-              .AddAbilityCasterHasNoFacts(new() { buff })
-              .SetIsFullRoundAction(true)
+              .SetLocalizedDuration(Duration.RoundPerLevel)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .ApplyBuff(buff, ContextDuration.Fixed(10), toCaster: true)
+                  .CastSpell(AbilityRefs.TricksterRainOfHalberds.ToString(), overrideSpellbook: true)
                   .Add<ContextActionBreachStart>()
                   .Build())
               .Configure();
