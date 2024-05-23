@@ -62,18 +62,18 @@ namespace MythicMagicMayhem.Trickster
               .Configure();
         }
 
-        private const string AbyssalBreachAbility = "NewSpell.UseAbyssalBreach";
-        public static readonly string AbyssalBreachAbilityGuid = "{0680AD26-35F1-4875-9AA6-C792A4081193}";
+        private const string RainHalberdiersAbility = "NewSpell.UseRainHalberdiers";
+        public static readonly string RainHalberdiersAbilityGuid = "{0680AD26-35F1-4875-9AA6-C792A4081193}";
 
-        private const string AbyssalBreachBuff = "NewSpell.AbyssalBreachBuff";
-        public static readonly string AbyssalBreachBuffGuid = "{16CB55C7-836A-4E7C-BED7-C2DC8F8063A3}";
+        private const string RainHalberdiersBuff = "NewSpell.RainHalberdiersBuff";
+        public static readonly string RainHalberdiersBuffGuid = "{16CB55C7-836A-4E7C-BED7-C2DC8F8063A3}";
 
-        private const string AbyssalBreachBuff2 = "NewSpell.AbyssalBreachBuff2";
-        public static readonly string AbyssalBreachBuff2Guid = "{0A6F618A-8898-40D6-AA47-7E902FCD4470}";
+        private const string RainHalberdiersBuff2 = "NewSpell.RainHalberdiersBuff2";
+        public static readonly string RainHalberdiersBuff2Guid = "{0A6F618A-8898-40D6-AA47-7E902FCD4470}";
 
-        internal const string DisplayName2 = "NewSpellAbyssalBreach.Name";
-        private const string Description2 = "NewSpellAbyssalBreach.Description";
-        public static BlueprintAbility AbyssalBreachConfigure()
+        internal const string DisplayName2 = "NewSpellRainHalberdiers.Name";
+        private const string Description2 = "NewSpellRainHalberdiers.Description";
+        public static BlueprintAbility RainHalberdiersConfigure()
         {
             var icon = AbilityRefs.DemonTeleport.Reference.Get().Icon;
 
@@ -85,7 +85,7 @@ namespace MythicMagicMayhem.Trickster
                 .Add<ContextActionBreachSummon>()
                 .Build();
 
-            var buff = BuffConfigurator.New(AbyssalBreachBuff, AbyssalBreachBuffGuid)
+            var buff = BuffConfigurator.New(RainHalberdiersBuff, RainHalberdiersBuffGuid)
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
               .SetIcon(icon)
@@ -93,14 +93,14 @@ namespace MythicMagicMayhem.Trickster
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
-            BuffConfigurator.New(AbyssalBreachBuff2, AbyssalBreachBuff2Guid)
+            BuffConfigurator.New(RainHalberdiersBuff2, RainHalberdiersBuff2Guid)
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
               .SetIcon(icon)
               .AddComponent<MMMDestroyOnDeactivate>()
               .Configure();
 
-            return AbilityConfigurator.NewSpell(AbyssalBreachAbility, AbyssalBreachAbilityGuid, SpellSchool.Conjuration, canSpecialize: false)
+            return AbilityConfigurator.NewSpell(RainHalberdiersAbility, RainHalberdiersAbilityGuid, SpellSchool.Conjuration, canSpecialize: false)
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
               .SetIcon(icon)

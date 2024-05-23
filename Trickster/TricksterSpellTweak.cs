@@ -27,7 +27,7 @@ namespace MythicMagicMayhem.Trickster
             SpellStuff.AddSpellLevel(AbilityRefs.Serenity.Reference, SpellListRefs.TricksterSpelllist.Reference, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterSummonPerpetuallyAnnoyedWizard.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 7, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterRecreationalPit.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 7, 6);
-            //SpellStuff.AddSpellLevel(AzataNewSpell.GroupHugConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 7);
+            SpellStuff.AddSpellLevel(TricksterNewSpell.HallMirrorsConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 7);
             SpellStuff.AddSpellLevel(AbilityRefs.HoldPersonMass.Reference, SpellListRefs.TricksterSpelllist.Reference, 7);
             SpellStuff.ChangeSpellLevel(AbilityRefs.UmbralStrike.Reference, SpellListRefs.TricksterSpelllist.Reference, 7, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterRayOfHalberds.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 8, 7);
@@ -42,8 +42,8 @@ namespace MythicMagicMayhem.Trickster
             SpellStuff.AddSpellLevel(AbilityRefs.MindBlankCommunal.Reference, SpellListRefs.TricksterSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.Shades.Reference, SpellListRefs.TricksterSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(AbilityRefs.Weird.Reference, SpellListRefs.TricksterSpelllist.Reference, 9);
-            //SpellStuff.AddSpellLevel(AzataNewSpell.ElysiumChoirConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 9);
-            //SpellStuff.AddSpellLevel(AzataNewSpell.ElysiumChoirConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 10);
+            SpellStuff.AddSpellLevel(TricksterNewSpell.RainHalberdiersConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 9);
+            SpellStuff.AddSpellLevel(TricksterNewSpell.TrickDeveloperConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 10);
         }
     }
 }
