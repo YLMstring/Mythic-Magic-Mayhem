@@ -85,7 +85,7 @@
   {
     "Key": "NewSpellGroupHug.Description",
     "enGB": "This spell functions as friendly hug, except that it affects all allies in the area.",
-    "zhCN": "该法术的效果如同friendly hug，但会影响范围内所有友方生物。"
+    "zhCN": "该法术的效果如同友善之拥，但会影响范围内所有友方生物。"
   },
   {
     "Key": "NewSpellElysiumChoir.Name",
