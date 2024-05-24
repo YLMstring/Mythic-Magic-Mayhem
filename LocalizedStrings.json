@@ -141,6 +141,39 @@
     "Key": "NewSpellAbyssalBreach.Description",
     "enGB": "Tearing a hole through Golarion's dimensional fabric you create a gateway for some of the most powerful denizens of the abyss to come to your aid. Each round a random demon appears and will fight on your side for 1 minute. The demon summoned each round is random with a CR between 13 and 25.",
     "zhCN": "通过在格拉利昂的位面结构上撕开一个洞，你创造一个门户，令一些最强大的深渊居民可以前来帮助你，每轮都会出现一个随机的恶魔，并为你战斗1分钟。每轮召唤的恶魔都是随机的，其CR介于13到25之间。"
+  },
+  {
+    "Key": "NewSpellHallMirrors.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hall of Mirrors",
+    "zhCN": "镜影殿堂"
+  },
+  {
+    "Key": "NewSpellHallMirrors.Description",
+    "enGB": "The best tricks are all down to smoke and mirrors, you have leveraged this fact to trick the enemy's senses into believing there are far more of you and your companions than is otherwise possible.  For the duration of the spell you and all allies within 30 feet of you are affected by the mirror image spell with the exception that the images refresh every round. ",
+    "zhCN": "最好的伎俩都归结为烟雾和镜子，你利用这一事实来欺骗敌人的感官，让他们相信在法术持续时间内，你和你的盟友在 30 英尺内的人数远远多于其他可能的数量。你们中的一些人会受到镜影法术的影响，且影子每轮都会刷新。"
+  },
+  {
+    "Key": "NewSpellRainHalberdiers.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rain of Halberdiers",
+    "zhCN": "天降戟兵"
+  },
+  {
+    "Key": "NewSpellRainHalberdiers.Description",
+    "enGB": "Conjuring halberds to rain from the sky is all well and good, but what's the point of having all these halberds without someone to wield them?  This spell functions as Rain of Halberds with the exception that it summons one grave knight (as per the create undead spell) per four caster levels for the duration of the spell.",
+    "zhCN": "从天而降的戟雨固然很好，但是拥有这些戟而没有人使用它们有什么意义呢？这个法术的功能与戟雨一样，除了它在法术持续时间内，每有四个施法者等级便召唤一名坟墓骑士（如同创造不死生物法术）。"
+  },
+  {
+    "Key": "NewSpellTrickDeveloper.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trick Developer",
+    "zhCN": "诡术开发者"
+  },
+  {
+    "Key": "NewSpellTrickDeveloper.Description",
+    "enGB": "You came to the realisation long ago that life is just a game, and if so then that means someone had to have designed that game.  There is no one you cannot trick and you use this to tap into potential you otherwise wouldn't (and shouldn't) have.  Choose one of the following 10th level mythic spells (Army of Heaven, Absolute Death, Abyssal Breach, Edict of Absolute Authority or Elysium Choir), you cast that spell.",
+    "zhCN": "你很久以前就意识到，生活只是一场游戏，如果是这样，那就意味着必定有人设计了这个游戏，没有人是你无法欺骗的，你可以利用它来挖掘你原本不会有（且不应该有）的潜力。选择下列 10 级神话法术之一（天堂军势、绝对死亡、深渊裂隙、绝对权威法令或快乐大合唱），你施展该法术。"
   }
 
 ]

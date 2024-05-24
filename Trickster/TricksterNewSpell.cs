@@ -19,6 +19,16 @@ using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccesso
 using MythicMagicMayhem.Aeon;
 using MythicMagicMayhem.Azata;
 using Kingmaker.UnitLogic.Abilities.Components;
+using BlueprintCore.Utils;
+using Kingmaker.Armies.Components;
+using Kingmaker.Blueprints;
+using Kingmaker.EntitySystem.Entities;
+using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.View;
+using Kingmaker;
+using System.Runtime.Remoting.Contexts;
+using Kingmaker.UnitLogic;
+using UnityEngine;
 
 namespace MythicMagicMayhem.Trickster
 {
@@ -79,13 +89,13 @@ namespace MythicMagicMayhem.Trickster
               .SetRange(AbilityRange.Custom)
               .SetCustomRange(40)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Selective, Metamagic.Bolstered, Metamagic.Empower, Metamagic.Maximize)
+              //.SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Selective, Metamagic.Bolstered, Metamagic.Empower, Metamagic.Maximize)
               .SetSpellDescriptor(SpellDescriptor.Summoning)
               .SetLocalizedDuration(Duration.RoundPerLevel)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .CastSpell(AbilityRefs.TricksterRainOfHalberds.ToString(), overrideSpellbook: true)
-                  .Add<ContextActionBreachStart>()
+                  .Add<ContextActionHalberdiersSummon>()
                   .Build())
               .Configure();
         }
@@ -106,6 +116,42 @@ namespace MythicMagicMayhem.Trickster
               .SetAvailableMetamagic(Metamagic.CompletelyNormal)
               .AddAbilityVariants(new() { AbilityRefs.AngelArmyOfHeaven.ToString(), AbilityRefs.AbsoluteDeath.ToString(), DemonNewSpell.AbyssalBreachAbilityGuid, AeonNewSpell.AbsoluteAuthorityAbility1Guid, AzataNewSpell.ElysiumChoirAbilityGuid })
               .Configure();
+        }
+    }
+
+    internal class ContextActionHalberdiersSummon : ContextAction
+    {
+        public override string GetCaption()
+        {
+            return "Halberdiers Summon";
+        }
+
+        public override void RunAction()
+        {
+            var num = Context.Params.CasterLevel;
+            while (true)
+            {
+                Summon(Context.MaybeCaster, Target.Point, Context.Params.CasterLevel * 6);
+                num -= 4;
+                if (num < 4) break;
+            }
+            
+        }
+
+        public static void Summon(UnitEntityData caster, Vector3 position, int second)
+        {
+            var unit = UnitRefs.CR11_GraveknightSummoned.Reference.Get();
+            UnitEntityData maybeCaster = caster;
+            Vector3 vector = position;
+            vector = ObstacleAnalyzer.GetNearestNode(vector, null).position;
+            UnitEntityView unitEntityView = unit.Prefab.Load(false, false);
+            float radius = (unitEntityView != null) ? unitEntityView.Corpulence : 0.5f;
+            FreePlaceSelector.PlaceSpawnPlaces(1, radius, vector);
+            UnitEntityData unitEntityData = Game.Instance.EntityCreator.SpawnUnit(unit, vector, Quaternion.identity, maybeCaster.HoldingState, null);
+            unitEntityData.Descriptor.SwitchFactions(caster.Faction, true);
+            unitEntityData.GroupId = maybeCaster.GroupId;
+            unitEntityData.UpdateGroup();
+            unitEntityData.Descriptor.AddBuff(BlueprintTool.GetRef<BlueprintBuffReference>(DemonNewSpell.AbyssalBreachBuff2Guid), caster, new TimeSpan(0, 0, second), null);
         }
     }
 }
