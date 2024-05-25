@@ -19,10 +19,11 @@ namespace MythicMagicMayhem.Trickster
             SpellStuff.AddSpellLevel(AbilityRefs.Glitterdust.Reference, SpellListRefs.TricksterSpelllist.Reference, 2);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterFishMissile.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 3, 2);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterBreathOfMoney.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 4, 3);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterHallucinogenicCloud.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 4, 3);
             SpellStuff.AddSpellLevel(AbilityRefs.ConfusionSpell.Reference, SpellListRefs.TricksterSpelllist.Reference, 4);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterSummonGreaslyBear.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 5, 4);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterMicroscopicProportions.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 6, 5);
-            //SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterRainOfHalberds.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 8, 5);
+            SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterRayOfHalberds.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 8, 7);
             SpellStuff.AddSpellLevel(AbilityRefs.CloakofDreams.Reference, SpellListRefs.TricksterSpelllist.Reference, 6);
             SpellStuff.AddSpellLevel(AbilityRefs.Serenity.Reference, SpellListRefs.TricksterSpelllist.Reference, 6);
             SpellStuff.ChangeSpellLevel(AbilityRefs.TricksterSummonPerpetuallyAnnoyedWizard.Reference, SpellListRefs.TricksterSpelllistMythic.Reference, 7, 6);
