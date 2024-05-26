@@ -35,6 +35,8 @@ using Kingmaker.EntitySystem.Entities;
 using BlueprintCore.Actions.Builder.AVEx;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem.Rules.Damage;
 
 namespace MythicMagicMayhem.Demon
 {
@@ -115,9 +117,7 @@ namespace MythicMagicMayhem.Demon
               .Configure();
 
             BuffConfigurator.New(AbyssalBreachBuff2, AbyssalBreachBuff2Guid)
-              .SetDisplayName(DisplayName2)
-              .SetDescription(Description2)
-              .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddComponent<MMMDestroyOnDeactivate>()
               .Configure();
 
@@ -170,7 +170,7 @@ namespace MythicMagicMayhem.Demon
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(DemonNewSpell.BlindFuryBuffGuid);
     }
 
-    public class MMMDestroyOnDeactivate : UnitBuffComponentDelegate
+    public class MMMDestroyOnDeactivate : UnitBuffComponentDelegate, ITargetRulebookHandler<RuleDealDamage>, IRulebookHandler<RuleDealDamage>, ISubscriber, ITargetRulebookSubscriber, IUnitSubscriber
     {
         // Token: 0x0600C378 RID: 50040 RVA: 0x00330564 File Offset: 0x0032E764
         public override void OnActivate()
@@ -182,6 +182,19 @@ namespace MythicMagicMayhem.Demon
         public override void OnDeactivate()
         {
             Owner.IsInGame = false;
+        }
+
+        void IRulebookHandler<RuleDealDamage>.OnEventAboutToTrigger(RuleDealDamage evt)
+        {
+            if (evt.Reason.Ability?.Blueprint == AbilityRefs.TricksterRainOfHalberds.Reference.Get())
+            {
+                evt.Remove((BaseDamage _) => true);
+            }
+        }
+
+        void IRulebookHandler<RuleDealDamage>.OnEventDidTrigger(RuleDealDamage evt)
+        {
+            
         }
     }
 }

@@ -67,29 +67,6 @@ namespace MythicMagicMayhem.Angel
         public void OnEventAboutToTrigger(RuleDealDamage evt)
         {
             if (!Owner.HasFact(halo)) { return; }
-            BaseDamage first = evt.DamageBundle.First;
-            bool flag;
-            if (first == null)
-            {
-                flag = false;
-            }
-            else
-            {
-                EntityFact sourceFact = first.SourceFact;
-                if (sourceFact == null)
-                {
-                    flag = false;
-                }
-                else
-                {
-                    MechanicsContext maybeContext = sourceFact.MaybeContext;
-                    flag = (maybeContext?.ParentContext) != null;
-                }
-            }
-            if (!flag && evt.DamageBundle.Weapon == null)
-            {
-                return;
-            }
             List<BaseDamage> list = TempList.Get<BaseDamage>();
             foreach (BaseDamage damage in evt.DamageBundle)
             {

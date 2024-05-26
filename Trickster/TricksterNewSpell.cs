@@ -29,6 +29,8 @@ using Kingmaker;
 using System.Runtime.Remoting.Contexts;
 using Kingmaker.UnitLogic;
 using UnityEngine;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace MythicMagicMayhem.Trickster
 {
@@ -82,19 +84,22 @@ namespace MythicMagicMayhem.Trickster
             var icon = AbilityRefs.TricksterRainOfHalberds.Reference.Get().Icon;
 
             return AbilityConfigurator.NewSpell(RainHalberdiersAbility, RainHalberdiersAbilityGuid, SpellSchool.Conjuration, canSpecialize: true)
+                .CopyFrom(AbilityRefs.TricksterRainOfHalberds,
+                typeof(AbilityEffectRunAction),
+                typeof(ContextRankConfig),
+                typeof(AbilityTargetsAround),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityDeliverDelay))
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
               .SetIcon(icon)
               .AllowTargeting(true, true, true, true)
               .SetRange(AbilityRange.Custom)
               .SetCustomRange(40)
-              .SetType(AbilityType.Spell)
               //.SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Selective, Metamagic.Bolstered, Metamagic.Empower, Metamagic.Maximize)
               .SetSpellDescriptor(SpellDescriptor.Summoning)
               .SetLocalizedDuration(Duration.RoundPerLevel)
-              .AddAbilityEffectRunAction(
-                actions: ActionsBuilder.New()
-                  .CastSpell(AbilityRefs.TricksterRainOfHalberds.ToString(), overrideSpellbook: true)
+              .AddAbilityEffectRunActionOnClickedPoint(ActionsBuilder.New()
                   .Add<ContextActionHalberdiersSummon>()
                   .Build())
               .Configure();

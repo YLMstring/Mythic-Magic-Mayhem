@@ -106,7 +106,7 @@ namespace MythicMagicMayhem
             Toggle.New(GetKey("tg12"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm12", "Demon Spell"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("tg12"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm13", "Trickster Spell"))
+            Toggle.New(GetKey("tg13"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm13", "Trickster Spell"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("tg7"), defaultValue: true, Helpers.CreateString("toggle-desc-mmm7", "Mergable Spellbooks"))
