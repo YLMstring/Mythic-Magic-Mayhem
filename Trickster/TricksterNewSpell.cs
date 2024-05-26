@@ -31,6 +31,7 @@ using Kingmaker.UnitLogic;
 using UnityEngine;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 
 namespace MythicMagicMayhem.Trickster
 {
@@ -46,7 +47,7 @@ namespace MythicMagicMayhem.Trickster
         private const string Description = "NewSpellHallMirrors.Description";
         public static BlueprintAbility HallMirrorsConfigure()
         {
-            var icon = AbilityRefs.DLC3_ThePromissingMirrorAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.Banishment.Reference.Get().Icon;
 
             var mirror = ActionsBuilder.New()
                 .ApplyBuff(BuffRefs.MirrorImageBuff.ToString(), ContextDuration.Fixed(1), isFromSpell: true)
@@ -83,6 +84,14 @@ namespace MythicMagicMayhem.Trickster
         {
             var icon = AbilityRefs.TricksterRainOfHalberds.Reference.Get().Icon;
 
+            var action = ActionsBuilder.New()
+                  .Add<ContextActionHalberdiersSummon>()
+                  .Build();
+
+            FeatureConfigurator.For(FeatureRefs.SkillAbilities)
+                    .AddAbilityUseTrigger(ability: RainHalberdiersAbilityGuid, forOneSpell: true, action: action, actionsOnAllTargets: false, actionsOnTarget: true)
+                    .Configure();
+
             return AbilityConfigurator.NewSpell(RainHalberdiersAbility, RainHalberdiersAbilityGuid, SpellSchool.Conjuration, canSpecialize: true)
                 .CopyFrom(AbilityRefs.TricksterRainOfHalberds,
                 typeof(AbilityEffectRunAction),
@@ -99,9 +108,6 @@ namespace MythicMagicMayhem.Trickster
               //.SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Selective, Metamagic.Bolstered, Metamagic.Empower, Metamagic.Maximize)
               .SetSpellDescriptor(SpellDescriptor.Summoning)
               .SetLocalizedDuration(Duration.RoundPerLevel)
-              .AddAbilityEffectRunActionOnClickedPoint(ActionsBuilder.New()
-                  .Add<ContextActionHalberdiersSummon>()
-                  .Build())
               .Configure();
         }
 
@@ -112,7 +118,7 @@ namespace MythicMagicMayhem.Trickster
         private const string Description3 = "NewSpellTrickDeveloper.Description";
         public static BlueprintAbility TrickDeveloperConfigure()
         {
-            var icon = AbilityRefs.TrickeryBlessingMajorAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.HideousLaughter.Reference.Get().Icon;
 
             return AbilityConfigurator.NewSpell(TrickDeveloperAbility, TrickDeveloperAbilityGuid, SpellSchool.Abjuration, canSpecialize: false)
               .SetDisplayName(DisplayName3)

@@ -65,7 +65,7 @@ namespace MythicMagicMayhem.Azata
 
         public static BlueprintAbility ElysiumChoirConfigure()
         {
-            var icon = AbilityRefs.Azata1SongOfThePeopleAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.FascinateFeature.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(ElysiumChoirBuff, ElysiumChoirBuffGuid)
               .SetDisplayName(DisplayName2)
