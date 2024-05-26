@@ -1,4 +1,4 @@
-# Mythic Magic Mayhem v0.4.1 for WoTR
+# Mythic Magic Mayhem v1.0.0 for WoTR
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [Spellbook Merge](https://github.com/vikigenius/SpellbookMerge/tree/master).
 - Make all mythic spell books mergeable with any spell book!
 - 4th and 6th casters gain extra spell slots:
