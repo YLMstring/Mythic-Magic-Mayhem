@@ -37,6 +37,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
+using MythicMagicMayhem.Trickster;
 
 namespace MythicMagicMayhem.Demon
 {
@@ -186,7 +187,7 @@ namespace MythicMagicMayhem.Demon
 
         void IRulebookHandler<RuleDealDamage>.OnEventAboutToTrigger(RuleDealDamage evt)
         {
-            if (evt.Reason.Ability?.Blueprint == AbilityRefs.TricksterRainOfHalberds.Reference.Get())
+            if (evt.Reason.Ability?.Blueprint == BlueprintTool.GetRef<BlueprintAbilityReference>(TricksterNewSpell.RainHalberdiersAbilityGuid).Get())
             {
                 evt.Remove((BaseDamage _) => true);
             }

@@ -88,10 +88,6 @@ namespace MythicMagicMayhem.Trickster
                   .Add<ContextActionHalberdiersSummon>()
                   .Build();
 
-            FeatureConfigurator.For(FeatureRefs.SkillAbilities)
-                    .AddAbilityUseTrigger(ability: RainHalberdiersAbilityGuid, forOneSpell: true, action: action, actionsOnAllTargets: false, actionsOnTarget: true)
-                    .Configure();
-
             return AbilityConfigurator.NewSpell(RainHalberdiersAbility, RainHalberdiersAbilityGuid, SpellSchool.Conjuration, canSpecialize: true)
                 .CopyFrom(AbilityRefs.TricksterRainOfHalberds,
                 typeof(AbilityEffectRunAction),
@@ -108,6 +104,7 @@ namespace MythicMagicMayhem.Trickster
               //.SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Selective, Metamagic.Bolstered, Metamagic.Empower, Metamagic.Maximize)
               .SetSpellDescriptor(SpellDescriptor.Summoning)
               .SetLocalizedDuration(Duration.RoundPerLevel)
+              .AddAbilityExecuteActionOnCast(action)
               .Configure();
         }
 
