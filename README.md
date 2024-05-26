@@ -32,6 +32,12 @@
 ![demonspell](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/ecf202f1-cb7b-4d3f-98c1-2b4cea607a0a)
 - New Spell - Blind Fury: Targets in the area must pass a willpower saving throw or suffer the effects of the rage spell and the blindness condition.  In addition those who fail their saving throw lose the benefits of true seeing, blind fighting or any other effect that allows them to ignore or reroll the miss chance caused by concealment.
 - New Spell - Abyssal Breach: Tearing a hole through Golarion's dimensional fabric you create a gateway for some of the most powerful denizens of the abyss to come to your aid.  Each round a random demon appears and will fight on your side for 1 minute.  The demon summoned each round is random with a CR between 13 and 25.
+### Trickster adjustments:
+- Trickster is now a full caster!
+![tricksterspell](https://github.com/YLMstring/Mythic-Magic-Mayhem/assets/61271096/53f098a0-d62b-481e-8916-05e001390cea)
+- New Spell - Hall of Mirrors: The best tricks are all down to smoke and mirrors, you have leveraged this fact to trick the enemy's senses into believing there are far more of you and your companions than is otherwise possible.  For the duration of the spell you and all allies within 30 feet of you are affected by the mirror image spell with the exception that the images refresh every round. 
+- New Spell - Rain of Halberdiers: Conjuring halberds to rain from the sky is all well and good, but what's the point of having all these halberds without someone to wield them?  This spell functions as Rain of Halberds with the exception that it summons one grave knight (as per the create undead spell) per four caster levels for the duration of the spell.
+- New Spell - Trick Developer: You came to the realisation long ago that life is just a game, and if so then that means someone had to have designed that game.  There is no one you cannot trick and you use this to tap into potential you otherwise wouldn't (and shouldn't) have.  Choose one of the following 10th level mythic spells (Army of Heaven, Absolute Death, Abyssal Breach, Edict of Absolute Authority or Elysium Choir), you cast that spell.
 ## Thanks to  
 -   WittleWolfie for his [Blueprint-Core](https://wittlewolfie.github.io/WW-Blueprint-Core/index.html), which makes modding easy and enjoyable.
 -   Bubbles (factsubio) for BubblePrints, saving me from going mad.
