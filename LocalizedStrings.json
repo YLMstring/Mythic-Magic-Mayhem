@@ -3,177 +3,209 @@
     "Key": "MergableSpellbooks.Name",
     "ProcessTemplates": false,
     "enGB": "Mythic Spellbook",
-    "zhCN": "神话法术书"
+    "zhCN": "神话法术书",
+    "ruRU": "Мифическая книга заклинаний"
   },
   {
     "Key": "MergableSpellbooks.Description",
     "enGB": "At 3rd rank, you receive the ability to cast mythic spells. You can either choose to take it as part of an existing full spellcaster spellbook, or as a standalone spellbook. Standalone spellbook has an independent progression and spell slots. The number of its spell slots can't be increased with the Abundant Casting mythic feat. In case of merging spellbooks the maximum caster level of the spells within it is 30, and you can use spell slots from the original spellbook to cast mythic spells. Raising the caster level makes spells more powerful. The number of spell slots can be increased with the Abundant Casting mythic feat. Spontaneous spellcasters get the new known spells from their original class and from mythic path independently: the original class's progression doesn't change, and every mythic rank increase gives additional known spells. If you are multiclassing, it is recommended to use the standalone spellbook.",
-    "zhCN": "在神话3阶时，你获得施放神话法术的能力。你可以选择将其作为现有的9环施法者法术书的一部分，或作为独立的法术书。独立的法术书具有独立的进度和法术位。充裕施法神话专长无法增加其法术位。若合并法术书，其中法术的最大施法者等级为30，并且可以使用原法术书中的法术位来施放神话法术。提高施法者等级会使法术更强大，还可以通过充裕施法神话专长来增加法术位的数量。自发施法者从原职业和神话道途中分别独立获得新的已知法术：原职业的进度不会改变，并且每个神话等级都会增加额外的已知法术。兼职角色建议使用独立法术书。"
+    "zhCN": "在神话3阶时，你获得施放神话法术的能力。你可以选择将其作为现有的9环施法者法术书的一部分，或作为独立的法术书。独立的法术书具有独立的进度和法术位。充裕施法神话专长无法增加其法术位。若合并法术书，其中法术的最大施法者等级为30，并且可以使用原法术书中的法术位来施放神话法术。提高施法者等级会使法术更强大，还可以通过充裕施法神话专长来增加法术位的数量。自发施法者从原职业和神话道途中分别独立获得新的已知法术：原职业的进度不会改变，并且每个神话等级都会增加额外的已知法术。兼职角色建议使用独立法术书。",
+    "ruRU": "На 3 мифическом уровне вы получаете способность сотворять мифические заклинания. Вы можете либо получить их как часть существующей книги заклинаний, либо как отдельную книгу заклинаний. Отдельная книга заклинаний имеет независимый прогресс и слоты для заклинаний. Мифическая способность Обильные чары не влияет на эту книгу заклинаний. При объединении книг заклинаний максимальный уровень заклинателя для нее равен 30, а слоты этой книги можно использовать для сотворения мифических заклинаний. Повышение уровня заклинателя делает заклинания более мощными. Количество слотов для заклинаний можно увеличить с помощью мифической способности Обильные чары. Спонтанные заклинатели изучают новые заклинания от своего класса и от мифического пути независимо друг от друга: прогрессия класса не меняется, а каждое повышение мифического уровня дает возможность выучить дополнительные заклинания. Если вы пользуетесь мультиклассом, то рекомендуется использовать отдельную книгу заклинаний."
   },
   {
     "Key": "FeatUndeadMount1.Name",
     "ProcessTemplates": false,
     "enGB": "Undead Mount",
-    "zhCN": "不死坐骑"
+    "zhCN": "不死坐骑",
+    "ruRU": "Скакун-нежить"
   },
   {
     "Key": "FeatUndeadMount1.Description",
     "enGB": "The animal companion also gains a profane bonus equal to Lich's mythic rank on its Charisma score.",
-    "zhCN": "动物伙伴还会在魅力上获得等同于巫妖神话等级的亵渎加值。"
+    "zhCN": "动物伙伴还会在魅力上获得等同于巫妖神话等级的亵渎加值。",
+    "ruRU": "Верный зверь также получает нечестивый бонус к показателю Харизмы равный мифическому уровню лича."
   },
   {
     "Key": "FeatUndeadMount2.Name",
     "ProcessTemplates": false,
     "enGB": "Undead Mount",
-    "zhCN": "不死坐骑"
+    "zhCN": "不死坐骑",
+    "ruRU": "Скакун-нежить"
   },
   {
     "Key": "FeatUndeadMount2.Description",
     "enGB": "Your animal companion gains all undead traits.",
-    "zhCN": "你的动物伙伴获得所有不死生物特性。"
+    "zhCN": "你的动物伙伴获得所有不死生物特性。",
+    "ruRU": "Ваш верный зверь приобретает черты, присущие нежити."
   },
   {
     "Key": "FeatUnholyFortitude.Name",
     "ProcessTemplates": false,
     "enGB": "Unholy Fortitude",
-    "zhCN": "不洁坚韧"
+    "zhCN": "不洁坚韧",
+    "ruRU": "Нечестивая стойкость"
   },
   {
     "Key": "FeatUnholyFortitude.Description",
     "enGB": "Lich may choose to add his Charisma bonus, instead of his Constitution bonus, to Fortitude saves and the number of hit points he gains for character levels.",
-    "zhCN": "巫妖在决定强韧豁免以及角色等级提供的生命值时可以选择使用魅力加值来代替体质加值。"
+    "zhCN": "巫妖在决定强韧豁免以及角色等级提供的生命值时可以选择使用魅力加值来代替体质加值。",
+    "ruRU": "Лич может, при желании, добавлять свой модификатор Харизмы вместо Выносливости к спасброскам Стойкости и количеству очков здоровья, которые он получает при повышении уровня."
   },
   {
     "Key": "MMMFeatNewHalo1.Name",
     "ProcessTemplates": false,
     "enGB": "Divine Champion",
-    "zhCN": "神圣勇士"
+    "zhCN": "神圣勇士",
+    "ruRU": "Божественный чемпион"
   },
   {
     "Key": "MMMFeatNewHalo1.Description",
     "enGB": "While Angelic Halo is active, all energy damage the Angel deal is converted into holy damage.",
-    "zhCN": "激活天使光环时，天使造成的所有能量伤害转化为神圣伤害。"
+    "zhCN": "激活天使光环时，天使造成的所有能量伤害转化为神圣伤害。",
+    "ruRU": "Пока активен ангельский нимб, весь энергетический урон, который наносит ангел, преобразуется в святой."
   },
   {
     "Key": "MMMFeatNewHalo2.Name",
     "ProcessTemplates": false,
     "enGB": "Flames of Heaven",
-    "zhCN": "天堂烈焰"
+    "zhCN": "天堂烈焰",
+    "ruRU": "Огонь Небес"
   },
   {
     "Key": "MMMFeatNewHalo2.Description",
     "enGB": "While Angelic Halo is active, all energy damage the Angel deal is converted into fire damage.",
-    "zhCN": "激活天使光环时，天使造成的所有能量伤害转化为火焰伤害。"
+    "zhCN": "激活天使光环时，天使造成的所有能量伤害转化为火焰伤害。",
+    "ruRU": "Пока активен ангельский нимб, весь энергетический урон, который наносит ангел, преобразуется в огненный."
   },
   {
     "Key": "MMMFeatNewSuperp1.Name",
     "ProcessTemplates": false,
     "enGB": "Harmonious Echo",
-    "zhCN": "和声回响"
+    "zhCN": "和声回响",
+    "ruRU": "Гармоничное эхо"
   },
   {
     "Key": "MMMFeatNewSuperp1.Description",
     "enGB": "Azata may start a second azata song while maintaining another.",
-    "zhCN": "灵使可以在持续一首灵使之歌的同时启动第二首。"
+    "zhCN": "灵使可以在持续一首灵使之歌的同时启动第二首。",
+    "ruRU": "Азата может одновременно поддерживать 2 песни."
   },
   {
     "Key": "NewSpellGroupHug.Name",
     "ProcessTemplates": false,
     "enGB": "Group Hug",
-    "zhCN": "抱成一团"
+    "zhCN": "抱成一团",
+    "ruRU": "Групповые обьятия"
   },
   {
     "Key": "NewSpellGroupHug.Description",
     "enGB": "This spell functions as friendly hug, except that it affects all allies in the area.",
-    "zhCN": "该法术的效果如同友善之拥，但会影响范围内所有友方生物。"
+    "zhCN": "该法术的效果如同友善之拥，但会影响范围内所有友方生物。",
+    "ruRU": "Это заклинание действует как заклинание Дружеские обьятия за исключением того, что оно действует на всех союзников в его радиусе действия."
   },
   {
     "Key": "NewSpellElysiumChoir.Name",
     "ProcessTemplates": false,
     "enGB": "Elysium Choir",
-    "zhCN": "快乐大合唱"
+    "zhCN": "快乐大合唱",
+    "ruRU": "Хор Элизиума"
   },
   {
     "Key": "NewSpellElysiumChoir.Description",
     "enGB": "When you sing all of Elysium joins with you. You use every performance ability you know. Those with a duration last for the duration of the spell, these benefits do not use up your daily usage of performance abilities.",
-    "zhCN": "你歌唱时，整个极乐境都会加入你。你使用你所知的一切表演。若有持续时间，则等同于该法术的持续时间，且不消耗这些能力的每日使用次数。"
+    "zhCN": "你歌唱时，整个极乐境都会加入你。你使用你所知的一切表演。若有持续时间，则等同于该法术的持续时间，且不消耗这些能力的每日使用次数。",
+    "ruRU": "Когда вы начинаете петь, весЬ Элизиум присоединяется к вам. Вы начинаете все известные вам выступления. Те, которые имеют продолжительность действия, действуют в течение всего срока действия заклинания. Это заклинание не тратит ежедневный запас раундов выступлений."
   },
   {
     "Key": "NewSpellAbsoluteAuthority.Name",
     "ProcessTemplates": false,
     "enGB": "Edict of Absolute Authority",
-    "zhCN": "绝对权威法令"
+    "zhCN": "绝对权威法令",
+    "ruRU": "Эдикт абсолютной власти"
   },
   {
     "Key": "NewSpellAbsoluteAuthority.Description",
     "enGB": "The natural order of the universe is absolute, and thus so is your authority. As a swift action you cause all enemies within a 30 foot radius to suffer the effects of the Edict of Retaliation and Edict of Nonresistance spells (saving separately for each).",
-    "zhCN": "宇宙的自然秩序是绝对的，你的权威也是如此。以一个迅捷动作，你可以使30英尺半径内的所有敌人受到报复法令和不抵抗法令的影响（两种效果分别骰豁免）。"
+    "zhCN": "宇宙的自然秩序是绝对的，你的权威也是如此。以一个迅捷动作，你可以使30英尺半径内的所有敌人受到报复法令和不抵抗法令的影响（两种效果分别骰豁免）。",
+    "ruRU": "Естественный порядок Вселенной абсолютен, а значит, абсолютна и ваша власть. Быстрым действием вы накладываете на всех врагов в радиусе 30 футов заклинания Эдикт возмездия и Эдикт непротивления (каждое заклинание требует отдельного спасброска)."
   },
   {
     "Key": "NewSpellTotalNullification.Name",
     "ProcessTemplates": false,
     "enGB": "Edict of Total Nullification",
-    "zhCN": "完全虚无法令"
+    "zhCN": "完全虚无法令",
+    "ruRU": "Эдикт полного обнуления"
   },
   {
     "Key": "NewSpellTotalNullification.Description",
     "enGB": "The aeon and his agents are protected from all harm by the will of the cosmos. The Aeon and all allies within a 20 foot radius gain the benefits of the Protection From Energy, Communal spell with the exception that it applies to any and all damage types, absorbs 10 per caster level and has separate damage pools. The damage types affected are physical, fire, cold, acid, lightning, sonic, positive, negative, holy, unholy and divine.",
-    "zhCN": "御衡者及其代理人受到宇宙意志的保护，免受所有伤害。御衡者和 20 英尺半径内的所有盟友都获得群体防护能量法术的好处，但它适用于所有伤害类型，这些伤害类型分别以每施法者等级吸收10点，包括物理、火焰、寒冷、酸液、闪电、音波、正能量、负能量、神圣、污邪和神力。"
+    "zhCN": "御衡者及其代理人受到宇宙意志的保护，免受所有伤害。御衡者和 20 英尺半径内的所有盟友都获得群体防护能量法术的好处，但它适用于所有伤害类型，这些伤害类型分别以每施法者等级吸收10点，包括物理、火焰、寒冷、酸液、闪电、音波、正能量、负能量、神圣、污邪和神力。",
+    "ruRU": "Эон и его соратники защищены от любого вреда волей космоса. Эон и все союзники в радиусе 20 футов получают преимущества заклинания Защита от стихии, за исключением того, что оно применяется ко всем типам урона, поглощает 10 урона за уровень заклинателя и имеет отдельный запас прочности для каждого типа урона. Защита действует от следующих типов урона: физический, огненный, урон холодном, кислотный, урон электричеством, урон звуком, урон положительной энергией, урон негативной энергией, святой, нечестивый и божественный."
   },
   {
     "Key": "NewSpellBlindFury.Name",
     "ProcessTemplates": false,
     "enGB": "Blind Fury",
-    "zhCN": "盲目狂怒"
+    "zhCN": "盲目狂怒",
+    "ruRU": "Слепая ярость"
   },
   {
     "Key": "NewSpellBlindFury.Description",
     "enGB": "Targets in the area must pass a willpower saving throw or suffer the effects of the rage spell and the blindness condition.  In addition those who fail their saving throw lose the benefits of true seeing, blind fighting or any other effect that allows them to ignore or reroll the miss chance caused by concealment.",
-    "zhCN": "范围内所有目标必须通过意志豁免，否则受到目盲以及狂暴术的效果。此外，未能通过豁免者还会失去真知术，盲斗，以及任何令其无视隐蔽，或是重投隐蔽失手的效果所带来的好处。"
+    "zhCN": "范围内所有目标必须通过意志豁免，否则受到目盲以及狂暴术的效果。此外，未能通过豁免者还会失去真知术，盲斗，以及任何令其无视隐蔽，或是重投隐蔽失手的效果所带来的好处。",
+    "ruRU": "Существа, находящиеся в радиусе действия заклинания должны совершить успешный спасбросок Воли или оказаться под действием заклинания Ярость и ослепнуть. Кроме того, те, кто провалят спасбросок также теряют преимущества истинного зрения, боя вслепую или любых других эффектов, которые позволяют им игнорировать или совершать несколько бросков на преодоление маскировки."
   },
   {
     "Key": "NewSpellAbyssalBreach.Name",
     "ProcessTemplates": false,
     "enGB": "Abyssal Breach",
-    "zhCN": "深渊裂隙"
+    "zhCN": "深渊裂隙",
+    "ruRU": "Прорыв Бездны"
   },
   {
     "Key": "NewSpellAbyssalBreach.Description",
     "enGB": "Tearing a hole through Golarion's dimensional fabric you create a gateway for some of the most powerful denizens of the abyss to come to your aid. Each round a random demon appears and will fight on your side for 1 minute. The demon summoned each round is random with a CR between 13 and 25.",
-    "zhCN": "通过在格拉利昂的位面结构上撕开一个洞，你创造一个门户，令一些最强大的深渊居民可以前来帮助你，每轮都会出现一个随机的恶魔，并为你战斗1分钟。每轮召唤的恶魔都是随机的，其CR介于13到25之间。"
+    "zhCN": "通过在格拉利昂的位面结构上撕开一个洞，你创造一个门户，令一些最强大的深渊居民可以前来帮助你，每轮都会出现一个随机的恶魔，并为你战斗1分钟。每轮召唤的恶魔都是随机的，其CR介于13到25之间。",
+    "ruRU": "Пробив дыру в ткани реальности Голариона, вы создаете врата, через которые к вам на помощь приходят самые могущественные обитатели Бездны. Каждый раунд появляется случайный демон, который будет сражаться на вашей стороне в течение 1 минуты. Могут быть призваный демоны имеющие от 13 до 25 костей здоровья."
   },
   {
     "Key": "NewSpellHallMirrors.Name",
     "ProcessTemplates": false,
     "enGB": "Hall of Mirrors",
-    "zhCN": "镜影殿堂"
+    "zhCN": "镜影殿堂",
+    "ruRU": "Зеркальный зал"
   },
   {
     "Key": "NewSpellHallMirrors.Description",
     "enGB": "The best tricks are all down to smoke and mirrors, you have leveraged this fact to trick the enemy's senses into believing there are far more of you and your companions than is otherwise possible.  For the duration of the spell you and all allies within 30 feet of you are affected by the mirror image spell with the exception that the images refresh every round. ",
-    "zhCN": "最好的伎俩都归结为烟雾和镜子，你利用这一事实来欺骗敌人的感官，让他们相信在法术持续时间内，你和你的盟友在 30 英尺内的人数远远多于其他可能的数量。你们中的一些人会受到镜影法术的影响，且影子每轮都会刷新。"
+    "zhCN": "最好的伎俩都归结为烟雾和镜子，你利用这一事实来欺骗敌人的感官，让他们相信在法术持续时间内，你和你的盟友在 30 英尺内的人数远远多于其他可能的数量。你们中的一些人会受到镜影法术的影响，且影子每轮都会刷新。",
+    "ruRU": "Лучшие фокусы получаютя при помощи дыма и зеркал. Вы пользуетесь ими, чтобы обмануть чувства противника и заставить его поверить, что вас и ваших спутников гораздо больше, чем это возможно в противном случае. На время действия заклинания на вас и всех союзников в радиусе 30 футов от вас действует заклинание Зеркальное отражение, за исключением того, что отражения обновляются каждый раунд. "
   },
   {
     "Key": "NewSpellRainHalberdiers.Name",
     "ProcessTemplates": false,
     "enGB": "Rain of Halberdiers",
-    "zhCN": "天降戟兵"
+    "zhCN": "天降戟兵",
+    "ruRU": "Дождь из алебардистов"
   },
   {
     "Key": "NewSpellRainHalberdiers.Description",
     "enGB": "Conjuring halberds to rain from the sky is all well and good, but what's the point of having all these halberds without someone to wield them?  This spell functions as Rain of Halberds with the exception that it summons one grave knight (as per the create undead spell) per four caster levels for the duration of the spell.",
-    "zhCN": "从天而降的戟雨固然很好，但是拥有这些戟而没有人使用它们有什么意义呢？这个法术的功能与戟雨一样，除了它在法术持续时间内，每有四个施法者等级便召唤一名坟墓骑士（如同创造不死生物法术）。"
+    "zhCN": "从天而降的戟雨固然很好，但是拥有这些戟而没有人使用它们有什么意义呢？这个法术的功能与戟雨一样，除了它在法术持续时间内，每有四个施法者等级便召唤一名坟墓骑士（如同创造不死生物法术）。",
+    "ruRU": "Призывать алебарды, чтобы они сыпались с неба, - это, конечно, хорошо, но какой смысл иметь все эти алебарды без тех, кто ими бы орудовал? Это заклинание действует как заклинание Дождь из алебард за исключением того, что вместо алебард, на всю длительность действия заклинания, за каждые 4 уровня заклинателя призывается могильный рыцарь (как при сотворении заклинания Создать нежить)."
   },
   {
     "Key": "NewSpellTrickDeveloper.Name",
     "ProcessTemplates": false,
     "enGB": "Trick Developer",
-    "zhCN": "诡术开发者"
+    "zhCN": "诡术开发者",
+    "ruRU": "Разработчик трюков"
   },
   {
     "Key": "NewSpellTrickDeveloper.Description",
     "enGB": "You came to the realisation long ago that life is just a game, and if so then that means someone had to have designed that game.  There is no one you cannot trick and you use this to tap into potential you otherwise wouldn't (and shouldn't) have.  Choose one of the following 10th level mythic spells (Army of Heaven, Absolute Death, Abyssal Breach, Edict of Absolute Authority or Elysium Choir), you cast that spell.",
-    "zhCN": "你很久以前就意识到，生活只是一场游戏，如果是这样，那就意味着必定有人设计了这个游戏，没有人是你无法欺骗的，你可以利用它来挖掘你原本不会有（且不应该有）的潜力。选择下列 10 级神话法术之一（天堂军势、绝对死亡、深渊裂隙、绝对权威法令或快乐大合唱），你施展该法术。"
+    "zhCN": "你很久以前就意识到，生活只是一场游戏，如果是这样，那就意味着必定有人设计了这个游戏，没有人是你无法欺骗的，你可以利用它来挖掘你原本不会有（且不应该有）的潜力。选择下列 10 级神话法术之一（天堂军势、绝对死亡、深渊裂隙、绝对权威法令或快乐大合唱），你施展该法术。",
+    "ruRU": "Вы давно поняли, что жизнь - это всего лишь игра, а раз так, значит, кто-то должен был ее придумать.  Нет никого, кого бы вы не смогли обмануть, и вы используете это, чтобы раскрыть потенциал, которого у вас иначе не было бы (и не должно быть).  Выберите одно из следующих мифических заклинаний 10-го уровня (Армия небес, Абсолютная смерть, Прорыв Бездны, Эдикт абсолютной власти или Хор Элизиума), вы сотворяете это заклинание."
   }
 
 ]
