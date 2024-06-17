@@ -61,6 +61,12 @@ namespace MythicMagicMayhem.Mechanics
                 .SetDescription(Description)
                 .Configure();
             aeon.m_AllowedSpellbooks = books;
+
+            var hacker = SpellbookRefs.MagicDeceiverSpellbook.Reference.Get();
+            if (hacker?.GetComponent<MagicHackSpellbookComponent>() != null)
+            {
+                hacker.GetComponent<MagicHackSpellbookComponent>().m_MaxDamageDicesPerAction = [5, 7, 10, 15, 20, 100, 100, 100, 100, 100];
+            }
         }
 
         private static BlueprintSpellbookReference[] GetBooks()
