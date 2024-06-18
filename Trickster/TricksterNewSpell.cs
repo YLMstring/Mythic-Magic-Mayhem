@@ -37,7 +37,12 @@ using BlueprintCore.Conditions.Builder;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.UnitLogic.Buffs.Components;
+using HarmonyLib;
+using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.RuleSystem.Rules.Damage;
+using Kingmaker.RuleSystem.Rules;
 
 namespace MythicMagicMayhem.Trickster
 {
@@ -52,7 +57,7 @@ namespace MythicMagicMayhem.Trickster
         private static readonly string MetagamerAblityGuid = "{04CF702D-E286-4BCC-B11F-23D8444CB5B4}";
 
         private const string MetagamerBuff = "MetagamerBuff";
-        private static readonly string MetagamerGuidBuff = "{47B70D83-13CD-4459-A6B3-0588D7DAD244}";
+        public static readonly string MetagamerGuidBuff = "{47B70D83-13CD-4459-A6B3-0588D7DAD244}";
 
         private const string MetagamerAuraBuff = "MetagamerAuraBuff";
         private static readonly string MetagamerAuraGuidBuff = "{1938D8D6-F735-47E1-B9B4-4D56423AB76B}";
@@ -68,8 +73,8 @@ namespace MythicMagicMayhem.Trickster
             .SetDisplayName(MetagamerDisplayName)
               .SetDescription(MetagamerDescription)
               .SetIcon(icon)
-
-              .AddBuffAllSavesBonus(ModifierDescriptor.Profane, 1)
+              .AddFacts([FeatureRefs.TricksterSneakyQuack.ToString()])
+              .AddComponent<MetagamerComp>()
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(MetagamerAura, MetagamerAuraGuid)
@@ -90,7 +95,6 @@ namespace MythicMagicMayhem.Trickster
               .SetDisplayName(MetagamerDisplayName)
               .SetDescription(MetagamerDescription)
               .SetIcon(icon)
-              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 20.Feet())
               .SetRange(AbilityRange.Personal)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
               .SetLocalizedDuration(Duration.OneMinute)
@@ -206,9 +210,7 @@ namespace MythicMagicMayhem.Trickster
                 num -= 4;
                 if (num < 4) break;
             }
-            
         }
-
         public static void Summon(UnitEntityData caster, Vector3 position, int second)
         {
             var unit = UnitRefs.CR11_GraveknightSummoned.Reference.Get();
@@ -224,5 +226,105 @@ namespace MythicMagicMayhem.Trickster
             unitEntityData.UpdateGroup();
             unitEntityData.Descriptor.AddBuff(BlueprintTool.GetRef<BlueprintBuffReference>(DemonNewSpell.AbyssalBreachBuff2Guid), caster, new TimeSpan(0, 0, second), null);
         }
+    }
+
+    public class MetagamerComp : UnitBuffComponentDelegate
+    {
+        // Token: 0x0600C307 RID: 49927 RVA: 0x0032F900 File Offset: 0x0032DB00
+        public override void OnTurnOn()
+        {
+            int num = Buff.Context.MaybeCaster.Stats.SneakAttack - Owner.Stats.SneakAttack;
+            if (num > 0)
+            {
+                base.Owner.Stats.SneakAttack.AddModifierUnique(num, base.Runtime);
+            }
+        }
+
+        // Token: 0x0600C308 RID: 49928 RVA: 0x0032F9E4 File Offset: 0x0032DBE4
+        public override void OnTurnOff()
+        {
+            base.OnTurnOff();
+            base.Owner.Stats.SneakAttack.RemoveModifiersFrom(base.Runtime);
+        }
+    }
+
+    [HarmonyPatch(typeof(AddImmunityToPrecisionDamage))]
+    [HarmonyPatch("OnEventAboutToTrigger")]
+    [HarmonyPatch(new Type[] { typeof(RuleCalculateDamage) })]
+    internal class MetagamerFix1
+    {
+        static bool Prefix(ref RuleCalculateDamage evt)
+        {
+            if (evt.Initiator.HasFact(Arcane))
+            {
+                return false;
+            }
+            return true;
+        }
+        private static BlueprintBuffReference Arcane = BlueprintTool.GetRef<BlueprintBuffReference>(TricksterNewSpell.MetagamerGuidBuff);
+    }
+
+    [HarmonyPatch(typeof(AddImmunityToPrecisionDamage))]
+    [HarmonyPatch("OnEventAboutToTrigger")]
+    [HarmonyPatch(new Type[] { typeof(RuleAttackRoll) })]
+    internal class MetagamerFix2
+    {
+        static bool Prefix(ref RuleAttackRoll evt)
+        {
+            if (evt.Initiator.HasFact(Arcane))
+            {
+                return false;
+            }
+            return true;
+        }
+        private static BlueprintBuffReference Arcane = BlueprintTool.GetRef<BlueprintBuffReference>(TricksterNewSpell.MetagamerGuidBuff);
+    }
+
+    [HarmonyPatch(typeof(AddImmunityToCriticalHits))]
+    [HarmonyPatch("OnEventAboutToTrigger")]
+    [HarmonyPatch(new Type[] { typeof(RuleCalculateDamage) })]
+    internal class MetagamerFix3
+    {
+        static bool Prefix(ref RuleCalculateDamage evt)
+        {
+            if (evt.Initiator.HasFact(Arcane))
+            {
+                return false;
+            }
+            return true;
+        }
+        private static BlueprintBuffReference Arcane = BlueprintTool.GetRef<BlueprintBuffReference>(TricksterNewSpell.MetagamerGuidBuff);
+    }
+
+    [HarmonyPatch(typeof(AddImmunityToCriticalHits))]
+    [HarmonyPatch("OnEventAboutToTrigger")]
+    [HarmonyPatch(new Type[] { typeof(RuleAttackRoll) })]
+    internal class MetagamerFix4
+    {
+        static bool Prefix(ref RuleAttackRoll evt)
+        {
+            if (evt.Initiator.HasFact(Arcane))
+            {
+                return false;
+            }
+            return true;
+        }
+        private static BlueprintBuffReference Arcane = BlueprintTool.GetRef<BlueprintBuffReference>(TricksterNewSpell.MetagamerGuidBuff);
+    }
+
+    [HarmonyPatch(typeof(AddImmunityToCriticalHits))]
+    [HarmonyPatch("OnEventAboutToTrigger")]
+    [HarmonyPatch(new Type[] { typeof(RuleDealStatDamage) })]
+    internal class MetagamerFix5
+    {
+        static bool Prefix(ref RuleDealStatDamage evt)
+        {
+            if (evt.Initiator.HasFact(Arcane))
+            {
+                return false;
+            }
+            return true;
+        }
+        private static BlueprintBuffReference Arcane = BlueprintTool.GetRef<BlueprintBuffReference>(TricksterNewSpell.MetagamerGuidBuff);
     }
 }
