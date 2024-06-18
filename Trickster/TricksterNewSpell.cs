@@ -68,7 +68,7 @@ namespace MythicMagicMayhem.Trickster
         private const string MetagamerAura = "MetagamerAura";
         private static readonly string MetagamerAuraGuid = "{25AFC47B-A276-4202-B343-095F5A2EECAD}";
 
-        private static BlueprintAbility CreateMetagamer()
+        public static BlueprintAbility CreateMetagamer()
         {
             var icon = AbilityRefs.DistrustOfFellowsAbility.Reference.Get().Icon;
 
