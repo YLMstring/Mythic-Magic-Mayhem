@@ -43,6 +43,9 @@ using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.RuleSystem.Rules;
+using Kingmaker.ElementsSystem;
+using Kingmaker.UnitLogic.Groups;
+using MythicMagicMayhem.Trickster;
 
 namespace MythicMagicMayhem.Trickster
 {
@@ -84,11 +87,15 @@ namespace MythicMagicMayhem.Trickster
                 .AddAbilityAreaEffectBuff(buff: Buff)
                 .Configure();
 
+            var action = ActionsBuilder.New().ApplyBuff(BuffRefs.Exhausted.ToString(), ContextDuration.Fixed(10)).Build();
+            var action2 = ActionsBuilder.New().Add<ContextActionOnAllAlly>(c => { c.Action = action; }).Build();
+
             var Aura = BuffConfigurator.New(MetagamerAuraBuff, MetagamerAuraGuidBuff)
               .SetDisplayName(MetagamerDisplayName)
               .SetDescription(MetagamerDescription)
               .SetIcon(icon)
               .AddAreaEffect(area)
+              .AddBuffActions(deactivated: action2)
               .Configure();
 
             return AbilityConfigurator.NewSpell(MetagamerAblity, MetagamerAblityGuid, SpellSchool.Enchantment, canSpecialize: false)
@@ -228,24 +235,29 @@ namespace MythicMagicMayhem.Trickster
         }
     }
 
-    public class MetagamerComp : UnitBuffComponentDelegate
+    internal class ContextActionOnAllAlly : ContextAction
     {
-        // Token: 0x0600C307 RID: 49927 RVA: 0x0032F900 File Offset: 0x0032DB00
-        public override void OnTurnOn()
+        // Token: 0x0600D200 RID: 53760 RVA: 0x00369E20 File Offset: 0x00368020
+        public override string GetCaption()
         {
-            int num = Buff.Context.MaybeCaster.Stats.SneakAttack - Owner.Stats.SneakAttack;
-            if (num > 0)
-            {
-                base.Owner.Stats.SneakAttack.AddModifierUnique(num, base.Runtime);
-            }
+            return "For each party member";
         }
 
-        // Token: 0x0600C308 RID: 49928 RVA: 0x0032F9E4 File Offset: 0x0032DBE4
-        public override void OnTurnOff()
+        // Token: 0x0600D201 RID: 53761 RVA: 0x00369E28 File Offset: 0x00368028
+        public override void RunAction()
         {
-            base.OnTurnOff();
-            base.Owner.Stats.SneakAttack.RemoveModifiersFrom(base.Runtime);
+            UnitGroup group = Game.Instance.Player.MainCharacter.Value.Group;
+            for (int i = 0; i < group.Count; i++)
+            {
+                if (group[i] == Context.MaybeCaster) { continue; }
+                using (base.Context.GetDataScope(group[i]))
+                {
+                    this.Action.Run();
+                }
+            }
         }
+        // Token: 0x04008C44 RID: 35908
+        public ActionList Action;
     }
 
     [HarmonyPatch(typeof(AddImmunityToPrecisionDamage))]
@@ -327,4 +339,29 @@ namespace MythicMagicMayhem.Trickster
         }
         private static BlueprintBuffReference Arcane = BlueprintTool.GetRef<BlueprintBuffReference>(TricksterNewSpell.MetagamerGuidBuff);
     }
+
+    internal class MetagamerComp : UnitBuffComponentDelegate
+    {
+        // Token: 0x0600C307 RID: 49927 RVA: 0x0032F900 File Offset: 0x0032DB00
+        public override void OnTurnOn()
+        {
+            int num = Buff.Context.MaybeCaster.Stats.SneakAttack - Owner.Stats.SneakAttack;
+            if (num > 0)
+            {
+                base.Owner.Stats.SneakAttack.AddModifierUnique(num, base.Runtime);
+            }
+        }
+
+        // Token: 0x0600C308 RID: 49928 RVA: 0x0032F9E4 File Offset: 0x0032DBE4
+        public override void OnTurnOff()
+        {
+            base.OnTurnOff();
+            base.Owner.Stats.SneakAttack.RemoveModifiersFrom(base.Runtime);
+        }
+    }
 }
+
+    
+
+    
+
