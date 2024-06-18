@@ -22,6 +22,15 @@ using MythicMagicMayhem.Components;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using BlueprintCore.Utils;
+using HarmonyLib;
+using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Parts;
+using Kingmaker.UnitLogic;
+using Kingmaker.Designers;
+using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem.Rules.Abilities;
+using Kingmaker.UnitLogic.Buffs.Components;
 
 namespace MythicMagicMayhem.Aeon
 {
@@ -245,5 +254,94 @@ namespace MythicMagicMayhem.Aeon
                   .Build())
               .Configure();
         }
+
+        private const string TemporalInterdictionAbility = "NewSpell.UseTemporalInterdiction";
+        public static readonly string TemporalInterdictionAbilityGuid = "{665D3138-3130-40DD-8E6C-D6253F82CE6D}";
+
+        private const string TemporalInterdictionBuff = "NewSpell.TemporalInterdictionBuff";
+        public static readonly string TemporalInterdictionBuffGuid = "{10B7F9F7-62B5-45C3-8C99-6C3F3922488A}";
+
+        internal const string DisplayName3 = "NewSpellTemporalInterdiction.Name";
+        private const string Description3 = "NewSpellTemporalInterdiction.Description";
+
+        public static BlueprintAbility TemporalInterdictionConfigure()
+        {
+            var icon = AbilityRefs.TimeStop.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(TemporalInterdictionBuff, TemporalInterdictionBuffGuid)
+              .SetDisplayName(DisplayName3)
+              .SetDescription(Description3)
+              .SetIcon(icon)
+              .AddComponent<SynthesisComponent>()
+              .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
+              .SetRanks(3)
+              .Configure();
+
+            var fx = AbilityRefs.CircleOfDeath.Reference.Get().GetComponent<AbilitySpawnFx>();
+
+            return AbilityConfigurator.NewSpell(
+                TemporalInterdictionAbility, TemporalInterdictionAbilityGuid, SpellSchool.Abjuration, canSpecialize: false)
+              .SetDisplayName(DisplayName3)
+              .SetDescription(Description3)
+              .SetIcon(icon)
+              .SetLocalizedDuration(Duration.OneRound)
+              .AddComponent(fx)
+              .SetRange(AbilityRange.Personal)
+              .SetType(AbilityType.Spell)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
+              .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ApplyBuff(buff, ContextDuration.Fixed(1), isFromSpell: true)
+                  .ApplyBuff(buff, ContextDuration.Fixed(1), isFromSpell: true)
+                  .ApplyBuff(buff, ContextDuration.Fixed(1), isFromSpell: true)
+                  .Build())
+              .Configure();
+        }
+    }
+
+    [HarmonyPatch(typeof(AbilityData), "get_ActionType")]
+    internal class SynthesisFix
+    {
+        static void Postfix(ref UnitCommand.CommandType __result, ref AbilityData __instance)
+        {
+            try
+            {
+                if (__instance.Caster == null || __instance.Spellbook == null)
+                {
+                    return;
+                }
+                if (__instance.Caster.HasFact(Arcane))
+                {
+                    __result = UnitCommand.CommandType.Free;
+                }   
+            }
+            catch (Exception ex) { Logger.Error("Failed to synthesis.", ex); }
+        }
+        private static readonly LogWrapper Logger = LogWrapper.Get("MMMmod");
+        private static BlueprintBuffReference Arcane = BlueprintTool.GetRef<BlueprintBuffReference>(AeonNewSpell.TemporalInterdictionBuffGuid);
+    }
+    internal class SynthesisComponent : UnitBuffComponentDelegate, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCastSpell>, IRulebookHandler<RuleCastSpell>
+    {
+        void IRulebookHandler<RuleCastSpell>.OnEventAboutToTrigger(RuleCastSpell evt)
+        {
+
+        }
+
+        void IRulebookHandler<RuleCastSpell>.OnEventDidTrigger(RuleCastSpell evt)
+        {
+            try
+            {
+                if (evt.Spell?.Spellbook != null)
+                {
+                    if (Buff.Rank > 1)
+                    {
+                        Buff.Rank--;
+                    }
+                    else { Buff.Remove(); }
+                }
+            }
+            catch (Exception ex) { Logger.Error("Failed to synthesis.", ex); }
+        }
+        private static readonly LogWrapper Logger = LogWrapper.Get("MMMmod");
     }
 }
