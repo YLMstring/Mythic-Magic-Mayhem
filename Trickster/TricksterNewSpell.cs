@@ -32,11 +32,74 @@ using UnityEngine;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators;
+using BlueprintCore.Conditions.Builder;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Enums;
+using Kingmaker.UnitLogic.Buffs;
 
 namespace MythicMagicMayhem.Trickster
 {
     internal class TricksterNewSpell
     {
+        private const string Metagamer = "TricksterNewSpell.Metagamer";
+        private static readonly string MetagamerGuid = "{A494761A-E068-48B8-B6F4-34D107EB4862}";
+        internal const string MetagamerDisplayName = "TricksterNewSpellMetagamer.Name";
+        private const string MetagamerDescription = "TricksterNewSpellMetagamer.Description";
+
+        private const string MetagamerAblity = "TricksterNewSpell.UseMetagamer";
+        private static readonly string MetagamerAblityGuid = "{04CF702D-E286-4BCC-B11F-23D8444CB5B4}";
+
+        private const string MetagamerBuff = "MetagamerBuff";
+        private static readonly string MetagamerGuidBuff = "{47B70D83-13CD-4459-A6B3-0588D7DAD244}";
+
+        private const string MetagamerAuraBuff = "MetagamerAuraBuff";
+        private static readonly string MetagamerAuraGuidBuff = "{1938D8D6-F735-47E1-B9B4-4D56423AB76B}";
+
+        private const string MetagamerAura = "MetagamerAura";
+        private static readonly string MetagamerAuraGuid = "{25AFC47B-A276-4202-B343-095F5A2EECAD}";
+
+        private static BlueprintAbility CreateMetagamer()
+        {
+            var icon = AbilityRefs.DistrustOfFellowsAbility.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(MetagamerBuff, MetagamerGuidBuff)
+            .SetDisplayName(MetagamerDisplayName)
+              .SetDescription(MetagamerDescription)
+              .SetIcon(icon)
+
+              .AddBuffAllSavesBonus(ModifierDescriptor.Profane, 1)
+              .Configure();
+
+            var area = AbilityAreaEffectConfigurator.New(MetagamerAura, MetagamerAuraGuid)
+                .SetAffectEnemies(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(33.Feet())
+                .AddAbilityAreaEffectBuff(buff: Buff)
+                .Configure();
+
+            var Aura = BuffConfigurator.New(MetagamerAuraBuff, MetagamerAuraGuidBuff)
+              .SetDisplayName(MetagamerDisplayName)
+              .SetDescription(MetagamerDescription)
+              .SetIcon(icon)
+              .AddAreaEffect(area)
+              .Configure();
+
+            return AbilityConfigurator.NewSpell(MetagamerAblity, MetagamerAblityGuid, SpellSchool.Enchantment, canSpecialize: false)
+              .SetDisplayName(MetagamerDisplayName)
+              .SetDescription(MetagamerDescription)
+              .SetIcon(icon)
+              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 20.Feet())
+              .SetRange(AbilityRange.Personal)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
+              .SetLocalizedDuration(Duration.OneMinute)
+              .AddAbilityEffectRunAction(ActionsBuilder.New()
+                  .ApplyBuff(Aura, ContextDuration.Fixed(10), isFromSpell: true)
+                  .Build())
+              .Configure();
+        }
+
         private const string HallMirrorsAbility = "NewSpell.UseHallMirrors";
         public static readonly string HallMirrorsAbilityGuid = "{18A1E6C0-0040-4EDB-8C18-6F764BD5E6F4}";
 
