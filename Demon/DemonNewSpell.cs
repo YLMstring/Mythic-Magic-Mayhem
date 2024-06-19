@@ -38,11 +38,68 @@ using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
 using MythicMagicMayhem.Trickster;
+using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.RuleSystem.Rules.Abilities;
+using UnityEngine.Serialization;
+using UnityEngine;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 
 namespace MythicMagicMayhem.Demon
 {
     internal class DemonNewSpell
     {
+        private const string DemonicFormVAbility = "NewSpell.UseDemonicFormV";
+        public static readonly string DemonicFormVAbilityGuid = "{2F0B7663-1BF3-49DC-806A-76560897704D}";
+
+        private const string DemonicFormVBuff = "NewSpell.DemonicFormVBuff";
+        public static readonly string DemonicFormVBuffGuid = "{49C018D7-1AEE-4B2A-9102-B45F45D9D34F}";
+
+        internal const string DisplayName0 = "NewSpellDemonicFormV.Name";
+        private const string Description0 = "NewSpellDemonicFormV.Description";
+        public static BlueprintAbility DemonicFormVConfigure()
+        {
+            var icon = AbilityRefs.AreshkagalRetriever_Ability_MendingRay.Reference.Get().Icon;
+
+            var monster = UnitRefs.CR23_AreshkagalRetriever.Reference.Get();
+            var balor = BuffRefs.DemonicFormIVBalorBuff.Reference.Get().GetComponent<Polymorph>();
+
+            var buff = BuffConfigurator.New(DemonicFormVBuff, DemonicFormVBuffGuid)
+                .CopyFrom(
+                BuffRefs.DemonicFormIVBalorBuff,
+                typeof(ReplaceSourceBone),
+                typeof(ReplaceCastSource))
+              .SetDisplayName(DisplayName0)
+              .SetDescription(Description0)
+              .SetIcon(icon)
+              .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
+              .AddReplaceAsksList(monster.Visual.Barks)
+              .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.NaturalSpell)
+              .AddPolymorph([ItemWeaponRefs.ClawHuge3d6.ToString(), ItemWeaponRefs.ClawHuge3d6.ToString(), ItemWeaponRefs.BiteHuge2d8.ToString()], false, 10, 8,
+                balor.m_EnterTransition, balor.m_ExitTransition, [AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.DemonicFormWeaponEnchantFact.ToString(), FeatureRefs.ShifterGrabTiger.ToString(), AbilityRefs.Disintegrate.ToString()], 
+                false, ItemWeaponRefs.ClawHuge3d6.ToString(), null, BlueprintCore.Blueprints.CustomConfigurators.ComponentMerge.Fail, 10, ItemWeaponRefs.ClawHuge3d6.ToString(),
+                monster.PortraitSafe, monster.Prefab, monster.Prefab, null, null, null, true, Size.Huge, SpecialDollType.None, 12, balor.m_TransitionExternal, true)
+              .AddAutoMetamagic([AbilityRefs.Disintegrate.ToString()], AutoMetamagic.AllowedType.Any, metamagic: Metamagic.Quicken)
+              .AddComponent<ReplaceCasterLevelForAbility>(c => { c.spell = AbilityRefs.Disintegrate.Reference; })
+              .Configure();
+
+            var mirror = ActionsBuilder.New()
+                .RemoveBuffsByDescriptor(SpellDescriptor.Polymorph, false)
+                .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank(), Kingmaker.UnitLogic.Mechanics.DurationRate.Minutes), isFromSpell: true)
+                .Build();
+
+            return AbilityConfigurator.NewSpell(DemonicFormVAbility, DemonicFormVAbilityGuid, SpellSchool.Transmutation, canSpecialize: false)
+              .SetDisplayName(DisplayName0)
+              .SetDescription(Description0)
+              .SetIcon(icon)
+              .SetRange(AbilityRange.Personal)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Extend)
+              .SetLocalizedDuration(Duration.MinutePerLevel)
+              .AddContextRankConfig(ContextRankConfigs.CasterLevel())
+              .AddAbilityEffectRunAction(mirror)
+              .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
+              .Configure();
+        }
+
         private const string BlindFuryAbility = "NewSpell.UseBlindFury";
         public static readonly string BlindFuryAbilityGuid = "{92C2E197-903E-4938-BF82-0C4724F01DAE}";
 
@@ -196,6 +253,27 @@ namespace MythicMagicMayhem.Demon
         void IRulebookHandler<RuleDealDamage>.OnEventDidTrigger(RuleDealDamage evt)
         {
             
+        }
+    }
+
+    public class ReplaceCasterLevelForAbility : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAbilityParams>, IRulebookHandler<RuleCalculateAbilityParams>, ISubscriber, IInitiatorRulebookSubscriber
+    {
+        // Token: 0x170025AA RID: 9642
+        // (get) Token: 0x0600E6AD RID: 59053 RVA: 0x003B7517 File Offset: 0x003B5717
+        public BlueprintAbility spell;
+        // Token: 0x0600E6AE RID: 59054 RVA: 0x003B752A File Offset: 0x003B572A
+        public void OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
+        {
+            var num = Buff?.MaybeContext?.Params?.CasterLevel;
+            if (evt.Spell == this.spell && evt.Spellbook == null && num > 0)
+            {
+                evt.ReplaceCasterLevel = num;
+            }
+        }
+
+        // Token: 0x0600E6AF RID: 59055 RVA: 0x003B754C File Offset: 0x003B574C
+        public void OnEventDidTrigger(RuleCalculateAbilityParams evt)
+        {
         }
     }
 }
