@@ -81,6 +81,10 @@ namespace MythicMagicMayhem.Trickster
               .AddComponent<MetagamerComp>()
               .Configure();
 
+            var comp = FeatureRefs.TricksterSneakyQuack.Reference.Get().GetComponent<ContextRankConfig>();
+            comp.m_BaseValueType = ContextRankBaseValueType.BaseStat;
+            comp.m_Stat = StatType.SneakAttack;
+
             var area = AbilityAreaEffectConfigurator.New(MetagamerAura, MetagamerAuraGuid)
                 .SetAffectEnemies(false)
                 .SetShape(AreaEffectShape.Cylinder)
