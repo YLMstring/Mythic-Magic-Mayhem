@@ -1,6 +1,8 @@
 ﻿using BlueprintCore.Blueprints.References;
 using MythicMagicMayhem.Azata;
+using MythicMagicMayhem.Demon;
 using MythicMagicMayhem.Mechanics;
+using MythicMagicMayhem.Trickster;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +59,9 @@ namespace MythicMagicMayhem.Aeon
             SpellStuff.AddSpellLevel(AbilityRefs.PowerWordKill.Reference, SpellListRefs.AeonSpellList.Reference, 9);
             SpellStuff.AddSpellLevel(AeonNewSpell.AbsoluteAuthorityConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 10);
             SpellStuff.AddSpellLevel(AeonNewSpell.TemporalInterdictionConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 10);
+            SpellStuff.AddSpellLevel(DemonNewSpell.DemonicFormVConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 10);
+            SpellStuff.AddSpellLevel(AzataNewSpell.DragonDanceConfigure(), SpellListRefs.AeonSpellMythicList.Reference, 10);
+            SpellStuff.AddSpellLevel(TricksterNewSpell.CreateMetagamer(), SpellListRefs.AeonSpellMythicList.Reference, 10);
         }
     }
 }

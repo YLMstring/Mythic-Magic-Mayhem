@@ -59,7 +59,7 @@ namespace MythicMagicMayhem.Azata
             SpellStuff.ChangeSpellLevel(AbilityRefs.HeroicInvocation.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
             SpellStuff.ChangeSpellLevel(AbilityRefs.PowerWordKill.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
             SpellStuff.ChangeSpellLevel(AbilityRefs.EvilSuccubusDominate.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
-            SpellStuff.AddSpellLevel(AzataNewSpell.DragonDanceConfigure(), SpellListRefs.AzataMythicSpellsSpelllist.Reference, 10);
+            //SpellStuff.AddSpellLevel(AzataNewSpell.DragonDanceConfigure(), SpellListRefs.AzataMythicSpellsSpelllist.Reference, 10);
         }
     }
 }

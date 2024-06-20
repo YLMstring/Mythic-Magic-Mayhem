@@ -208,15 +208,15 @@
     "ruRU": "Вы давно поняли, что жизнь - это всего лишь игра, а раз так, значит, кто-то должен был ее придумать.  Нет никого, кого бы вы не смогли обмануть, и вы используете это, чтобы раскрыть потенциал, которого у вас иначе не было бы (и не должно быть).  Выберите одно из следующих мифических заклинаний 10-го уровня (Армия небес, Абсолютная смерть, Прорыв Бездны, Эдикт абсолютной власти или Хор Элизиума), вы сотворяете это заклинание."
   },
   {
-    "Key": "NewSpellAbsoluteAuthority.Name",
+    "Key": "NewSpellTemporalInterdiction.Name",
     "ProcessTemplates": false,
     "enGB": "Temporal Interdiction",
     "zhCN": "时空封锁"
   },
   {
-    "Key": "NewSpellAbsoluteAuthority.Description",
-    "enGB": "The heart of the Aeon's power is their mastery over space and time.  The most awesome of these powers is the ability to literally freeze time for a short period for all but themselves. For 1 round the Aeon gains the ability to cast up to three spells as a free action.",
-    "zhCN": "御衡者力量的核心在于他们对空间和时间的掌控。  这些能力中最令人敬畏的是能够为除了他们自己之外的所有人短时间冻结时间。在 1 轮内，御衡者获得以自由动作施展最多三个法术的能力。"
+    "Key": "NewSpellTemporalInterdiction.Description",
+    "enGB": "The heart of the Aeon's power is their mastery over space and time. The most awesome of these powers is the ability to literally freeze time for a short period for all but themselves. For 1 round the Aeon gains the ability to cast up to three spells as a free action.",
+    "zhCN": "御衡者力量的核心在于他们对空间和时间的掌控。这些能力中最令人敬畏的是能够为除了他们自己之外的所有人短时间冻结时间。在 1 轮内，御衡者获得以自由动作施展最多三个法术的能力。"
   },
   {
     "Key": "TricksterNewSpellMetagamer.Name",
