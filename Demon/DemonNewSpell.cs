@@ -58,7 +58,7 @@ namespace MythicMagicMayhem.Demon
         private const string Description0 = "NewSpellDemonicFormV.Description";
         public static BlueprintAbility DemonicFormVConfigure()
         {
-            var icon = AbilityRefs.AreshkagalRetriever_Ability_MendingRay.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.DemonLordAspectSelection.Reference.Get().Icon;
 
             var monster = UnitRefs.CR23_AreshkagalRetriever.Reference.Get();
             var balor = BuffRefs.DemonicFormIVBalorBuff.Reference.Get().GetComponent<Polymorph>();

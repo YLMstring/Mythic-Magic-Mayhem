@@ -277,7 +277,7 @@ namespace MythicMagicMayhem.Aeon
               .SetRanks(3)
               .Configure();
 
-            var fx = AbilityRefs.CircleOfDeath.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var fx = AbilityRefs.OverwhelmingPresence.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             return AbilityConfigurator.NewSpell(
                 TemporalInterdictionAbility, TemporalInterdictionAbilityGuid, SpellSchool.Abjuration, canSpecialize: false)

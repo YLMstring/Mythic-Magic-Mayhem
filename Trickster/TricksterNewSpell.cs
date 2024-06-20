@@ -70,7 +70,7 @@ namespace MythicMagicMayhem.Trickster
 
         public static BlueprintAbility CreateMetagamer()
         {
-            var icon = AbilityRefs.DistrustOfFellowsAbility.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.VivsectionistDiscoverySelection.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(MetagamerBuff, MetagamerGuidBuff)
             .SetDisplayName(MetagamerDisplayName)
