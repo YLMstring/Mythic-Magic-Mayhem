@@ -46,6 +46,7 @@ using Kingmaker.RuleSystem.Rules;
 using Kingmaker.ElementsSystem;
 using Kingmaker.UnitLogic.Groups;
 using MythicMagicMayhem.Trickster;
+using BlueprintCore.Conditions.Builder.ContextEx;
 
 namespace MythicMagicMayhem.Trickster
 {
@@ -84,7 +85,7 @@ namespace MythicMagicMayhem.Trickster
                 .SetAffectEnemies(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(33.Feet())
-                .AddAbilityAreaEffectBuff(buff: Buff)
+                .AddAbilityAreaEffectBuff(buff: Buff, condition: ConditionsBuilder.New().IsAlly().Build())
                 .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(BuffRefs.Exhausted.ToString(), ContextDuration.Fixed(10)).Build();

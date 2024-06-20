@@ -98,8 +98,8 @@ namespace MythicMagicMayhem.Azata
               .AddContextRankConfig(ContextRankConfigs.CasterLevel())
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .ApplyBuff(buff1, ContextDuration.Fixed(10))
                   .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Rank()), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Fire), halfIfSaved: true)
+                  .ApplyBuff(buff1, ContextDuration.Fixed(10))
                   .Build(), savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex)
               .Configure();
 
@@ -123,8 +123,8 @@ namespace MythicMagicMayhem.Azata
               .AddContextRankConfig(ContextRankConfigs.CasterLevel())
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .ApplyBuff(buff2, ContextDuration.Fixed(10))
                   .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Rank()), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Cold), halfIfSaved: true)
+                  .ApplyBuff(buff2, ContextDuration.Fixed(10))
                   .Build(), savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex)
               .Configure();
 
@@ -148,8 +148,8 @@ namespace MythicMagicMayhem.Azata
               .AddContextRankConfig(ContextRankConfigs.CasterLevel())
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .ApplyBuff(buff3, ContextDuration.Fixed(10))
                   .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Rank()), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Electricity), halfIfSaved: true)
+                  .ApplyBuff(buff3, ContextDuration.Fixed(10))
                   .Build(), savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex)
               .Configure();
 
@@ -173,8 +173,8 @@ namespace MythicMagicMayhem.Azata
               .AddContextRankConfig(ContextRankConfigs.CasterLevel())
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .ApplyBuff(buff4, ContextDuration.Fixed(10))
                   .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Rank()), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Acid), halfIfSaved: true)
+                  .ApplyBuff(buff4, ContextDuration.Fixed(10))
                   .Build(), savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex)
               .Configure();
 
@@ -198,8 +198,8 @@ namespace MythicMagicMayhem.Azata
               .AddContextRankConfig(ContextRankConfigs.CasterLevel())
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .ApplyBuff(buff5, ContextDuration.Fixed(10))
                   .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Rank()), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Sonic), halfIfSaved: true)
+                  .ApplyBuff(buff5, ContextDuration.Fixed(10))
                   .Build(), savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex)
               .Configure();
 
