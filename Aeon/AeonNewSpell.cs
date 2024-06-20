@@ -331,7 +331,7 @@ namespace MythicMagicMayhem.Aeon
         {
             try
             {
-                if (evt.Spell?.Spellbook != null)
+                if (evt.Spell?.Spellbook != null && evt.Spell.Blueprint.GetComponent<AbilityEffectStickyTouch>() == null)
                 {
                     if (Buff.Rank > 1)
                     {
