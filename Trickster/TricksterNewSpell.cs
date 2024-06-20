@@ -362,16 +362,19 @@ namespace MythicMagicMayhem.Trickster
         }
     }
 
-    [HarmonyPatch(typeof(ContextRankConfig), nameof(ContextRankConfig.GetBaseValue))]
+    [HarmonyPatch(typeof(ContextRankConfig), nameof(ContextRankConfig.GetValue))]
     internal class MetagamerFix6
     {
         static void Postfix(ref ContextRankConfig __instance, ref int __result, ref MechanicsContext context)
         {
-            if (__instance.m_BaseValueType == ContextRankBaseValueType.FeatureRank && __instance.m_Feature == FeatureRefs.SneakAttack.Reference)
+            Logger.Info("MetagamerFix6");
+            if (__instance.OwnerBlueprint.AssetGuidThreadSafe == BuffRefs.TricksterSneakyQuackBuff.ToString())
             {
                 __result = Math.Max(__result, context.MaybeCaster.Stats.SneakAttack);
+                Logger.Info(__result.ToString());
             }
         }
+        private static readonly LogWrapper Logger = LogWrapper.Get("MMMmod");
     }
 }
 
