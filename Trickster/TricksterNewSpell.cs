@@ -47,6 +47,7 @@ using Kingmaker.ElementsSystem;
 using Kingmaker.UnitLogic.Groups;
 using MythicMagicMayhem.Trickster;
 using BlueprintCore.Conditions.Builder.ContextEx;
+using Kingmaker.UnitLogic.Mechanics;
 
 namespace MythicMagicMayhem.Trickster
 {
@@ -80,10 +81,6 @@ namespace MythicMagicMayhem.Trickster
               .AddFacts([FeatureRefs.TricksterSneakyQuack.ToString()])
               .AddComponent<MetagamerComp>()
               .Configure();
-
-            var comp = FeatureRefs.TricksterSneakyQuack.Reference.Get().GetComponent<ContextRankConfig>();
-            comp.m_BaseValueType = ContextRankBaseValueType.BaseStat;
-            comp.m_Stat = StatType.SneakAttack;
 
             var area = AbilityAreaEffectConfigurator.New(MetagamerAura, MetagamerAuraGuid)
                 .SetAffectEnemies(false)
@@ -362,6 +359,18 @@ namespace MythicMagicMayhem.Trickster
         {
             base.OnTurnOff();
             base.Owner.Stats.SneakAttack.RemoveModifiersFrom(base.Runtime);
+        }
+    }
+
+    [HarmonyPatch(typeof(ContextRankConfig), nameof(ContextRankConfig.GetBaseValue))]
+    internal class MetagamerFix6
+    {
+        static void Postfix(ref ContextRankConfig __instance, ref int __result, ref MechanicsContext context)
+        {
+            if (__instance.m_BaseValueType == ContextRankBaseValueType.FeatureRank && __instance.m_Feature == FeatureRefs.SneakAttack.Reference)
+            {
+                __result = Math.Max(__result, context.MaybeCaster.Stats.SneakAttack);
+            }
         }
     }
 }
