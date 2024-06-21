@@ -1,4 +1,6 @@
 ﻿using BlueprintCore.Blueprints.References;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.FactLogic;
 using MythicMagicMayhem.Mechanics;
 using System;
 using System.Collections.Generic;
@@ -60,6 +62,11 @@ namespace MythicMagicMayhem.Azata
             SpellStuff.ChangeSpellLevel(AbilityRefs.PowerWordKill.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
             SpellStuff.ChangeSpellLevel(AbilityRefs.EvilSuccubusDominate.Reference, SpellListRefs.AzataMythicSpelllist.Reference, 11, 9);
             SpellStuff.AddSpellLevel(AzataNewSpell.DragonDanceConfigure(), SpellListRefs.AzataMythicSpellsSpelllist.Reference, 10);
+            var comp = FeatureRefs.BurstOfSonicEnergyFeature.Reference.Get()?.GetComponent<AddKnownSpell>();
+            if (comp != null)
+            {
+                comp.SpellLevel = 4;
+            }
         }
     }
 }
