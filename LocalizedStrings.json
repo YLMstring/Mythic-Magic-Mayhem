@@ -212,13 +212,13 @@
     "ProcessTemplates": false,
     "enGB": "Temporal Interdiction",
     "zhCN": "时空封锁",
-    "ruRU": ""
+    "ruRU": "Временной запрет"
   },
   {
     "Key": "NewSpellTemporalInterdiction.Description",
     "enGB": "The heart of the Aeon's power is their mastery over space and time. The most awesome of these powers is the ability to literally freeze time for a short period for all but themselves. For 1 round the Aeon gains the ability to cast up to three spells as a free action.",
     "zhCN": "御衡者力量的核心在于他们对空间和时间的掌控。这些能力中最令人敬畏的是能够为除了他们自己之外的所有人短时间冻结时间。在 1 轮内，御衡者获得以自由动作施展最多三个法术的能力。",
-    "ruRU": ""
+    "ruRU": "Основой сил эона является власть над пространством и временем. Самая потрясающая из этих способностей - умение буквально останавливать время на короткий срок для всех, кроме себя. На 1 раунд эон получает способность сотворять до 3 заклинаний при помощи свободного действия."
   },
   {
     "Key": "TricksterNewSpellMetagamer.Name",
