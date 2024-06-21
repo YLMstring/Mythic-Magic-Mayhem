@@ -45,7 +45,7 @@ namespace MythicMagicMayhem.Trickster
             SpellStuff.AddSpellLevel(AbilityRefs.Weird.Reference, SpellListRefs.TricksterSpelllist.Reference, 9);
             SpellStuff.AddSpellLevel(TricksterNewSpell.RainHalberdiersConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 9);
             SpellStuff.AddSpellLevel(TricksterNewSpell.TrickDeveloperConfigure(), SpellListRefs.TricksterSpelllistMythic.Reference, 10);
-            //SpellStuff.AddSpellLevel(TricksterNewSpell.CreateMetagamer(), SpellListRefs.TricksterSpelllistMythic.Reference, 10);
+            SpellStuff.AddSpellLevel(TricksterNewSpell.CreateMetagamer(), SpellListRefs.TricksterSpelllistMythic.Reference, 10);
         }
     }
 }
