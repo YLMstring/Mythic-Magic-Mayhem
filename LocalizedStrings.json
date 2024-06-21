@@ -216,7 +216,7 @@
   {
     "Key": "NewSpellTemporalInterdiction.Description",
     "enGB": "The heart of the Aeon's power is their mastery over space and time. The most awesome of these powers is the ability to literally freeze time for a short period for all but themselves. For 1 round the Aeon gains the ability to cast up to three spells as a free action.",
-    "zhCN": "御衡者力量的核心在于他们对空间和时间的掌控。这些能力中最令人敬畏的是能够为除了他们自己之外的所有人短时间冻结时间。在 1 轮内，御衡者获得以自由动作施展最多三个法术的能力。"
+    "zhCN": "御衡者力量的核心在于他们对时空的掌控。这些能力中最令人敬畏的是他们能够将除了自己以外所有人的时间短暂停止的能力。在1轮内，御衡者获得以自由动作施展最多三个法术的能力。"
   },
   {
     "Key": "TricksterNewSpellMetagamer.Name",
@@ -227,7 +227,7 @@
   {
     "Key": "TricksterNewSpellMetagamer.Description",
     "enGB": "Every group of friends has someone who ‘knows better’ and has no problem with sharing their superior knowledge with their companions regardless of whether or not it has been asked for, congratulations for being THAT guy. For 1 minute while within a 30ft radius of the trickster all allies gain Sneaky Quack, ignore critical hit and precision damage immunity and gain sneak attack dice equal to the trickster's if it's not already higher. When the spell ends all allies become exhausted for 1 minute due to the constant frustrating ’suggestions‘ from the trickster.",
-    "zhCN": "每一群朋友都有一个“更了解”的人，并且无论是否被要求，都可以毫无问题地与同伴分享他们的高级知识，恭喜你成为那个人。 1 分钟内，在骗子盟友 30 英尺半径内，获得潜行嘎嘎声，忽略致命一击和精确伤害免疫，并获得与骗子相同的偷袭骰子（如果还没有更高的话）。当法术结束时，由于骗子不断发出令人沮丧的“建议”，所有盟友都会精疲力尽一分钟。"
+    "zhCN": "每群朋友中都会有那么一个人，他总是“懂得更多”，并且会毫无犹豫地与同伴分享他那“高人一等”的知识，无论是否有人请求，恭喜你成为了这样的人。在1分钟内，诡计大师30尺范围内所有盟友获得“偷袭医术”，无视重击和精准伤害免疫，并且获得等同于诡计大师的偷袭骰（如果自身没有更多的话）。当法术结束后，所有友军都会因为诡计大师那持续不断的“建议”而力竭1分钟。"
   },
   {
     "Key": "NewSpellDragonDance.Name",
@@ -238,7 +238,7 @@
   {
     "Key": "NewSpellDragonDance.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level. The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
-    "zhCN": "极乐世界的原始力量流经你，轰炸你的敌人，使他们容易受到你的元素力量的攻击。  当你施放该法术时，选择一个元素（火、冷、闪电、酸或音），该法术会从一个目标跳跃到另一个目标，就像连锁闪电一样，每施法者等级对所选元素造成 1d6 点伤害。目标还会获得所选元素的脆弱性，持续 1 分钟，成功的豁免检定会将伤害减半，但不会阻止脆弱性效果。"
+    "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance1.Name",
@@ -249,7 +249,7 @@
   {
     "Key": "NewSpellDragonDance1.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
-    "zhCN": "极乐世界的原始力量流经你，轰炸你的敌人，使他们容易受到你的元素力量的攻击。  当你施放该法术时，选择一个元素（火、冷、闪电、酸或音），该法术会从一个目标跳跃到另一个目标，就像连锁闪电一样，每施法者等级对所选元素造成 1d6 点伤害。  目标还会获得所选元素的脆弱性，持续 1 分钟，成功的豁免检定会将伤害减半，但不会阻止脆弱性效果。"
+    "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance2.Name",
@@ -260,7 +260,7 @@
   {
     "Key": "NewSpellDragonDance2.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
-    "zhCN": "极乐世界的原始力量流经你，轰炸你的敌人，使他们容易受到你的元素力量的攻击。  当你施放该法术时，选择一个元素（火、冷、闪电、酸或音），该法术会从一个目标跳跃到另一个目标，就像连锁闪电一样，每施法者等级对所选元素造成 1d6 点伤害。  目标还会获得所选元素的脆弱性，持续 1 分钟，成功的豁免检定会将伤害减半，但不会阻止脆弱性效果。"
+    "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance3.Name",
@@ -271,7 +271,7 @@
   {
     "Key": "NewSpellDragonDance3.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
-    "zhCN": "极乐世界的原始力量流经你，轰炸你的敌人，使他们容易受到你的元素力量的攻击。  当你施放该法术时，选择一个元素（火、冷、闪电、酸或音），该法术会从一个目标跳跃到另一个目标，就像连锁闪电一样，每施法者等级对所选元素造成 1d6 点伤害。  目标还会获得所选元素的脆弱性，持续 1 分钟，成功的豁免检定会将伤害减半，但不会阻止脆弱性效果。"
+    "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance4.Name",
@@ -282,7 +282,7 @@
   {
     "Key": "NewSpellDragonDance4.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
-    "zhCN": "极乐世界的原始力量流经你，轰炸你的敌人，使他们容易受到你的元素力量的攻击。  当你施放该法术时，选择一个元素（火、冷、闪电、酸或音），该法术会从一个目标跳跃到另一个目标，就像连锁闪电一样，每施法者等级对所选元素造成 1d6 点伤害。  目标还会获得所选元素的脆弱性，持续 1 分钟，成功的豁免检定会将伤害减半，但不会阻止脆弱性效果。"
+    "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance5.Name",
@@ -293,7 +293,7 @@
   {
     "Key": "NewSpellDragonDance5.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
-    "zhCN": "极乐世界的原始力量流经你，轰炸你的敌人，使他们容易受到你的元素力量的攻击。  当你施放该法术时，选择一个元素（火、冷、闪电、酸或音），该法术会从一个目标跳跃到另一个目标，就像连锁闪电一样，每施法者等级对所选元素造成 1d6 点伤害。  目标还会获得所选元素的脆弱性，持续 1 分钟，成功的豁免检定会将伤害减半，但不会阻止脆弱性效果。"
+    "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDemonicFormV.Name",
@@ -304,7 +304,7 @@
   {
     "Key": "NewSpellDemonicFormV.Description",
     "enGB": "Your mastery over demonic forms has reached an unparalleled level. Harnessing the power of the abyss you can transform into a Primeval Retriever, an ancient and unique hunter of the abyss that preyed upon even the most powerful of demons that trespassed into it's territory. This creature inspired such fear in all demon kind that it inspired the demon lords to fashion their retriever constructs in its image. The Primeval Retriever can cast disintegration as a swift action at will using your caster level for damage, a vicious bite that grapples it's prey and chitinous legs harder than adamantine.",
-    "zhCN": "你对恶魔形态的掌握已经达到了无与伦比的水平。 利用深渊的力量，你可以变身为原始猎犬，这是一种古老而独特的深渊猎人，甚至会捕食侵入其领地的最强大的恶魔。这种生物激起了所有恶魔种类的恐惧，以至于它启发恶魔领主按照它的形象塑造了他们的猎犬结构。原始猎犬可以使用你的施法者等级随意以一个快速动作施放分解，造成伤害，这是一种恶毒的撕咬，可以抓住猎物，几丁质的腿比金刚更坚硬。"
+    "zhCN": "你对恶魔形态的掌握已经达到了登峰造极的境界。你可以利用深渊的力量，变身成一头原初搜猎仪，这是一种古老而独特的深渊猎手，即使是最强大的恶魔，只要胆敢踏入它的领地，也会成为它的猎物。这种生物令所有恶魔都感到恐惧，以至于连恶魔领主们都以它的形象塑造了他们的搜猎仪构装体。原初猎犬可以随意以一个迅捷动作施放解离术，使用你的施法者等级来决定伤害，它还拥有可以擒抱猎物的利齿和比精金还要坚硬的几丁质腿爪。"
   }
 
 ]
