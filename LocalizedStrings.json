@@ -211,99 +211,117 @@
     "Key": "NewSpellTemporalInterdiction.Name",
     "ProcessTemplates": false,
     "enGB": "Temporal Interdiction",
-    "zhCN": "时空封锁"
+    "zhCN": "时空封锁",
+    "ruRU": "Временной запрет"
   },
   {
     "Key": "NewSpellTemporalInterdiction.Description",
     "enGB": "The heart of the Aeon's power is their mastery over space and time. The most awesome of these powers is the ability to literally freeze time for a short period for all but themselves. For 1 round the Aeon gains the ability to cast up to three spells as a free action.",
+    "ruRU": "Основой сил эона является власть над пространством и временем. Самая потрясающая из этих способностей - умение буквально останавливать время на короткий срок для всех, кроме себя. На 1 раунд эон получает способность сотворять до 3 заклинаний при помощи свободного действия.",
     "zhCN": "御衡者力量的核心在于他们对时空的掌控。这些能力中最令人敬畏的是他们能够将除了自己以外所有人的时间短暂停止的能力。在1轮内，御衡者获得以自由动作施展最多三个法术的能力。"
   },
   {
     "Key": "TricksterNewSpellMetagamer.Name",
     "ProcessTemplates": false,
     "enGB": "‘Helpful’ Metagamer",
-    "zhCN": "‘实用’超游"
+    "zhCN": "‘实用’超游",
+    "ruRU": "‘Полезный’ метагеймер"
   },
   {
     "Key": "TricksterNewSpellMetagamer.Description",
     "enGB": "Every group of friends has someone who ‘knows better’ and has no problem with sharing their superior knowledge with their companions regardless of whether or not it has been asked for, congratulations for being THAT guy. For 1 minute while within a 30ft radius of the trickster all allies gain Sneaky Quack, ignore critical hit and precision damage immunity and gain sneak attack dice equal to the trickster's if it's not already higher. When the spell ends all allies become exhausted for 1 minute due to the constant frustrating ’suggestions‘ from the trickster.",
+    "ruRU": "В каждой группе друзей есть тот, кто ‘знает лучше’ и не стесняется делиться своими превосходящими знаниями со своими компаньонами, независимо от того, просили его об этом или нет, поздравляем, вы и есть ЭТОТ умник. На  1 минуту все находящиеся рядом с трикстером союзники эффекты способности Хитрое врачевание, их атаки игнорируют невосприимчивости к критическому урону и урону точности, а также они получают количество костей атаки исподтишка, равное количеству костей трикстера, при условии, что оно уже не превышает это значение. Когда действие заклинания прекращается, все союзники оказываются утомлены на 1 минуту из-за постоянных раздражающих ’советов‘ от трикстера.",
     "zhCN": "每群朋友中都会有那么一个人，他总是“懂得更多”，并且会毫无犹豫地与同伴分享他那“高人一等”的知识，无论是否有人请求，恭喜你成为了这样的人。在1分钟内，诡计大师30尺范围内所有盟友获得“偷袭医术”，无视重击和精准伤害免疫，并且获得等同于诡计大师的偷袭骰（如果自身没有更多的话）。当法术结束后，所有友军都会因为诡计大师那持续不断的“建议”而力竭1分钟。"
   },
   {
     "Key": "NewSpellDragonDance.Name",
     "ProcessTemplates": false,
     "enGB": "Primordial Dragon Dance",
-    "zhCN": "原初龙舞"
+    "zhCN": "原初龙舞",
+    "ruRU": "Первородный драконий танец"
   },
   {
     "Key": "NewSpellDragonDance.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level. The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
+    "ruRU": "Первородная сила Элизиума течет через вас, уничтожая врагов уязвимыми для вашей силы стихий. Выберите стихию (огонь, холод, электричество, кислота или звук), когда вы сотворяете заклинание, то оно прыгает от цели к цели подобно цепной молнии, нанося при этом 1d6 урона выбраной стихией за уровень заклинателя.  Цель также становится уязвима выбранной стихии на 1 минуту, успешный спасбросок уменьшает урон вдвое, но цель все также становится уязвимой.",
     "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance1.Name",
     "ProcessTemplates": false,
     "enGB": "Primordial Dragon Dance (Fire)",
-    "zhCN": "原初龙舞（火）"
+    "zhCN": "原初龙舞（火）",
+    "ruRU": "Первородный драконий танец (огонь)"
   },
   {
     "Key": "NewSpellDragonDance1.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
+    "ruRU": "Первородная сила Элизиума течет через вас, уничтожая врагов уязвимыми для вашей силы стихий. Выберите стихию (огонь, холод, электричество, кислота или звук), когда вы сотворяете заклинание, то оно прыгает от цели к цели подобно цепной молнии, нанося при этом 1d6 урона выбраной стихией за уровень заклинателя.  Цель также становится уязвима выбранной стихии на 1 минуту, успешный спасбросок уменьшает урон вдвое, но цель все также становится уязвимой.",
     "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance2.Name",
     "ProcessTemplates": false,
     "enGB": "Primordial Dragon Dance (Cold)",
-    "zhCN": "原初龙舞（寒）"
+    "zhCN": "原初龙舞（寒）",
+    "ruRU": "Первородный драконий танец (холод)"
   },
   {
     "Key": "NewSpellDragonDance2.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
+    "ruRU": "Первородная сила Элизиума течет через вас, уничтожая врагов уязвимыми для вашей силы стихий. Выберите стихию (огонь, холод, электричество, кислота или звук), когда вы сотворяете заклинание, то оно прыгает от цели к цели подобно цепной молнии, нанося при этом 1d6 урона выбраной стихией за уровень заклинателя.  Цель также становится уязвима выбранной стихии на 1 минуту, успешный спасбросок уменьшает урон вдвое, но цель все также становится уязвимой.",
     "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance3.Name",
     "ProcessTemplates": false,
     "enGB": "Primordial Dragon Dance (Lightning)",
-    "zhCN": "原初龙舞（电）"
+    "zhCN": "原初龙舞（电）",
+    "ruRU": "Первородный драконий танец (электричество)"
   },
   {
     "Key": "NewSpellDragonDance3.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
+    "ruRU": "Первородная сила Элизиума течет через вас, уничтожая врагов уязвимыми для вашей силы стихий. Выберите стихию (огонь, холод, электричество, кислота или звук), когда вы сотворяете заклинание, то оно прыгает от цели к цели подобно цепной молнии, нанося при этом 1d6 урона выбраной стихией за уровень заклинателя.  Цель также становится уязвима выбранной стихии на 1 минуту, успешный спасбросок уменьшает урон вдвое, но цель все также становится уязвимой.",
     "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance4.Name",
     "ProcessTemplates": false,
     "enGB": "Primordial Dragon Dance (Acid)",
-    "zhCN": "原初龙舞（酸）"
+    "zhCN": "原初龙舞（酸）",
+    "ruRU": "Первородный драконий танец (кислота)"
   },
   {
     "Key": "NewSpellDragonDance4.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
+    "ruRU": "Первородная сила Элизиума течет через вас, уничтожая врагов уязвимыми для вашей силы стихий. Выберите стихию (огонь, холод, электричество, кислота или звук), когда вы сотворяете заклинание, то оно прыгает от цели к цели подобно цепной молнии, нанося при этом 1d6 урона выбраной стихией за уровень заклинателя.  Цель также становится уязвима выбранной стихии на 1 минуту, успешный спасбросок уменьшает урон вдвое, но цель все также становится уязвимой.",
     "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDragonDance5.Name",
     "ProcessTemplates": false,
     "enGB": "Primordial Dragon Dance (Sonic)",
-    "zhCN": "原初龙舞（波）"
+    "zhCN": "原初龙舞（波）",
+    "ruRU": "Первородный драконий танец (звук)"
   },
   {
     "Key": "NewSpellDragonDance5.Description",
     "enGB": "The primordial power of Elysium flows through you blasting your enemies and rendering them vulnerable to your elemental power.  Choose an element (fire, cold, lightning, acid or sonic) when you cast the spell, the spell leaps from target to target in the same way as chain lightning inflicting 1d6 damage of the chosen element per caster level.  The target also gains vulnerability to the selected element for 1 minute, succeeding in a saving throw halves the damage but does not prevent the vulnerability effect.",
+    "ruRU": "Первородная сила Элизиума течет через вас, уничтожая врагов уязвимыми для вашей силы стихий. Выберите стихию (огонь, холод, электричество, кислота или звук), когда вы сотворяете заклинание, то оно прыгает от цели к цели подобно цепной молнии, нанося при этом 1d6 урона выбраной стихией за уровень заклинателя.  Цель также становится уязвима выбранной стихии на 1 минуту, успешный спасбросок уменьшает урон вдвое, но цель все также становится уязвимой.",
     "zhCN": "极乐境的原始力量在你体内流淌，冲击着你的敌人，使他们更容易被你操纵元素的力量伤害。在施放此法术时，选择一种元素(火焰，寒冷，闪电，酸液或者音波)，法术就像链状闪电一样，从一个目标跃向另一个目标，造成每个施法者等级1d6所选的元素伤害。目标还会在1分钟内对所选的元素产生易伤，成功通过一次豁免则伤害减半，但无法防止易伤效果。"
   },
   {
     "Key": "NewSpellDemonicFormV.Name",
     "ProcessTemplates": false,
     "enGB": "Demonic Form V",
-    "zhCN": "恶魔形态V"
+    "zhCN": "恶魔形态V",
+    "ruRU": "Демоническая форма V"
   },
   {
     "Key": "NewSpellDemonicFormV.Description",
     "enGB": "Your mastery over demonic forms has reached an unparalleled level. Harnessing the power of the abyss you can transform into a Primeval Retriever, an ancient and unique hunter of the abyss that preyed upon even the most powerful of demons that trespassed into it's territory. This creature inspired such fear in all demon kind that it inspired the demon lords to fashion their retriever constructs in its image. The Primeval Retriever can cast disintegration as a swift action at will using your caster level for damage, a vicious bite that grapples it's prey and chitinous legs harder than adamantine.",
+    "ruRU": "Ваше мастерство превращения в различных демонов достигло беспрецедентного уровня. Обуздав силы Бездны вы можете принять форму первородного ловчего, древнего и уникального охотника Бездны, который охотился даже на самых могущественных демонов, вторгшихся на его территорию. Это существо внушало такой страх всему демоническому роду, что даже вдохновило лордов демонов на создание конструктов по его образу и подобию. Первородный ловчий получает возможность сотворять заклинание Дезинтеграция при помощи быстрого действия, используя ваш уровень заклинателя для урона, жвала, при помощи которых можно ловить добычу, а также хитиновые лапы, прочность которых не уступает адамантину.",
     "zhCN": "你对恶魔形态的掌握已经达到了登峰造极的境界。你可以利用深渊的力量，变身成一头原初搜猎仪，这是一种古老而独特的深渊猎手，即使是最强大的恶魔，只要胆敢踏入它的领地，也会成为它的猎物。这种生物令所有恶魔都感到恐惧，以至于连恶魔领主们都以它的形象塑造了他们的搜猎仪构装体。原初猎犬可以随意以一个迅捷动作施放解离术，使用你的施法者等级来决定伤害，它还拥有可以擒抱猎物的利齿和比精金还要坚硬的几丁质腿爪。"
   }
 
