@@ -367,7 +367,7 @@ namespace MythicMagicMayhem.Trickster
     {
         static void Postfix(ref ContextRankConfig __instance, ref int __result, ref MechanicsContext context)
         {
-            Logger.Info("MetagamerFix6");
+            //Logger.Info("MetagamerFix6");
             if (__instance.OwnerBlueprint.AssetGuidThreadSafe == BuffRefs.TricksterSneakyQuackBuff.ToString())
             {
                 __result = Math.Max(__result, context.MaybeCaster.Stats.SneakAttack);
