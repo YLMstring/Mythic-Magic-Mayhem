@@ -374,6 +374,18 @@ namespace MythicMagicMayhem.Azata
                   c.RequiredFact = FeatureRefs.InsightfulContemplationSongFeature.Reference.Get();
                   c.m_AreaEffect = AbilityAreaEffectRefs.InsightfulContemplationSongArea.Reference.Get().ToReference<BlueprintAbilityAreaEffectReference>();
               })
+              .AddComponent<AddAreaEffectIfHasFact>(c => {
+                  c.RequiredFact = FeatureRefs.FakeInspireCourageFeature.Reference.Get();
+                  c.m_AreaEffect = AbilityAreaEffectRefs.FakeInspireCourageArea.Reference.Get().ToReference<BlueprintAbilityAreaEffectReference>();
+              })
+              .AddComponent<AddAreaEffectIfHasFact>(c => {
+                  c.RequiredFact = FeatureRefs.FakeInspireGreatnessFeature.Reference.Get();
+                  c.m_AreaEffect = AbilityAreaEffectRefs.FakeInspireGreatnessArea.Reference.Get().ToReference<BlueprintAbilityAreaEffectReference>();
+              })
+              .AddComponent<AddAreaEffectIfHasFact>(c => {
+                  c.RequiredFact = FeatureRefs.FakeInspireHeroicsFeature.Reference.Get();
+                  c.m_AreaEffect = AbilityAreaEffectRefs.FakeInspireHeroicsArea.Reference.Get().ToReference<BlueprintAbilityAreaEffectReference>();
+              })
               .Configure();
 
             //var fx = AbilityRefs.SmiteEvilAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
