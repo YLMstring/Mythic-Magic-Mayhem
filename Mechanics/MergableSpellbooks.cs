@@ -77,6 +77,23 @@ namespace MythicMagicMayhem.Mechanics
             var sixs = new HashSet<BlueprintSpellsTable>() { };
             foreach (var clazz in clazzs)
             {
+                if (clazz.Archetypes.Any()) 
+                {
+                    foreach (var archetype in clazz.Archetypes)
+                    {
+                        if (GetMaxLevel(archetype.ReplaceSpellbook) == 0) { continue; }
+                        books.Add(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
+                        Main.Logger.Info("Make " + archetype.ReplaceSpellbook.NameSafe() + " mergable");
+                        if (GetMaxLevel(archetype.ReplaceSpellbook) == 5)
+                        {
+                            fours.Add(archetype.ReplaceSpellbook.SpellsPerDay);
+                        }
+                        else if (GetMaxLevel(archetype.ReplaceSpellbook) == 7)
+                        {
+                            sixs.Add(archetype.ReplaceSpellbook.SpellsPerDay);
+                        }
+                    }
+                }
                 if (GetMaxLevel(clazz.Spellbook) == 0) { continue; }
                 books.Add(clazz.Spellbook.ToReference<BlueprintSpellbookReference>());
                 Main.Logger.Info("Make " + clazz.Spellbook.NameSafe() + " mergable");
@@ -87,21 +104,6 @@ namespace MythicMagicMayhem.Mechanics
                 else if (GetMaxLevel(clazz.Spellbook) == 7)
                 {
                     sixs.Add(clazz.Spellbook.SpellsPerDay);
-                }
-                if (!clazz.Archetypes.Any()) continue;
-                foreach (var archetype in clazz.Archetypes)
-                {
-                    if (GetMaxLevel(archetype.ReplaceSpellbook) == 0) { continue; }
-                    books.Add(archetype.ReplaceSpellbook.ToReference<BlueprintSpellbookReference>());
-                    Main.Logger.Info("Make " + archetype.ReplaceSpellbook.NameSafe() + " mergable");
-                    if (GetMaxLevel(archetype.ReplaceSpellbook) == 5)
-                    {
-                        fours.Add(archetype.ReplaceSpellbook.SpellsPerDay);
-                    }
-                    else if (GetMaxLevel(archetype.ReplaceSpellbook) == 7)
-                    {
-                        sixs.Add(archetype.ReplaceSpellbook.SpellsPerDay);
-                    }
                 }
             }
             foreach (var table in fours)
