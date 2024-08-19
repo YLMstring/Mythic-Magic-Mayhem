@@ -5,6 +5,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -386,6 +387,18 @@ namespace MythicMagicMayhem.Azata
                   c.RequiredFact = FeatureRefs.FakeInspireHeroicsFeature.Reference.Get();
                   c.m_AreaEffect = AbilityAreaEffectRefs.FakeInspireHeroicsArea.Reference.Get().ToReference<BlueprintAbilityAreaEffectReference>();
               })
+              .AddComponent<AddAreaEffectIfHasFact>(c => {
+                  c.RequiredFact = BlueprintTool.GetRef<BlueprintFeatureReference>("241ce86c60b54392a988c61a5d75293f");
+                  c.m_AreaEffect = BlueprintTool.GetRef<BlueprintAbilityAreaEffectReference>("2fe3beace4484edb9a5e66de15e763cd");
+              })
+              .AddComponent<AddAreaEffectIfHasFact>(c => {
+                  c.RequiredFact = BlueprintTool.GetRef<BlueprintFeatureReference>("2c575afe75a24905bde456308514b048");
+                  c.m_AreaEffect = BlueprintTool.GetRef<BlueprintAbilityAreaEffectReference>("09e27ddbefb34cb9a398b0c8224687fe");
+              })
+              .AddComponent<AddAreaEffectIfHasFact>(c => {
+                  c.RequiredFact = BlueprintTool.GetRef<BlueprintFeatureReference>("59077996944b4ae1bef4cdd1b872ef8d");
+                  c.m_AreaEffect = BlueprintTool.GetRef<BlueprintAbilityAreaEffectReference>("141d633de63c477885463d4e836ae1a6");
+              })
               .Configure();
 
             //var fx = AbilityRefs.SmiteEvilAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
@@ -424,6 +437,10 @@ namespace MythicMagicMayhem.Azata
                     ifTrue: ActionsBuilder.New().CastSpell(AbilityRefs.SongOfCourageousDefenderChoseCompanionAbility.ToString()).Build())
                   .Conditional(ConditionsBuilder.New().CasterHasFact(FeatureRefs.SoothingPerformanceFeature.ToString()).IsAlly().Build(),
                     ifTrue: ActionsBuilder.New().CastSpell(AbilityRefs.SoothingPerformanceAbility.ToString()).Build())
+                  .Conditional(ConditionsBuilder.New().CasterHasFact("f7dcab1cd75140488bacb73b04e29b5c").IsEnemy().Build(),
+                    ifTrue: ActionsBuilder.New().CastSpell("40e997669e6b4dbaaee8b9a093cfb506").Build())
+                  .Conditional(ConditionsBuilder.New().CasterHasFact("6b600329edb14b8ca658a2e8e39b8610").IsEnemy().Build(),
+                    ifTrue: ActionsBuilder.New().CastSpell("6cc1c799e163429dbf22f8ee97c6e377").Build())
                   .Build())
               .Configure();
         }
