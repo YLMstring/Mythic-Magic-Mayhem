@@ -71,7 +71,15 @@ namespace MythicMagicMayhem.Mechanics
 
         private static BlueprintSpellbookReference[] GetBooks()
         {
-            var books = new List<BlueprintSpellbookReference>() { };
+            var books = new List<BlueprintSpellbookReference>() { 
+                SpellbookRefs.ThassilonianAbjurationSpellbook.Reference.Get().ToReference<BlueprintSpellbookReference>(),
+                SpellbookRefs.ThassilonianConjurationSpellbook.Reference.Get().ToReference<BlueprintSpellbookReference>(),
+                SpellbookRefs.ThassilonianEnchantmentSpellbook.Reference.Get().ToReference<BlueprintSpellbookReference>(),
+                SpellbookRefs.ThassilonianEvocationSpellbook.Reference.Get().ToReference<BlueprintSpellbookReference>(),
+                SpellbookRefs.ThassilonianIllusionSpellbook.Reference.Get().ToReference<BlueprintSpellbookReference>(),
+                SpellbookRefs.ThassilonianNecromancySpellbook.Reference.Get().ToReference<BlueprintSpellbookReference>(),
+                SpellbookRefs.ThassilonianTransmutationSpellbook.Reference.Get().ToReference<BlueprintSpellbookReference>()
+            };
             var clazzs = RootRefs.BlueprintRoot.Reference.Get().Progression.AvailableCharacterClasses;
             var fours = new HashSet<BlueprintSpellsTable>() { };
             var sixs = new HashSet<BlueprintSpellsTable>() { };
