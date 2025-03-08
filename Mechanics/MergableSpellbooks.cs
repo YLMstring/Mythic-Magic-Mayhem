@@ -62,6 +62,13 @@ namespace MythicMagicMayhem.Mechanics
                 .Configure();
             aeon.m_AllowedSpellbooks = books;
 
+            // String, where your guid file :sus_emoji:
+            var gd = FeatureSelectMythicSpellbookConfigurator.New("gdspellbook", "2cd312fb-390d-4123-804e-c6f5b93383f1")
+                .SetDisplayName(DisplayName)
+                .SetDescription(Description)
+                .Configure();
+            gd.m_AllowedSpellbooks = books;
+
             var hacker = SpellbookRefs.MagicDeceiverSpellbook.Reference.Get();
             if (hacker?.GetComponent<MagicHackSpellbookComponent>() != null)
             {
