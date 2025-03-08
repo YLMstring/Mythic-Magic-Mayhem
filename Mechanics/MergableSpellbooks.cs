@@ -67,7 +67,7 @@ namespace MythicMagicMayhem.Mechanics
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
                 .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.Reference.Get())
-                .SetMythicSpellList(SpellListRefs.GoldDragonSpellList.Reference.Get())
+                .SetMythicSpellList(SpellListRefs.GoldDragonSpellListMythic.Reference.Get())
                 .Configure();
             gd.m_AllowedSpellbooks = books;
             // add the spell book configurator to the GD progression
