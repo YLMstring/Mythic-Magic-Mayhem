@@ -68,6 +68,10 @@ namespace MythicMagicMayhem.Mechanics
                 .SetDescription(Description)
                 .Configure();
             gd.m_AllowedSpellbooks = books;
+            // add the spell book configurator to the GD progression
+            ProgressionConfigurator.For(ProgressionRefs.GoldenDragonProgression)
+                .AddToLevelEntry(1, gd)
+                .Configure();
 
             var hacker = SpellbookRefs.MagicDeceiverSpellbook.Reference.Get();
             if (hacker?.GetComponent<MagicHackSpellbookComponent>() != null)
