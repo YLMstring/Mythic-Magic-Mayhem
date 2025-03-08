@@ -66,6 +66,8 @@ namespace MythicMagicMayhem.Mechanics
             var gd = FeatureSelectMythicSpellbookConfigurator.New("gdspellbook", "2cd312fb-390d-4123-804e-c6f5b93383f1")
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
+                .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable)
+                .SetMythicSpellList(SpellListRefs.GoldDragonSpellList)
                 .Configure();
             gd.m_AllowedSpellbooks = books;
             // add the spell book configurator to the GD progression
