@@ -1,14 +1,7 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using Epic.OnlineServices.Logging;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MythicMagicMayhem.Mechanics
 {

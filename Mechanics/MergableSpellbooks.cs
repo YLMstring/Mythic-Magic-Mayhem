@@ -62,6 +62,19 @@ namespace MythicMagicMayhem.Mechanics
                 .Configure();
             aeon.m_AllowedSpellbooks = books;
 
+            // String, where your guid file :sus_emoji:
+            var gd = FeatureSelectMythicSpellbookConfigurator.New("gdspellbook", "2cd312fb-390d-4123-804e-c6f5b93383f1")
+                .SetDisplayName(DisplayName)
+                .SetDescription(Description)
+                .SetSpellKnownForSpontaneous(SpellsTableRefs.MythicSpontaneousSpellsKnownTable.Reference.Get())
+                .SetMythicSpellList(SpellListRefs.GoldDragonSpellListMythic.Reference.Get())
+                .Configure();
+            gd.m_AllowedSpellbooks = books;
+            // add the spell book configurator to the GD progression
+            ProgressionConfigurator.For(ProgressionRefs.GoldenDragonProgression)
+                .AddToLevelEntry(1, gd)
+                .Configure();
+
             var hacker = SpellbookRefs.MagicDeceiverSpellbook.Reference.Get();
             if (hacker?.GetComponent<MagicHackSpellbookComponent>() != null)
             {
